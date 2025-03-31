@@ -1,0 +1,258 @@
+/* ベーススタイル */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Klee One", cursive;
+  font-weight: 400;
+  font-style: normal;
+  background: #4d7c6b;
+}
+
+header {
+  background-color: #fff3e1;
+  color: #522e1d;
+  height: 60px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-align: left;
+}
+
+header img {
+  width: 50px;
+  height: 50px;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+.logo {
+  margin: 1.5rem 0;
+  width: 380px;
+  height: 380px;
+  border-radius: 70px;
+}
+
+.top {
+  color: #fff3e1;
+  text-align: center;
+  padding: 0 9rem;
+  font-size: 1.25rem;
+}
+
+a {
+  color: greenyellow;
+  text-decoration: none;
+}
+
+a:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.top h2 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.top h1 {
+  margin-bottom: 1.5rem;
+}
+
+.top p {
+  margin-bottom: 1.1rem;
+}
+
+#midashi {
+  color: #fff3e1;
+  text-align: center;
+  padding-top: 4rem;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+}
+
+.circle-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.circle {
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.circle-info {
+  position: absolute;
+  bottom: auto;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+}
+
+.circle:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+#circle-1 {
+  background-color: black; /* 外務局 */
+}
+
+#circle-2 {
+  background-color: #f4e511; /* 企画開発局 */
+}
+
+#circle-3 {
+  background-color: orange; /* 広報局 */
+}
+
+#circle-4 {
+  background-color: #f44336; /* 参加団体局 */
+}
+
+#circle-5 {
+  background-color: blue; /* 渉外局 */
+}
+
+#circle-6 {
+  background-color: rgb(243, 37, 185); /* 総務局 */
+}
+
+#circle-7 {
+  background-color: #9c27b0; /* 編集局 */
+}
+
+footer {
+  background-color: #fff3e1;
+  text-align: center;
+  padding: 20px;
+  color: #522e1d;
+}
+
+footer p {
+  font-size: 0.75rem;
+}
+/* モーダルのスタイル */
+.modal {
+  display: none; /* デフォルトは非表示 */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* 背景を半透明に */
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.modal-content {
+  background-color: #fff3e1;
+  color: #522e1d;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 600px;
+  max-height: 80vh; /* 高さを最大80%に制限 */
+  overflow-y: auto; /* 内容が多い場合スクロール可能に */
+  text-align: center;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-content h2 {
+  margin-bottom: 10px;
+  font-size: 1.8rem;
+}
+
+.modal-content h3 {
+  margin-top: 1.25rem;
+}
+
+.modal-content img{
+  width: 250px;
+  height: 250px;
+}
+
+h5 {
+  font-size: 1.25rem;
+  margin-top: 1.5rem;
+  text-align: right;
+}
+
+.modal-content p {
+  font-size: 1rem;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.sns {
+  color: #fff3e1;
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.sns p {
+  padding: 0 1.5rem;
+}
+
+.sns h2 {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.qr {
+  margin: 1.5rem 0;
+  width: 280px;
+  height: 280px;
+}
+
+.snsimg {
+  margin: 1.5rem 0;
+  width: 300px;
+  height: 300px;
+  border-radius: 90px;
+}
