@@ -1,2 +1,2 @@
 #
-tokosaishinkan2025.github.io
+henshukyoku.github.io
