@@ -57,30 +57,17 @@
 
   </head>
   <body>
-    <!-- ============================================ -->
-    <!-- グローバルコンテナ -->
-    <!-- ============================================ -->
-    <!-- ページ全体を包むコンテナ（ローディング時のフェードイン制御に使用） -->
     <div id="global-container">
-      <!-- メインコンテナ（モバイルメニュー開閉時のスライドに使用） -->
       <div id="container">
-        <!-- モバイルメニュー用の背景カバー（クリックでメニューを閉じる） -->
         <div class="mobile-menu__cover"></div>
-        <!-- ヘッダーの背景変更をトリガーする要素（スクロール位置検知用） -->
         <div class="nav-trigger"></div>
         
-        <!-- ============================================ -->
-        <!-- ヘッダー -->
-        <!-- ============================================ -->
         <header class="header">
           <div class="header__inner appear up">
-            <!-- ロゴ -->
             <div class="logo item">
-              <!-- <img class="logo__img" src="logo.webp" /> -->
               <span class="logo__stay">所沢キャンパス祭</span>
               <span class="logo__world">2026</span>
             </div>
-            <!-- モバイルメニューボタン（ハンバーガーメニュー） -->
             <button class="mobile-menu__btn">
               <span></span>
               <span></span>
@@ -89,76 +76,54 @@
           </div>
         </header>
         
-        <!-- ============================================ -->
-        <!-- メインコンテンツ -->
-        <!-- ============================================ -->
         <div id="content">
-          <!-- ヒーローセクション（トップのスライダー） -->
           <div class="hero">
             <div class="swiper">
               <div class="swiper-wrapper">
-                <!-- スライド1 -->
                 <div class="swiper-slide">
                   <div class="hero__title">所沢キャンパス祭</div>
                   <img src="IMG_1006.JPG" alt="" />
                 </div>
-                <!-- スライド2 -->
                 <div class="swiper-slide">
                   <div class="hero__title">早稲田大学</div>
                   <img src="IMG_1074.JPG" alt="" />
                 </div>
-                <!-- スライド3 -->
                 <div class="swiper-slide">
-                  <div class="hero__title">スローガン</div>
-                  <img src="IMG_1075.JPG" alt="" />
+                  <picture>
+                    <source media="(max-width: 599px)" srcset="スローガン_縦.jpg">
+                    <img src="スローガン_横.jpg" alt="" />
+                  </picture>
                 </div>
               </div>
-              <!-- スクロールインジケーター -->
-              <!-- <div class="hero__footer">
-                <img class="hero__downarrow" src="arrow.svg" />
-                <span class="hero__scrolltext">scroll</span>
-              </div> -->
             </div>
           </div>
           
-          <!-- メインコンテンツエリア -->
           <div id="main-content">
-            <!-- 左サイドバー（SNSリンク） -->
             <aside class="side left">
               <div class="side__inner">
-                <a href="#" class="twitter icon tween-animate-title">Twitter</a>
-                <a href="#" class="fb icon tween-animate-title">Instagram</a>
+                <a href="https://x.com/tokosai_waseda" class="twitter icon tween-animate-title">X</a>
+                <a href="https://www.instagram.com/waseda.tokosai/" class="fb icon tween-animate-title">Instagram</a>
               </div>
             </aside>
             
-            <!-- メインコンテンツ -->
             <main>
-              <!-- Travelセクション: サービス紹介 -->
-              <section class="travel">
-                <div class="travel__inner">
-                  <!-- 画像（カバースライドアニメーション付き） -->
-                  <div class="travel__img cover-slide">
+              <section class="pamphlet">
+                <div class="pamphlet__inner">
+                  <div class="pamphlet__img cover-slide">
                     <img class="img-zoom" src="panfu.webp" />
                   </div>
-                  <!-- テキストコンテンツ（左からフェードイン） -->
-                  <div class="travel__texts appear left">
-                    <div class="travel__texts-inner">
-                      <!-- タイトル -->
-                      <div class="travel__title main-title item">
-                        <span class="purple">今年</span>
+                  <div class="pamphlet__texts appear left">
+                    <div class="pamphlet__texts-inner">
+                      <div class="pamphlet__title main-title item">
+                        <span class="purple">今年度</span>
                         <span>パンフレット</span>
                       </div>
-                      <!-- サブタイトル -->
-                      <div class="travel__sub sub-title item">ご覧ください</div>
-                      <!-- 説明文 -->
-                      <div class="travel__description item">
-                        <p>
-                          今年度の<br />パンフレットです。
-                        </p>
+                      <div class="pamphlet__sub sub-title item">ご覧ください</div>
+                      <div class="pamphlet__description item">
+                        <p>今年度の<br />パンフレットです。</p>
                         <p>クリックでダウンロードいただけます。</p>
                       </div>
-                      <!-- CTAボタン -->
-                      <div class="travel__btn item">
+                      <div class="pamphlet__btn item">
                         <button class="btn filled">もっと詳しく</button>
                       </div>
                     </div>
@@ -166,132 +131,78 @@
                 </div>
               </section>
               
-              <!-- Popularセクション: 人気の観光地 -->
-              <section class="popular">
-                <!-- セクションタイトル -->
-                <div class="popular__header">
+              <section class="highlight">
+                <div class="highlight__header">
                   <h2 class="main-title tween-animate-title">注目企画</h2>
-                  <p class="sub-title tween-animate-title">
-                    お気に入りの企画を見つけましょう
-                  </p>
+                  <p class="sub-title tween-animate-title">お気に入りの企画を見つけましょう</p>
                 </div>
-                <!-- 観光地カード一覧 -->
-                <div class="popular__inner appear up">
-                  <div class="popular__container">
-                    <!-- 観光地カード1: パリ -->
-                    <div class="popular__item item">
-                      <div class="popular__img">
+                <div class="highlight__inner appear up">
+                  <div class="highlight__container">
+                    <div class="highlight__item item">
+                      <div class="highlight__img">
                         <img src="kazi.jpg" alt="" />
                       </div>
-                      <p class="popular__title">梶裕貴トークショー</p>
+                      <p class="highlight__title">梶裕貴トークショー</p>
                     </div>
-                    <!-- 観光地カード2: ニューヨーク -->
-                    <div class="popular__item item">
-                      <div class="popular__img">
+                    <div class="highlight__item item">
+                      <div class="highlight__img">
                         <img src="yabuki.jpg" alt="" />
                       </div>
-                      <p class="popular__title">矢吹奈子トークショー</p>
+                      <p class="highlight__title">矢吹奈子トークショー</p>
                     </div>
-                    <!-- 観光地カード3: 香港 -->
-                    <div class="popular__item item">
-                      <div class="popular__img">
+                    <div class="highlight__item item">
+                      <div class="highlight__img">
                         <img src="okada.webp" alt="" />
                       </div>
-                      <p class="popular__title">岡田紗佳トークショー</p>
+                      <p class="highlight__title">岡田紗佳トークショー</p>
                     </div>
-                    <!-- 観光地カード4: 大阪 -->
-                    <div class="popular__item item">
-                      <div class="popular__img">
+                    <div class="highlight__item item">
+                      <div class="highlight__img">
                         <img src="metaverse.webp" alt="" />
                       </div>
-                      <p class="popular__title">メタバース</p>
+                      <p class="highlight__title">メタバース</p>
                     </div>
                   </div>
                 </div>
               </section>
               
-              <!-- Housesセクション: 宿泊先一覧 -->
-              <section class="houses">
-                <!-- セクションタイトル -->
+              <section class="programs">
                 <div>
-                  <h2 class="main-title tween-animate-title">
-                    企画一覧
-                  </h2>
-                  <p class="sub-title tween-animate-title">
-                    企画内容をご覧ください
-                  </p>
+                  <h2 class="main-title tween-animate-title">企画一覧</h2>
+                  <p class="sub-title tween-animate-title">企画内容をご覧ください</p>
                 </div>
-                <!-- 宿泊先カード一覧 -->
-                <div class="houses__inner">
-                  <!-- 宿泊先カード1 -->
-                  <div class="houses__item">
+                <div class="programs__inner">
+                  <div class="programs__item">
                     <div class="cover-slide hover-darken">
-                      <div
-                        class="bg-img-zoom img-bg50"
-                        style="background-image: url(kamen.webp)"
-                      ></div>
+                      <div class="bg-img-zoom img-bg50" style="background-image: url(TOKOSAI.jpg)"></div>
                     </div>
-                    <p class="houses__title">芸能人企画</p>
+                    <p class="programs__title">芸能人企画</p>
                   </div>
-                  <!-- 宿泊先カード2 -->
-                  <div class="houses__item">
+                  <div class="programs__item">
                     <div class="cover-slide hover-darken">
-                      <div
-                        class="bg-img-zoom img-bg50"
-                        style="background-image: url(kamen.webp)"
-                      ></div>
+                      <div class="bg-img-zoom img-bg50" style="background-image: url(kamen.webp)"></div>
                     </div>
-                    <p class="houses__title">教室内企画</p>
+                    <p class="programs__title">教室内企画</p>
                   </div>
-                  <!-- 宿泊先カード3 -->
-                  <div class="houses__item">
+                  <div class="programs__item">
                     <div class="cover-slide hover-darken">
-                      <div
-                        class="bg-img-zoom img-bg50"
-                        style="background-image: url(kamen.webp)"
-                      ></div>
+                      <div class="bg-img-zoom img-bg50" style="background-image: url(ステージ.jpg)"></div>
                     </div>
-                    <p class="houses__title">ステージ企画</p>
+                    <p class="programs__title">ステージ企画</p>
                   </div>
-                  <!-- 宿泊先カード4 -->
-                  <div class="houses__item">
+                  <div class="programs__item">
                     <div class="cover-slide hover-darken">
-                      <div
-                        class="bg-img-zoom img-bg50"
-                        style="background-image: url(kamen.webp)"
-                      ></div>
+                      <div class="bg-img-zoom img-bg50" style="background-image: url(kamen.webp)"></div>
                     </div>
-                    <p class="houses__title">屋台</p>
+                    <p class="programs__title">屋台</p>
                   </div>
-                  <!-- 宿泊先カード5
-                  <div class="houses__item">
-                    <div class="cover-slide hover-darken">
-                      <div
-                        class="bg-img-zoom img-bg50"
-                        style="background-image: url(kamen.webp)"
-                      ></div>
-                    </div>
-                    <p class="houses__title">House 5</p>
-                  </div>
-                  宿泊先カード6 -->
-                  <!-- <div class="houses__item">
-                    <div class="cover-slide hover-darken">
-                      <div
-                        class="bg-img-zoom img-bg50"
-                        style="background-image: url(kamen.webp)"
-                      ></div>
-                    </div>
-                    <p class="houses__title">House 6</p>
-                  </div> -->
-                  <!-- もっと詳しくボタン（下からフェードイン） -->
-                  <div class="houses__btn appear up">
+                  <div class="programs__btn appear up">
                     <button class="btn slide-bg item">もっと詳しく</button>
                   </div>
                 </div>
               </section>
             </main>
             
-            <!-- 右サイドバー（コピーライト） -->
             <aside class="side right">
               <div class="side__inner">
                 <span class="tween-animate-title">&copy; 所沢キャンパス祭実行委員会</span>
@@ -300,63 +211,37 @@
           </div>
         </div>
         
-        <!-- ============================================ -->
-        <!-- フッター -->
-        <!-- ============================================ -->
         <div class="footer appear up">
-          <!-- ロゴ -->
           <div class="logo item">
-            <!-- <img class="logo__img" src="logo.webp" /> -->
             <span class="logo__stay">所沢キャンパス祭</span>
             <span class="logo__world">2026</span>
           </div>
-          <!-- フッターナビゲーション -->
           <nav class="footer__nav">
             <ul class="footer__ul">
-              <li class="footer__li item"><a href="#">早稲田祭</a></li>
-              <li class="footer__li item"><a href="#">理工展</a></li>
-              <!-- <li class="footer__li item"><a href="#">Company</a></li>
-              <li class="footer__li item"><a href="#">Sitemap</a></li> -->
+              <li class="footer__li item"><a href="https://wasedasai.net/">早稲田祭</a></li>
+              <li class="footer__li item"><a href="https://www.rikoten.com/">理工展</a></li>
             </ul>
             <div class="footer__copyright item">&copy; 所沢キャンパス祭実行委員会</div>
           </nav>
+          <div class="footer__bottom">
+            <div class="footer__social">
+              <a href="https://x.com/tokosai_waseda" class="footer__social-link icon twitter">X</a>
+              <a href="https://www.instagram.com/waseda.tokosai/" class="footer__social-link icon fb">Instagram</a>
+            </div>
+          </div>
         </div>
       </div>
       
-      <!-- ============================================ -->
-      <!-- モバイルメニュー -->
-      <!-- ============================================ -->
-      <!-- モバイル表示時に表示されるサイドメニュー -->
       <nav class="mobile-menu">
-        <!-- ロゴ -->
-        <!-- <div class="logo">
-          <img class="logo__img" src="logo.svg" />
-          <span class="logo__stay"></span>
-          <span class="logo__world">World</span>
-        </div> -->
-        <!-- メニュー項目 -->
         <ul class="mobile-menu__main">
-          <li class="mobile-menu__item">
-            <a class="mobile-menu__link" href="#">
-              <span class="main-title">トップページ</span>
-              <!-- <span class="sub-title">サービスについて</span> -->
-            </a>
-          </li>
-          <li class="mobile-menu__item">
-            <a class="mobile-menu__link" href="#">
-              <span class="main-title">概要</span>
-              <!-- <span class="sub-title">私たちについて</span> -->
-            </a>
-          </li>
-          <li class="mobile-menu__item">
-            <a class="mobile-menu__link" href="#">
-              <span class="main-title">企画一覧</span>
-              <!-- <span class="sub-title">コンタクト方法</span> -->
-            </a>
-          </li>
+          <li class="mobile-menu__item"><a class="mobile-menu__link" href="index.html"><span class="main-title">トップ</span></a></li>
+          <li class="mobile-menu__item"><a class="mobile-menu__link" href="#"><span class="main-title">とこ祭について</span></a></li>
+          <li class="mobile-menu__item"><a class="mobile-menu__link" href="#"><span class="main-title">企画一覧</span></a></li>
+          <li class="mobile-menu__item"><a class="mobile-menu__link" href="#"><span class="main-title">アクセス</span></a></li>
+          <li class="mobile-menu__item"><a class="mobile-menu__link" href="#"><span class="main-title">協賛</span></a></li>
+          <li class="mobile-menu__item"><a class="mobile-menu__link" href="#"><span class="main-title">他大学の情報</span></a></li>
+          <li class="mobile-menu__item"><a class="mobile-menu__link" href="shinkan.html"><span class="main-title">新歓</span></a></li>
         </ul>
       </nav>
     </div>
-    
   </body>
-</html>
