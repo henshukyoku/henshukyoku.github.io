@@ -1,114 +1,127 @@
-/* ベーススタイル */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-html {
-  scroll-behavior: smooth;
-}
+/* ============================================ */
+/* shinkan.css - 新歓ページ専用スタイル */
+/* ============================================ */
 
-html, body {
+/* ★フォント読み込み（HTMLのheadに書くのがベストですが、ここでもOK） */
+@import url('https://fonts.googleapis.com/css2?family=Klee+One&display=swap');
+
+/* --- ページ全体のレイアウト調整 --- */
+
+/* ヘッダーの裏に隠れないように余白を空ける */
+.new-page-main {
+  padding-top: 100px; /* ヘッダーの高さ分 */
+  width: 100%;
+  /* bodyへの指定をここに移動 */
+  font-family: "Klee One", cursive;
+  color: #522e1d;
   overflow-x: hidden;
 }
 
-body {
-  font-family: "Klee One", cursive;
-  font-weight: 400;
-  font-style: normal;
-  background: #4d7c6b;
-}
-  
-header {
-  background-color: #fff3e1;
-  color: #522e1d;
-  height: 60px;
+/* コンテンツ幅を制限して中央寄せにするラッパー */
+.shinkan-wrapper {
+  width: 100%;
+  max-width: 1000px; /* PCで見やすくなる幅 */
+  margin: 0 auto;
   padding: 20px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  text-align: left;
 }
 
-header img {
-  width: 50px;
-  height: 50px;
-}
-
-h1 {
-  font-size: 2rem;
-}
-
-.logo {
-  margin: 1.5rem 0;
-  width: 380px;
-  height: 380px;
-  border-radius: 70px;
-}
-
-.top {
-  color: #fff3e1;
-  text-align: center;
-  padding: 0 9rem;
-  padding-bottom: 3rem;
-  font-size: 1.25rem;
-}
-
-.border{
-  text-align: center;
-  border: 1px solid #fff3e1;
-  margin-top: 2rem;
-}
-
-a {
+/* リンクの設定（このページ内限定） */
+.shinkan-wrapper a {
   color: greenyellow;
   text-decoration: none;
 }
-
-a:hover {
+.shinkan-wrapper a:hover {
   cursor: pointer;
   opacity: 0.7;
 }
 
-.top h1 {
-  margin-bottom: 1.5rem;
+/* --- トップエリア（旧header, .top） --- */
+
+/* 旧headerタグのデザインをdivで再現 */
+.shinkan-top-bar {
+  background-color: #fff3e1;
+  color: #522e1d;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+}
+.shinkan-top-bar img {
+  width: 50px;
+  height: 50px;
 }
 
+/* ★重要：クラス名を変更 (.logo -> .shinkan-logo) */
+.shinkan-logo {
+  margin: 1.5rem auto; /* 中央寄せ */
+  width: 380px;
+  height: 380px;
+  border-radius: 70px;
+  display: block; /* 画像をブロック要素化 */
+  object-fit: cover;
+}
+
+.top {
+  text-align: center;
+  padding: 0 1rem;
+  padding-bottom: 3rem;
+  font-size: 1.25rem;
+}
+
+.top h1 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
 .top h2 {
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
-
-.top h5{
+.top h5 {
   margin-bottom: 3rem;
 }
-
-.top .border {
-  margin-left: -9rem;
-  margin-right: -9rem;
-}
-
 .top p {
   margin-bottom: 1.1rem;
 }
 
-#midashi {
-  color: #fff3e1;
-  text-align: center;
-  padding-top: 4rem;
+/* ボーダーのデザイン調整 */
+.border {
+  width: 100%;
+  max-width: 800px;
+  margin: 3rem auto; /* 上下の余白 */
+  
+  /* 高さをなくして線だけにする */
+  height: 1px; 
+  border: none; 
+  background-color: #522e1d; /* 文字と同じ茶色に変更 */
+  padding: 0;
 }
 
-main {
+/* --- サークル（局紹介）エリア --- */
+
+#midashi {
+  color: #522e1d;
+  text-align: center;
+  padding-top: 4rem;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+/* mainタグの代わりにセクションで囲む */
+.circle-section {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 50vh;
+  padding: 20px 0;
 }
 
 .circle-container {
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
+  justify-content: center; /* 中央寄せ */
 }
 
 .circle {
@@ -124,10 +137,10 @@ main {
 
 .circle-info {
   position: absolute;
-  bottom: auto;
   text-align: center;
   color: white;
   font-weight: bold;
+  pointer-events: none; /* クリックを透過 */
 }
 
 .circle:hover {
@@ -136,67 +149,44 @@ main {
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
 }
 
-#circle-1 {
-  background-color: black; /* 外務局 */
-}
+/* 各円の色指定 */
+#circle-1 { background-color: black; }
+#circle-2 { background-color: #f4e511; }
+#circle-3 { background-color: orange; }
+#circle-4 { background-color: #f44336; }
+#circle-5 { background-color: blue; }
+#circle-6 { background-color: rgb(243, 37, 185); }
+#circle-7 { background-color: #9c27b0; }
 
-#circle-2 {
-  background-color: #f4e511; /* 企画開発局 */
-}
+/* 黄色の円だけ文字を見やすく黒にする調整（任意） */
+#circle-2 .circle-info { color: #522e1d; }
 
-#circle-3 {
-  background-color: orange; /* 広報局 */
-}
+/* --- モーダル（ポップアップ） --- */
 
-#circle-4 {
-  background-color: #f44336; /* 参加団体局 */
-}
-
-#circle-5 {
-  background-color: blue; /* 渉外局 */
-}
-
-#circle-6 {
-  background-color: rgb(243, 37, 185); /* 総務局 */
-}
-
-#circle-7 {
-  background-color: #9c27b0; /* 編集局 */
-}
-
-footer {
-  background-color: #fff3e1;
-  text-align: center;
-  padding: 20px;
-  color: #522e1d;
-}
-
-footer p {
-  font-size: 0.75rem;
-}
-/* モーダルのスタイル */
 .modal {
   display: none; 
   position: fixed;
+  z-index: 9999; /* 共通ヘッダーより上に表示 */
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.6); 
+  background-color: rgba(0, 0, 0, 0.6);
   justify-content: center;
   align-items: center;
-  
+  padding: 20px;
 }
 
 .modal-content {
   background-color: #fff3e1;
   color: #522e1d;
-  padding: 20px;
+  padding: 30px;
   border-radius: 10px;
-  width: 80%;
+  width: 90%;
   max-width: 600px;
-  max-height: 80vh; 
-  overflow-y: auto; 
+  max-height: 60vh; 
+  overflow-y: auto;
+  margin: auto;
   text-align: center;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
   animation: fadeIn 0.3s ease;
@@ -205,21 +195,15 @@ footer p {
 .modal-content h2 {
   margin-bottom: 10px;
   font-size: 1.8rem;
+  color: #522e1d;
 }
 
-.modal-content h3 {
-  margin-top: 1.25rem;
-}
-
-.modal-content img{
-  width: 250px;
-  height: 250px;
-}
-
-h5 {
-  font-size: 1.25rem;
-  margin-top: 1.5rem;
-  text-align: right;
+.modal-content img {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  object-fit: cover;
+  margin: 10px auto;
 }
 
 .modal-content p {
@@ -232,50 +216,65 @@ h5 {
   position: absolute;
   top: 10px;
   right: 20px;
-  font-size: 1.5rem;
+  font-size: 2rem;
   cursor: pointer;
+  color: #522e1d;
 }
-
-
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-/* sns */
+/* --- SNSエリア --- */
+
 .sns {
-  color: #fff3e1;
+  color: #522e1d;
   text-align: center;
   margin-bottom: 4rem;
+  padding: 20px;
 }
-
-.sns p {
-  padding: 0 1.5rem;
-}
-
 .sns h2 {
-  margin-top:2rem;
+  margin-top: 2rem;
   margin-bottom: 1.5rem;
-  
 }
-
 .qr {
-  margin: 1.5rem 0;
+  margin: 1.5rem auto;
   width: 280px;
   height: 280px;
+  display: block; /* 画像を中央寄せしやすく */
 }
-
 .snsimg {
-  margin: 1.5rem 0;
+  margin: 1.5rem auto;
   width: 300px;
   height: 300px;
   border-radius: 90px;
+  display: block;
 }
 
+/* --- スマホ対応 (レスポンシブ) --- */
+
+@media (max-width: 700px) {
+  /* ロゴサイズ調整 */
+  .shinkan-logo {
+    width: 250px;
+    height: 250px;
+  }
+  
+  /* 円サイズ調整 */
+  .circle {
+    width: 140px;
+    height: 140px;
+  }
+  
+  /* 余白調整 */
+  .top {
+    padding: 0 1rem;
+  }
+  
+  .border {
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0; /* ← これが1.5remになっていると太くなります！0にしてください */
+  }
+}

@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
     circle.addEventListener('click', () => {
       const modalId = circle.getAttribute('data-modal'); // data-modal属性を取得
       const modal = document.getElementById(modalId);
-      modal.style.display = 'flex'; // モーダルを表示
+      modal.style.display = 'flex'; // モーダルを表示（中央配置対応）
     });
   });
 
