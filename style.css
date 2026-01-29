@@ -1464,9 +1464,9 @@ main {
 }
 /* Twitterアイコン */
 .icon.twitter::before {
-  background-image: url(images/twitter.svg);
+  background-image: url(twitter.svg);
 }
 /* Facebookアイコン */
 .icon.fb::before {
-  background-image: url(images/Instagram.svg);
+  background-image: url(instagram.svg);
 }
