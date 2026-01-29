@@ -84,33 +84,32 @@
   display: none;
 }
 
-/* 回転するアニメーション要素（3D回転） */
+/* ロゴ画像表示用の設定 */
 .pace-progress-inner {
-  width: 40px;
-  height: 40px;
-  background-color: #904669;
+  /* 1. ロゴのサイズに合わせて調整してください */
+  width: 100px; 
+  height: 100px;
+  
+  /* 2. 背景色を透明にして、画像を指定します */
+  background-color: transparent; 
+  background-image: url("images/logo.webp"); /* ←ここにロゴ画像のパスを入れる */
+  background-size: contain;   /* ロゴ全体が見えるように縮小 */
+  background-repeat: no-repeat;
+  background-position: center;
+  
   margin: 0 auto;
-  animation-name: sk-rotateplane;
-  animation-duration: 1.2s;
-  animation-timing-function: ease-in-out;
-  animation-delay: 0s;
-  animation-iteration-count: infinite;
-  animation-direction: normal;
-  animation-fill-mode: forwards;
+
+  /* 3.「ふわふわ」アニメーション */
+  
+  animation: logo-pulse 2s infinite ease-in-out;
 }
 
-/* 3D回転アニメーション（平面を回転させる） */
-@keyframes sk-rotateplane {
-  0% {
-    transform: perspective(120px) rotateX(0deg) rotateY(0deg);
-  }
-  50% {
-    transform: perspective(120px) rotateX(-180deg) rotateY(0deg);
-  }
-  100% {
-    transform: perspective(120px) rotateX(-180deg) rotateY(-180deg);
-  }
-}/*# sourceMappingURL=loader.css.map */
+/* ふわふわ明滅するアニメーション（新規追加） */
+@keyframes logo-pulse {
+  0% { opacity: 0.5; transform: scale(0.95); }
+  50% { opacity: 1; transform: scale(1.05); }
+  100% { opacity: 0.5; transform: scale(0.95); }
+}
 
 /* ============================================ */
 /* 基本スタイル */
@@ -130,22 +129,22 @@ img {
 /* ユーティリティクラス（マージン・パディング） */
 /* ============================================ */
 /* 小さいマージンボトム（16px） */
-.mb-sm, .popular__title, .houses__title, .travel__img, .sub-title {
+.mb-sm, .highlight__title, .programs__title, .pamphlet__img, .sub-title {
   margin-bottom: 16px !important;
 }
 
 /* 大きいマージンボトム（80px、PCでは150px） */
-.mb-lg, .popular__btn, .houses, .travel {
+.mb-lg, .highlight__btn, .programs, .pamphlet {
   margin-bottom: 80px !important;
 }
 @media screen and (min-width: 960px) {
-  .mb-lg, .popular__btn, .houses, .travel {
+  .mb-lg, .highlight__btn, .programs, .pamphlet {
     margin-bottom: 150px !important;
   }
 }
 
 /* 小さいパディングボトム（16px） */
-.pb-sm, .travel__texts {
+.pb-sm, .pamphlet__texts {
   padding-bottom: 16px !important;
 }
 
@@ -163,19 +162,19 @@ img {
 /* レイアウトユーティリティ */
 /* ============================================ */
 /* コンテンツの最大幅を設定（90%幅、最大1070px） */
-.content-width, .footer, .popular__container, .popular__header, .houses, .travel, .header__inner {
+.content-width, .footer, .highlight__container, .highlight__header, .programs, .pamphlet, .header__inner {
   width: 90%;
   margin: 0 auto;
   max-width: 1070px;
 }
 
 /* Flexboxレイアウト（モバイル:縦並び、PC:横並び） */
-.flex, .footer__ul, .footer__nav, .popular__container, .houses__inner, .travel__inner, .header__nav {
+.flex, .footer__ul, .footer__nav, .highlight__container, .programs__inner, .pamphlet__inner, .header__nav {
   display: flex;
   flex-direction: column;
 }
 @media screen and (min-width: 600px) {
-  .flex, .footer__ul, .footer__nav, .popular__container, .houses__inner, .travel__inner, .header__nav {
+  .flex, .footer__ul, .footer__nav, .highlight__container, .programs__inner, .pamphlet__inner, .header__nav {
     flex-direction: row;
     flex-wrap: wrap;
   }
@@ -198,20 +197,22 @@ img {
   }
 }
 
-.font-md, .popular__title {
+.font-md, .highlight__title {
   font-size: 17px;
+  color: #522e1d;
 }
 @media screen and (min-width: 960px) {
-  .font-md, .popular__title {
+  .font-md, .highlight__title {
     font-size: 19px;
   }
 }
 
-.font-lr, .houses__title {
+.font-lr, .programs__title {
   font-size: 17px;
+  color: #522e1d;
 }
 @media screen and (min-width: 960px) {
-  .font-lr, .houses__title {
+  .font-lr, .programs__title {
     font-size: 23px;
   }
 }
@@ -229,10 +230,16 @@ img {
   font-weight: 600;
   margin-bottom: 0;
   display: block;
+  color: #522e1d;
 }
 
 .sub-title {
   color: #535353;
+}
+
+/* 「企画一覧」セクションのタイトル上の余白を広げる */
+.programs .main-title {
+  margin-top: 40px;
 }
 
 /* ============================================ */
@@ -308,36 +315,36 @@ img {
   position: relative;
   display: inline-block;
   background-color: white;
-  border: 1px solid black;
+  border: 1px solid #522e1d;
   font-weight: 600;
   padding: 10px 40px;
   margin: 10px auto;
   cursor: pointer;
   transition: all 0.3s;
-  color: black;
+  color: #522e1d;
   text-decoration: none !important;
 }
 /* ホバー時に背景色が変わるボタン */
 .btn.float:hover {
-  background-color: black;
+  background-color: #522e1d;
   color: white;
   box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.5);
 }
 /* 塗りつぶしボタン（初期状態: 黒背景） */
 .btn.filled {
-  background-color: black;
+  background-color: #522e1d;
   color: white;
   box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.5);
 }
 /* 塗りつぶしボタンのホバー（白背景に変化） */
 .btn.filled:hover {
   background-color: white;
-  color: black;
+  color: #522e1d;
   box-shadow: none;
 }
 /* ホバー時に文字間隔が広がるボタン */
 .btn.letter-spacing:hover {
-  background-color: black;
+  background-color: #522e1d;
   letter-spacing: 3px;
   color: white;
 }
@@ -347,11 +354,11 @@ img {
 }
 .btn.shadow:hover {
   transform: translate(-2.5px, -2.5px);
-  box-shadow: 5px 5px 0 0 black;
+  box-shadow: 5px 5px 0 0 #522e1d;
 }
 /* 押し込み効果のあるボタン */
 .btn.solid {
-  box-shadow: 2px 2px 0 0 black;
+  box-shadow: 2px 2px 0 0 #522e1d;
   border-radius: 7px;
 }
 .btn.solid:hover {
@@ -370,7 +377,7 @@ img {
   display: inline-block;
   width: 100%;
   height: 100%;
-  background-color: black;
+  background-color: #522e1d;
   position: absolute;
   top: 0;
   left: 0;
@@ -402,7 +409,7 @@ img {
   display: inline-block;
   width: 100%;
   height: 100%;
-  background-color: black;
+  background-color: #522e1d;
   position: absolute;
   top: 0;
   left: 0;
@@ -438,22 +445,22 @@ img {
   left: 0;
   width: 100%;
   height: 100%;
-  border: 1px solid black;
+  border: 1px solid #522e1d;
   box-sizing: border-box;
   line-height: 48px;
   text-align: center;
   transition: all 0.3s;
   transform-origin: center center -25px;
-  color: black;
+  color: #522e1d;
 }
 .btn-cubic .hovering {
-  background-color: black;
+  background-color: #522e1d;
   color: white;
   transform: rotateX(90deg);
 }
 .btn-cubic .default {
   background-color: white;
-  color: black;
+  color: #522e1d;
   transform: rotateX(0);
 }
 .btn-cubic:hover .hovering {
@@ -483,13 +490,20 @@ img {
   }
 }
 /* スライド内の画像（ズームイン効果） */
-.swiper-slide > img {
+.swiper-slide > img,
+.swiper-slide > picture > img {
   width: 100%;
   height: 100%;
   max-width: 100%;
   object-fit: cover;
   transform: scale(1.3); /* 初期状態: 拡大 */
   transition: transform 1.9s ease;
+}
+/* picture要素を親要素いっぱいに広げる */
+.swiper-slide > picture {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 /* スライドのオーバーレイ（青みがかったフィルター） */
 .swiper-slide::after {
@@ -501,8 +515,13 @@ img {
   height: 100%;
   background-color: rgba(0, 61, 125, 0.1);
 }
+/* アクティブなスライドはオーバーレイをなくして明るく表示 */
+.swiper-slide-active::after {
+  background-color: rgba(0, 61, 125, 0);
+}
 /* アクティブなスライド: 画像を通常サイズに */
-.swiper-slide-active > img {
+.swiper-slide-active > img,
+.swiper-slide-active > picture > img {
   transform: none;
 }
 /* アクティブなスライド: タイトルを表示 */
@@ -851,6 +870,12 @@ img {
   top: 60px;
   width: 300px;
 }
+/* PC表示時: ハンバーガーメニューをより広く表示 */
+@media screen and (min-width: 960px) {
+  .mobile-menu {
+    width: 480px;
+  }
+}
 .mobile-menu .logo {
   padding: 0 40px;
   font-size: 38px;
@@ -864,7 +889,7 @@ img {
 }
 /* ハンバーガーアイコンの線（3本） */
 .mobile-menu__btn > span {
-  background-color: black;
+  background-color: #522e1d;
   width: 35px;
   height: 2px;
   display: block;
@@ -906,7 +931,7 @@ img {
 .mobile-menu__link {
   display: block;
   margin-top: 30px;
-  color: black;
+  color: #522e1d;
   text-decoration: none !important;
 }
 
@@ -915,6 +940,12 @@ img {
 .menu-open #container {
   transform: translate(-300px, 60px);
   box-shadow: 0 8px 40px -10px rgba(0, 0, 0, 0.8);
+}
+/* PC表示時: メニュー幅に合わせてスライド量を増やす */
+@media screen and (min-width: 960px) {
+  .menu-open #container {
+    transform: translate(-480px, 60px);
+  }
 }
 /* 背景カバーを表示 */
 .menu-open .mobile-menu__cover {
@@ -926,25 +957,9 @@ img {
   transform: none;
   opacity: 1;
 }
-/* 各メニュー項目に順番に遅延を設定 */
-.menu-open .mobile-menu__item:nth-child(1) {
-  transition-delay: 0.07s;
-}
-.menu-open .mobile-menu__item:nth-child(2) {
-  transition-delay: 0.14s;
-}
-.menu-open .mobile-menu__item:nth-child(3) {
-  transition-delay: 0.21s;
-}
-.menu-open .mobile-menu__item:nth-child(4) {
-  transition-delay: 0.28s;
-}
-.menu-open .mobile-menu__item:nth-child(5) {
-  transition-delay: 0.35s;
-}
 /* ハンバーガーアイコンを×に変化 */
 .menu-open .mobile-menu__btn > span {
-  background-color: black;
+  background-color: #522e1d;
 }
 /* 1本目の線: 下に移動して135度回転 */
 .menu-open .mobile-menu__btn > span:nth-child(1) {
@@ -965,11 +980,21 @@ img {
 /* ============================================ */
 /* ページレイアウト */
 /* ============================================ */
+/* 背景色のループアニメーション（#DEB6C4 → #DFBD99 → #A1CFCA → #BFB1D7） */
+@keyframes bg-color-cycle {
+  0% { background-color: #DEB6C4; }
+  25% { background-color: #DFBD99; }
+  50% { background-color: #A1CFCA; }
+  75% { background-color: #BFB1D7; }
+  100% { background-color: #DEB6C4; }
+}
+
 /* メインコンテナ（モバイルメニュー開閉時のスライドに使用） */
 #container {
   position: relative;
   z-index: 10;
-  background:#19bc70;
+  background-color: #DEB6C4;
+  animation: bg-color-cycle 40s ease-in-out infinite;
   transition: transform 0.5s, box-shadow 0.5s;
 }
 
@@ -1036,7 +1061,7 @@ main {
 }
 /* ナビゲーションリンク */
 .header__li > a {
-  color: black;
+  color: #522e1d;
   text-decoration: none;
   text-transform: uppercase;
 }
@@ -1052,10 +1077,10 @@ main {
 }
 
 /* ============================================ */
-/* Travelセクション（サービス紹介） */
+/* パンフレットセクション */
 /* ============================================ */
-/* Travelセクションのコンテナ */
-.travel__inner {
+/* パンフレットセクションのコンテナ */
+.pamphlet__inner {
   position: relative;
   z-index: 0;
   justify-content: space-between;
@@ -1063,36 +1088,36 @@ main {
   padding: 15px;
 }
 @media screen and (min-width: 600px) {
-  .travel__inner {
+  .pamphlet__inner {
     padding: 50px;
   }
 }
 @media screen and (min-width: 1280px) {
-  .travel__inner {
+  .pamphlet__inner {
     padding: 50px 150px;
   }
 }
 /* 画像コンテナ */
-.travel__img {
+.pamphlet__img {
   height: 300px;
   transition: box-shadow 0.5s ease 1.6s;
 }
 /* ビューポートに入った時: 内側に影を追加 */
-.travel__img.inview {
-  box-shadow: inset 0 0 30px black;
+.pamphlet__img.inview {
+  box-shadow: inset 0 0 30px #522e1d;
 }
 @media screen and (min-width: 600px) {
-  .travel__img {
+  .pamphlet__img {
     flex-basis: 47%;
   }
 }
 @media screen and (min-width: 960px) {
-  .travel__img {
+  .pamphlet__img {
     height: 400px;
   }
 }
 /* 画像 */
-.travel__img > img {
+.pamphlet__img > img {
   position: relative;
   z-index: -1;
   opacity: 1;
@@ -1102,14 +1127,14 @@ main {
 }
 /* テキストコンテンツ（PC: 右側に配置） */
 @media screen and (min-width: 600px) {
-  .travel__texts {
+  .pamphlet__texts {
     display: flex;
     align-items: flex-end;
     flex-basis: 47%;
   }
 }
 /* タイトルの左側に線を表示（アニメーション付き） */
-.travel__texts.inview .travel__title::before {
+.pamphlet__texts.inview .pamphlet__title::before {
   animation-name: scaleX;
   animation-duration: 0.3s;
   animation-timing-function: ease;
@@ -1118,11 +1143,11 @@ main {
   animation-direction: normal;
   animation-fill-mode: forwards;
 }
-.travel__title {
+.pamphlet__title {
   position: relative;
 }
 /* タイトル左側の装飾線（PC表示時のみ） */
-.travel__title::before {
+.pamphlet__title::before {
   display: none;
   position: absolute;
   content: "";
@@ -1130,17 +1155,17 @@ main {
   width: 100px;
   top: 50%;
   left: -120px;
-  background: black;
+  background: #522e1d;
   transform: scaleX(0);
   transform-origin: right;
 }
 @media screen and (min-width: 960px) {
-  .travel__title::before {
+  .pamphlet__title::before {
     display: block;
   }
 }
 @media screen and (min-width: 960px) {
-  .travel__description {
+  .pamphlet__description {
     margin-bottom: 40px;
   }
 }
@@ -1155,34 +1180,34 @@ main {
   }
 }
 /* ============================================ */
-/* Housesセクション（宿泊先一覧） */
+/* 企画カテゴリ一覧 */
 /* ============================================ */
 /* 宿泊先カード（PC: 2列表示） */
 @media screen and (min-width: 600px) {
-  .houses__item {
+  .programs__item {
     flex-basis: 50%;
   }
 }
 @media screen and (min-width: 960px) {
-  .houses__item {
+  .programs__item {
     margin-bottom: 60px;
   }
 }
 /* もっと詳しくボタン */
-.houses__btn {
+.programs__btn {
   text-align: center;
   flex-basis: 100%;
 }
 
 /* ============================================ */
-/* Popularセクション（人気の観光地） */
+/* 注目企画（ハイライト） */
 /* ============================================ */
-/* Popularセクションのコンテナ */
-.popular__inner {
+/* ハイライトセクションのコンテナ */
+.highlight__inner {
   position: relative;
 }
 /* 背景色（下部90%をグレーに） */
-.popular__inner::before {
+.highlight__inner::before {
   content: "";
   position: absolute;
   bottom: 0;
@@ -1191,14 +1216,14 @@ main {
   width: 100%;
   background: #eaebe6;
 }
-/* 観光地カードのコンテナ */
-.popular__container {
+/* 企画カードのコンテナ */
+.highlight__container {
   position: relative;
   z-index: 2;
   justify-content: space-between;
 }
 @media screen and (max-width: 599px) {
-  .popular__container {
+  .highlight__container {
     flex-direction: row;
     flex-wrap: nowrap;
     overflow-x: auto;
@@ -1207,66 +1232,66 @@ main {
     gap: 16px;
     padding: 0 8px 10px;
   }
-  .popular__container::-webkit-scrollbar {
+  .highlight__container::-webkit-scrollbar {
     display: none;
   }
 }
 /* 観光地カード（レスポンシブ: モバイル1列、タブレット2列、PC4列） */
 @media screen and (min-width: 600px) {
-  .popular__item {
+  .highlight__item {
     flex-basis: 47%;
   }
 }
 @media screen and (min-width: 960px) {
-  .popular__item {
+  .highlight__item {
     flex-basis: 25%;
   }
 }
 @media screen and (min-width: 1280px) {
-  .popular__item {
+  .highlight__item {
     flex-basis: 23%;
   }
 }
 @media screen and (max-width: 599px) {
-  .popular__item {
+  .highlight__item {
     flex: 0 0 78%;
     scroll-snap-align: center;
   }
 }
 /* 観光地画像 */
-.popular__img {
+.highlight__img {
   height: 150px;
   margin-bottom: 5px;
 }
 @media screen and (min-width: 960px) {
-  .popular__img {
+  .highlight__img {
     height: 335px;
   }
 }
-.popular__img > img {
+.highlight__img > img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 @media screen and (max-width: 599px) {
-  .popular__img {
+  .highlight__img {
     height: auto;
     aspect-ratio: 3 / 4;
     position: relative;
     overflow: hidden;
   }
-  .popular__img > img {
+  .highlight__img > img {
     position: absolute;
     inset: 0;
   }
 }
 /* 一覧から探すボタン */
-.popular__btn {
+.highlight__btn {
   text-align: center;
   flex-basis: 100%;
 }
 @media screen and (max-width: 599px) {
-  .popular__btn {
+  .highlight__btn {
     flex: 0 0 78%;
     scroll-snap-align: center;
   }
@@ -1276,12 +1301,52 @@ main {
 /* フッター */
 /* ============================================ */
 .footer {
+  /* ビューポート幅で表示し、親コンテナの色が見えないようにする */
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  box-sizing: border-box;
+  margin: 0;
   padding: 60px 0;
+  background: white;
+}
+.footer .logo,
+.footer__nav {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1070px;
 }
 .footer__nav {
   justify-content: space-between;
   align-items: center;
   text-align: center;
+}
+.footer__bottom {
+  width: 90%;
+  margin: 20px auto 0;
+  max-width: 1070px;
+}
+.footer__social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.footer__social-link {
+  color: #535353;
+  text-decoration: none !important;
+  position: relative;
+  padding-left: 1.4em; /* アイコン分の余白 */
+  letter-spacing: 1px;
+}
+.footer__social-link:hover {
+  text-decoration: underline !important;
+}
+/* フッター内ではアイコンを左端に配置 */
+.footer__social-link.icon::before {
+  left: 0;
 }
 .footer__ul {
   list-style: none;
@@ -1290,6 +1355,9 @@ main {
 .footer__li {
   margin: 10px;
 }
+.footer__copyright {
+  color: #522e1d;
+}
 @media screen and (min-width: 600px) {
   .footer__li {
     margin-left: 0;
@@ -1297,7 +1365,7 @@ main {
   }
 }
 .footer__li > a {
-  color: #535353;
+  color: #522e1d;
   text-decoration: none;
 }
 .footer > .logo {
@@ -1316,12 +1384,13 @@ main {
 .logo {
   font-size: 20px;
   display: flex;
+  color: #522e1d;
 }
 .logo__img {
   width: 0.7em;
 }
 .logo__world {
-  color:#4d7c6b; /* ブランドカラー */
+  color: #4d7c6b; /* ブランドカラー */
 }
 
 /* ============================================ */
@@ -1341,7 +1410,7 @@ main {
   }
 }
 .side .tween-animate-title {
-  color: black;
+  color: #522e1d;
   text-decoration: none !important;
   margin: 0 40px;
   vertical-align: middle;
@@ -1390,14 +1459,14 @@ main {
   height: 1em;
   transform: translateY(-50%);
   background-position: center;
-  background-repeat: none;
+  background-repeat: no-repeat;
   background-size: contain;
 }
 /* Twitterアイコン */
 .icon.twitter::before {
-  background-image: url(../images/twitter.svg);
+  background-image: url(images/twitter.svg);
 }
 /* Facebookアイコン */
 .icon.fb::before {
-  background-image: url(../images/facebook.svg);
+  background-image: url(images/Instagram.svg);
 }
