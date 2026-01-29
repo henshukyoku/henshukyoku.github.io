@@ -92,7 +92,7 @@
   
   /* 2. 背景色を透明にして、画像を指定します */
   background-color: transparent; 
-  background-image: url("images/logo.webp"); /* ←ここにロゴ画像のパスを入れる */
+  background-image: url("logo.webp"); /* ←ここにロゴ画像のパスを入れる */
   background-size: contain;   /* ロゴ全体が見えるように縮小 */
   background-repeat: no-repeat;
   background-position: center;
