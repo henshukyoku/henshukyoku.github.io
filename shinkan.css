@@ -294,3 +294,42 @@
 .pace {
   display: none !important;
 }
+
+/* ============================================ */
+/* 重要：文字が表示されない問題を解決する設定 */
+/* ============================================ */
+
+/* アニメーション用の「透明待機」を無効化して、最初から表示させます */
+
+/* 1. ヘッダーやフッターの項目 */
+.appear .item {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* 2. 横から出てくる文字（サイドバー）やタイトル */
+.tween-animate-title,
+.animate-title {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* 文字が1文字ずつバラバラになっている場合の対策 */
+.tween-animate-title span, 
+.tween-animate-title .char,
+.animate-title span,
+.animate-title .char {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* 3. サイドバーの文字色を確実に茶色にする */
+.side .tween-animate-title {
+  color: #522e1d !important;
+}
+
+/* 4. サイドバー自体を表示させる（念のため） */
+.side {
+  opacity: 1 !important;
+  display: block !important;
+}
