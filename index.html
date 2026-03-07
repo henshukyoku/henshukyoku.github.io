@@ -17,6 +17,14 @@
     <!-- 外部ライブラリ・リソースの読み込み -->
     <!-- ============================================ -->
     <!-- Pace.js: ページ読み込み進捗を表示するライブラリ -->
+
+    <script>
+  window.paceOptions = {
+    ajax: false, // 重い通信の監視をオフにする
+    document: true,
+    eventLag: false // スマホのラグによる遅延を無視する
+  　};
+　　</script>
     <script src="pace.js"></script>
     
     <!-- Google Fonts: フォントの事前接続（パフォーマンス最適化） -->
