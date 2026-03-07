@@ -70,3 +70,14 @@ class Main {
     }
 }
 const main = new Main;
+
+// 読み込みが遅い場合でも、最大3秒後に強制的にローディング画面を消す
+window.addEventListener('load', function() {
+  setTimeout(function() {
+    const body = document.querySelector('body');
+    if (!body.classList.contains('pace-done')) {
+      body.classList.add('pace-done');
+      console.log('Forced loading completion');
+    }
+  }, 3000); // 3000ms = 3秒（必要に応じて調整してください）
+});
