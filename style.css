@@ -1655,7 +1655,7 @@ main {
 }
 /* Facebookアイコン */
 .icon.fb::before {
-  background-image: url(Instagram.svg);
+  background-image: url(instagram.svg);
 }
 
 /* ============================================ */
