@@ -465,13 +465,33 @@
   margin: 0px 0 !important; /* 前後の余白をわざと広く設定 */
 }
 
-/* 2. 波の動きを「激遅」にする（変わったか確認するため） */
-.new-page-main .wind-wave.purple { animation-duration: 20s !important; }
-.new-page-main .wind-wave.pink   { animation-duration: 35s !important; }
-.new-page-main .wind-wave.cyan   { animation-duration: 25s !important; }
-.new-page-main .wind-wave.orange { animation-duration: 40s !important; }
+/* 2. 波の動きをトップページと同じ速度に戻す */
+.new-page-main .wind-wave.purple { animation-duration: 15s !important; }
+.new-page-main .wind-wave.pink   { animation-duration: 12s !important; }
+.new-page-main .wind-wave.cyan   { animation-duration: 18s !important; }
+.new-page-main .wind-wave.orange { animation-duration: 20s !important; }
 
 /* 3. 線の太さを変える（SVGの中身を上書き） */
 .new-page-main .wind-wave.purple {
   background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1000 100" xmlns="http://www.w3.org/2000/svg"><path d="M 0 50 Q 250 10, 500 50 T 1000 50" fill="none" stroke="%23DCD3E6" stroke-width="20"/></svg>') !important;
 }
+
+/* 4. 新歓ページで風を確実に見せる（透明化・重なりなどを強制解除） */
+.new-page-main .wind-decoration-area {
+  opacity: 1 !important;
+  z-index: 10 !important;
+}
+
+.new-page-main .wind-wave {
+  opacity: 1 !important;
+  mix-blend-mode: normal !important;
+}
+
+.new-page-main .wind-wave.purple,
+.new-page-main .wind-wave.pink,
+.new-page-main .wind-wave.cyan,
+.new-page-main .wind-wave.orange {
+  background-repeat: repeat-x !important;
+  animation-play-state: running !important;
+}
+
