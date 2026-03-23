@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>所沢キャンパス祭2026</title>
+
+    <script src="scripts/vendors/pace.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Klee+One&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="shinkan.css" />
+
+    <script src="scripts/vendors/gsap.min.js" defer></script>
+    <script src="scripts/vendors/swiper-bundle.min.js" defer></script>
+    <script src="scripts/libs/hero-slider.js" defer></script>
+    <script src="scripts/vendors/scroll-polyfill.js" defer></script>
+    <script src="scripts/libs/scroll.js" defer></script>
+    <script src="scripts/libs/mobile-menu.js" defer></script>
+    <script src="scripts/libs/text-animation.js" defer></script>
+    <script src="scripts/main.js" defer></script>
+  </head>
+  <body>
+    <div id="global-container">
+      <div id="container">
+        <div class="mobile-menu__cover"></div>
+        <div class="nav-trigger"></div>
+
+        <header class="header">
+          <div class="header__inner appear up">
+            <div class="logo item">
+              <span class="logo__stay">所沢キャンパス祭</span>
+              <span class="logo__world">2026</span>
+            </div>
+            <button class="mobile-menu__btn">
+              <span></span><span></span><span></span>
+            </button>
+          </div>
+        </header>
+
+        <div id="content">
+          <div id="main-content">
+            <main class="new-page-main">
+
+              <div class="shinkan-wrapper">
+                <div class="blackboard">
+                  <div class="blackboard-title"><span>新歓日程</span></div>
+                  <div class="blackboard-month-wrapper"><span class="blackboard-month">4月</span></div>
+                  <ul class="blackboard-list">
+                    <li><span class="highlight-yellow">4/4（土）</span> 新歓ピクニック<br>@石神井公園 12:00〜<br>定員なし！</li>
+                    <li><span class="highlight-yellow">4/11（土）</span> 新歓定例会①<br>@所沢キャンパス 15:00〜17:00</li>
+                    <li><span class="highlight-yellow">4/18（土）</span> 新歓BBQ<br>@吉祥寺パルコ 14:30〜16:30<br>定員あり！お早めに！</li>
+                    <li><span class="highlight-yellow">4/25（土）</span> 新歓定例会②<br>@所沢キャンパス 15:00〜17:00</li>
+                  </ul>
+                  <div class="blackboard-month-wrapper"><span class="blackboard-month">5月</span></div>
+                  <ul class="blackboard-list">
+                    <li><span class="highlight-yellow">5/16（土）</span> 局発表定例会<br>@所沢キャンパス 11:00〜</li>
+                    <li><span class="highlight-yellow">5/16（土）、17（日）</span> 新歓合宿<br>@秩父 定例会後、出発</li>
+                  </ul>
+                  <div class="blackboard-footer">
+                    <p>※新歓の予定は変更・中止になる場合があります<br>最新の情報をご確認ください！</p>
+                    <p>新しい仲間と出会えるチャンス！<br>みなさんのご参加お待ちしています！</p>
+                    <p><span class="highlight-yellow">局ごとの新歓もあります！</span><br>局の新歓インスタや下記のボタンからチェック！</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="wind-decoration-area reverse-wind">
+                <div class="wind-wave purple"></div>
+                <div class="wind-wave pink"></div>
+                <div class="wind-wave cyan"></div>
+                <div class="wind-wave orange"></div>
+              </div>
+
+              <div class="shinkan-wrapper">
+                <h2 id="midashi">局紹介</h2>
+
+                <div class="circle-main-area">
+                  <div class="circle-container">
+                    <div class="circle" id="circle-1" data-modal="modal-1"><div class="circle-info">外務局</div></div>
+                    <div class="circle" id="circle-2" data-modal="modal-2"><div class="circle-info">企画開発局</div></div>
+                    <div class="circle" id="circle-3" data-modal="modal-3"><div class="circle-info">広報局</div></div>
+                    <div class="circle" id="circle-4" data-modal="modal-4"><div class="circle-info">参加団体局</div></div>
+                    <div class="circle" id="circle-5" data-modal="modal-5"><div class="circle-info">渉外局</div></div>
+                    <div class="circle" id="circle-6" data-modal="modal-6"><div class="circle-info">総務局</div></div>
+                    <div class="circle" id="circle-7" data-modal="modal-7"><div class="circle-info">編集局</div></div>
+                  </div>
+                </div>
+
+                <div id="modal-1" class="modal"><div class="modal-content"><span class="close">&times;</span><img src="images/gaimu.PNG"><h2>外務局</h2><br><p>仕事も遊びも全力で楽しむことができる局！</p><br><p>外部団体との連携により所祭に活気をもたらす役割を担っています。</p><br><p>メンバーも個性豊かで情熱のある温かい人たちばかりです！</p><br><h3>人数</h3><br><h5>＜男女別＞</h5><br><p>女子：24人 男子：24人</p><br><h5>＜学年別＞</h5><br><p>2年：25人 3年：23人</p><br><h3>局新歓日程</h3></div></div>
+
+                <div id="modal-2" class="modal"><div class="modal-content"><span class="close">&times;</span><img src="images/kikaku.PNG"><h2>企画開発局</h2><br><p>所祭の局のなかで当日行う企画を1から考え、準備、運営を行います！</p><br><p>企画の立案や運営方法の検討、当日の進行づくりまで幅広く関わります。</p><br><p>自分のアイデアが実際の企画として来場者の楽しさにつながる、やりがいの大きい役割を担っています！</p><br><h3>人数</h3><br><h5>＜男女別＞</h5><br><p>女子：22人 男子：24人</p><br><h5>＜学年別＞</h5><br><p>2年：25人 3年：21人</p><br><h3>局新歓日程</h3></div></div>
+
+                <div id="modal-3" class="modal"><div class="modal-content"><span class="close">&times;</span><img src="images/koho.PNG"><h2>広報局</h2><br><p>所祭の来場者数を左右する重要な役割を担う局！</p><br><p>地域・学内・SNSの3部門から、多方面に向けて所祭の魅力を発信しています！</p><br><p>広告企画や地域イベントへの参加、SNS運用など幅広く活動し、「伝える」ことを通して所祭を盛り上げます！</p><br><h3>人数</h3><br><h5>＜男女別＞</h5><br><p>女子：16人 男子：10人</p><br><h5>＜学年別＞</h5><br><p>2年：13人 3年：13人</p><br><h3>局新歓日程</h3></div></div>
+
+                <div id="modal-4" class="modal"><div class="modal-content"><span class="close">&times;</span><img src="images/sanka.PNG"><h2>参加団体局</h2><br><p>参加団体局は所祭の柱です！</p><br><p>所祭に参加するパフォーマーや屋台団体、教室企画団体の準備・運営を支えています！</p><br><p>参加団体局なくして所祭なし。</p><br><p>前日当日は間違いなく1番盛り上がる局です！</p><br><h3>人数</h3><br><h5>＜男女別＞</h5><br><p>女子：8人 男子：10人</p><br><h5>＜学年別＞</h5><br><p>2年：9人 3年：9人</p><br><h3>局新歓日程</h3></div></div>
+
+                <div id="modal-5" class="modal"><div class="modal-content"><span class="close">&times;</span><img src="images/syogai.PNG"><h2>渉外局</h2><br><p>学外の企業やOB・OG、地域の方々に協力をお願いして、所祭の資金を集める局です！</p><br><p>活動を通してマナーや交渉力が身につくので、最強のガクチカになります。</p><br><p>合宿やディズニー、ご飯会など遊びも全力で楽しむアットホームな雰囲気なので、成長も遊びも欲張りたい人はぜひ渉外局へ！！</p><br><h3>人数</h3><br><h5>＜男女別＞</h5><br><p>女子：25人 男子：20人</p><br><h5>＜学年別＞</h5><br><p>2年：24人 3年：21人</p><br><h3>局新歓日程</h3></div></div>
+
+                <div id="modal-6" class="modal"><div class="modal-content"><span class="close">&times;</span><img src="images/somu.PNG"><h2>総務局</h2><br><p>局のなかで自由さを誇りながら、他局とも関わって人脈を広げられる局です。</p><br><p>いろんな意味で自由なので、サークルを盛り上げたい人や真面目に仕事をしたい人、暇なときに顔を出したい人など様々な人が集まっています。</p><br><p>また、所祭の遊びをすべて企画できるので、人を巻き込んで大学生活を送りたい人にもおすすめです。</p><br><h3>人数</h3><br><h5>＜男女別＞</h5><br><p>女子：21人 男子：27人</p><br><h5>＜学年別＞</h5><br><p>2年：22人 3年：26人</p><br><h3>局新歓日程</h3></div></div>
+
+                <div id="modal-7" class="modal"><div class="modal-content"><span class="close">&times;</span><br><iframe src="https://www.youtube.com/embed/P3kqXA6_KxY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><h2>編集局</h2><br><p>画像・PV・サイト制作、キャンパス内装飾を担当しています！</p><br><p>デジタル制作はもちろん、高校の文化祭らしく、自分たちの手でキャンパスを彩ることも！</p><br><p>情報系に強いので1年生にとって、頼れる先輩がたくさんいるのも強みです！</p><br><p>落ち着いていながらも、温かく笑顔あふれる雰囲気に、あなたも虜になること間違いなし！？</p><br><h3>人数</h3><br><h5>＜男女別＞</h5><br><p>女子：21人 男子：16人</p><br><h5>＜学年別＞</h5><br><p>2年：17人 3年：20人</p><br><h3>局新歓日程</h3><ul class="blackboard-list"><br><li>①ボドゲカフェ<br>4/6(月)12:00〜17:00<br>＠池袋周辺</li><li>②ピクニック<br>4/19(日)11:00〜17:00<br>＠航空公園</li><li>③ご飯会<br>4/22(水)18:00〜20:00<br>@ニューナマステインディア小手指</li><li>④ご飯会<br>4/30(木)20:00〜22:00<br>@もんじゃ　め組　所沢店</li><li>⑤ご飯会<br>5/8(金)18:00〜20:00<br>@ニューナマステインディア小手指</li></ul></div></div>
+              </div>
+
+              <div class="wind-decoration-area">
+                <div class="wind-wave purple"></div>
+                <div class="wind-wave pink"></div>
+                <div class="wind-wave cyan"></div>
+                <div class="wind-wave orange"></div>
+              </div>
+
+              <div class="shinkan-wrapper">
+                <div class="sns">
+                  <h2>新歓オープンチャットはこちらから！</h2>
+                  <img class="qr" src="images/opc2026.jpg">
+                  <p><a href="https://line.me/ti/g2/7O0Qgr2tNw6hVTxKQXPvQIeMP_ZlSo2yHtZjvQ?utm_source=invitation&utm_medium=link_copy&utm_campaign=default">LINEオープンチャット</a>に参加して新歓情報をチェック！</p>
+                </div>
+              </div>
+            </main>
+          </div>
+        </div>
+
+        <div class="footer appear up">
+          <div class="logo item"><span class="logo__stay">所沢キャンパス祭</span><span class="logo__world">2026</span></div>
+          <nav class="footer__nav">
+            <ul class="footer__ul">
+              <li class="footer__li item"><a href="https://wasedasai.net/">早稲田祭</a></li>
+              <li class="footer__li item"><a href="https://www.rikoten.com/">理工展</a></li>
+            </ul>
+            <div class="footer__copyright item">&copy; 所沢キャンパス祭実行委員会</div>
+          </nav>
+        </div>
+      </div>
+      <nav class="mobile-menu">
+        <ul class="mobile-menu__main">
+          <li class="mobile-menu__item">
+            <a class="mobile-menu__link" href="index.html">
+              <span class="main-title">トップ</span>
+            </a>
+          </li>
+          <li class="mobile-menu__item">
+            <a class="mobile-menu__link" href="#">
+              <span class="main-title">とこ祭について</span>
+            </a>
+          </li>
+          <li class="mobile-menu__item">
+            <a class="mobile-menu__link" href="#">
+              <span class="main-title">企画一覧</span>
+            </a>
+          </li>
+          <li class="mobile-menu__item">
+            <a class="mobile-menu__link" href="#">
+              <span class="main-title">アクセス</span>
+            </a>
+          </li>
+          <li class="mobile-menu__item">
+            <a class="mobile-menu__link" href="#">
+              <span class="main-title">協賛</span>
+            </a>
+          </li>
+          <li class="mobile-menu__item">
+            <a class="mobile-menu__link" href="#">
+              <span class="main-title">他大学の情報</span>
+            </a>
+          </li>
+          <li class="mobile-menu__item">
+            <a class="mobile-menu__link" href="shinkan.html">
+              <span class="main-title">新歓</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <script src="shinkan.js"></script>
+  </body>
+</html>
