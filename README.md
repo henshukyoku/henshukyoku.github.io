@@ -32,7 +32,11 @@
 
 ## 📂 ディレクトリ構造
 
-├── images/             # 各種画像
+## 📂 ディレクトリ構造
+
+```text
+.
+├── images/             # 各種画像・アイコン
 ├── scripts/            # JavaScriptファイル群
 │   ├── libs/           # 自作スクリプト（スクロール、メニュー制御等）
 │   ├── vendors/        # 外部ライブラリ（GSAP, Swiper, Pace.js）
