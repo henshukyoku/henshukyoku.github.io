@@ -1,0 +1,213 @@
+
+
+/* ============================================================
+   COMING SOON PAGE - CLEAN VERSION
+   ============================================================ */
+
+/* 1. レイアウトのリセットと中央配置
+   #contentなどの親要素が持つ「左寄りの呪い」を解きます */
+#content, 
+#main-content {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  display: flex !important;
+  justify-content: center !important;
+}
+
+.coming-soon-main {
+  width: 100%;
+  max-width: 1000px;
+  /* ヘッダーとの距離をpadding-topだけで調整（スペーサーdivを不要に） */
+  padding: 180px 20px 100px; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-family: "Klee One", cursive;
+  box-sizing: border-box;
+}
+
+/* 2. タイトル（h1）
+   既存のstyle.cssの装飾をリセットしつつ中央へ */
+.coming-soon-main h1 {
+  font-size: 2.5rem;
+  color: #522e1d;
+  line-height: 1.4;
+  width: 100%;
+}
+
+/* 3. 画像（トコヌン）
+   PC・スマホ両方で最適なサイズ感を維持 */
+.coming-soon-main img {
+  max-width: 600px;
+  width: 100%;
+  height: auto;
+}
+
+/* 4. レスポンシブ調整（スマホ） */
+@media screen and (max-width: 600px) {
+  .coming-soon-main {
+    padding-top: 130px; /* スマホでは少し上に詰める */
+  }
+  .coming-soon-main h1 {
+    font-size: 1.6rem;
+    /* margin-bottom: 25px; */
+  }
+}
+
+/* ============================================================
+   ANIMATION & VISIBILITY OVERRIDE
+   ローディングやアニメーション待機による「消える」問題を強制解決
+   ============================================================ */
+#global-container { 
+  opacity: 1 !important; 
+  transition: none !important; 
+}
+
+.pace { display: none !important; }
+
+/* 共通スタイルの「透明待機」を解除 */
+.appear .item, 
+.animate-title, 
+.tween-animate-title span {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+}
+
+/* ============================================ */
+/* 風の模様（ウェーブ装飾）アニメーション */
+/* ============================================ */
+.wind-decoration-area {
+  position: relative;
+  width: 100%;
+  height: 90px; /* 帯エリアの高さ */
+  overflow: visible;
+  margin: 30px 0; /* 前後のセクションとの余白 */
+  opacity: 0.85; /* 全体を少し透けさせて馴染ませる */
+}
+
+/* 個別の波の共通設定 */
+.wind-wave {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-repeat: repeat-x;
+  background-position: left center;
+}
+
+/* --- 紫の風 --- */
+.wind-wave.purple {
+  /* なだらかな上向きの波 */
+  background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1000 100" xmlns="http://www.w3.org/2000/svg"><path d="M 0 50 Q 250 10, 500 50 T 1000 50" fill="none" stroke="%23DCD3E6" stroke-width="12"/></svg>');
+  background-size: 1000px 100%;
+  animation: wind-move-1000 15s linear infinite;
+  z-index: 1;
+}
+
+/* --- ピンクの風 --- */
+.wind-wave.pink {
+  /* 少し深めの下向きの波 */
+  background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1000 100" xmlns="http://www.w3.org/2000/svg"><path d="M 0 50 Q 250 90, 500 50 T 1000 50" fill="none" stroke="%23F4D3E0" stroke-width="8"/></svg>');
+  background-size: 1200px 100%; /* 長さを変えて波をズラす */
+  animation: wind-move-1200 12s linear infinite;
+  z-index: 2;
+  top: -10px; /* 少し上に配置 */
+}
+
+/* --- 水色の風 --- */
+.wind-wave.cyan {
+  /* 鋭い上向きの波 */
+  background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1000 100" xmlns="http://www.w3.org/2000/svg"><path d="M 0 50 Q 250 -10, 500 50 T 1000 50" fill="none" stroke="%23CDE5DE" stroke-width="15"/></svg>');
+  background-size: 800px 100%;
+  animation: wind-move-800 18s linear infinite;
+  z-index: 3;
+  top: 15px;
+}
+
+/* --- オレンジの風 --- */
+.wind-wave.orange {
+  /* 大きな下向きの波 */
+  background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1000 100" xmlns="http://www.w3.org/2000/svg"><path d="M 0 50 Q 250 110, 500 50 T 1000 50" fill="none" stroke="%23F4DDC4" stroke-width="10"/></svg>');
+  background-size: 1500px 100%;
+  animation: wind-move-1500 20s linear infinite;
+  z-index: 4;
+}
+
+/* --- 風が右から左へ流れるアニメーション --- */
+@keyframes wind-move-1000 {
+  0% { background-position: 0 center; }
+  100% { background-position: -1000px center; }
+}
+@keyframes wind-move-1200 {
+  0% { background-position: 0 center; }
+  100% { background-position: -1200px center; }
+}
+@keyframes wind-move-800 {
+  0% { background-position: 0 center; }
+  100% { background-position: -800px center; }
+}
+@keyframes wind-move-1500 {
+  0% { background-position: 0 center; }
+  100% { background-position: -1500px center; }
+}
+
+/* --- 逆向きの風（左から右へ）にする追加クラス --- */
+.wind-decoration-area.reverse-wind {
+  transform: scaleX(-1); /* 左右を反転させる魔法のコード */
+}
+
+/* --- ヒーローセクションのベース設定 --- */
+.hero--single {
+  position: relative; /* 風を画像の上に浮かせる基準にします */
+  width: 100%;
+  overflow: hidden;
+  padding-top: 100px; /* ヘッダー分の余白 */
+}
+
+.hero__image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* --- ヒーローセクション（親）の設定 --- */
+.hero--single {
+  position: relative;
+  width: 100%;
+  overflow: visible; 
+  padding-top: 100px;
+}
+
+/* --- 画像の上に重ねる風（子）の設定 --- */
+.hero-wind-top,
+.hero-wind-bottom {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  margin: 0;
+  z-index: 5;
+  pointer-events: none;
+  opacity: 0.8;
+  
+  overflow: visible;
+}
+
+/* 上部の風の配置を調整 */
+.hero-wind-top {
+  /* 画像の上端にピタッと合わせる */
+  top: 100px; 
+}
+
+/* 下部の風の配置を調整 */
+.hero-wind-bottom {
+  /* 画像の下端にピタッと合わせる */
+  bottom: 150px;
+
+  overflow: visible;
+}
+

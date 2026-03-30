@@ -1,0 +1,143 @@
+/* ============================================ */
+/* 1. レイアウト基本設定（hinagata.css と同型） */
+/* ============================================ */
+
+.new-page-main {
+  padding-top: 150px;
+  padding-bottom: 50px;
+  width: 100%;
+  font-family: "Klee One", cursive;
+  color: #522e1d;
+  line-height: 1.6;
+}
+
+.content-inner {
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 600px) {
+  .new-page-main {
+    padding-top: 120px;
+  }
+}
+
+/* ============================================ */
+/* 2. アクセスページ固有 */
+/* ============================================ */
+
+.access-page-title {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.access-block {
+  margin-bottom: 2rem;
+}
+
+.access-block p {
+  margin-bottom: 1rem;
+}
+
+.access-heading {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #522e1d;
+  margin: 0 0 1rem;
+}
+
+.access-subheading {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #522e1d;
+  margin: 1.5rem 0 0.75rem;
+}
+
+.access-placeholder {
+  color: #6b5a4f;
+  font-size: 0.95rem;
+  padding: 0.75rem 1rem;
+  background: rgba(255, 255, 255, 0.45);
+  border-radius: 8px;
+  border: 1px dashed rgba(82, 46, 29, 0.25);
+}
+
+.access-address {
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+.access-map-embed {
+  position: relative;
+  width: 100%;
+  margin: 1rem 0;
+  padding-top: 56.25%;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.access-map-embed iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.access-map-link {
+  color: #4d7c6b;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.access-map-link-row {
+  text-align: left;
+}
+
+.access-map-link:hover {
+  opacity: 0.85;
+}
+
+/* ============================================ */
+/* 3. トラブル対策（hinagata.css と同型） */
+/* ============================================ */
+
+#global-container {
+  opacity: 1 !important;
+  transition: none !important;
+}
+
+.pace {
+  display: none !important;
+}
+
+.appear .item {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+.tween-animate-title,
+.animate-title {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.tween-animate-title span,
+.tween-animate-title .char,
+.animate-title span,
+.animate-title .char {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+.side .tween-animate-title {
+  color: #522e1d !important;
+}
+
+.side {
+  opacity: 1 !important;
+  display: block !important;
+}

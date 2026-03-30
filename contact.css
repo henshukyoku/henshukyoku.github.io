@@ -1,0 +1,157 @@
+/* ============================================ */
+/* 1. レイアウト基本設定 */
+/* ============================================ */
+
+/* ページ全体の基本設定 */
+.new-page-main {
+  padding-top: 150px; /* ヘッダーが被らないように調整 */
+  padding-bottom: 50px;
+  width: 100%; /* 横幅はいっぱいに広げておく */
+  font-family: "Klee One", cursive;
+  color: #522e1d;
+  line-height: 1.6;
+}
+
+/* ★新設：中身を中央に寄せるための共通パーツ */
+/* これを div につければ、端っこにならずに中央に揃います */
+.content-inner {
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto; /* 中央寄せ */
+}
+
+/* スマホ対応 */
+@media screen and (max-width: 600px) {
+  .new-page-main {
+    padding-top: 120px;
+  }
+}
+
+/* ============================================ */
+/* 2. 各ページ固有のスタイル（ここに書く！！） */
+/* ============================================ */
+
+/* 自由に作ったクラスに余白を追加する場合など */
+.tekito {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+/* ============================================ */
+/* 2. お問い合わせページ固有 */
+/* ============================================ */
+
+.contact-page-title {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.contact-block {
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+.contact-block p {
+  margin-bottom: 1.1rem;
+}
+
+.contact-mail {
+  margin-top: 1.25rem;
+}
+
+.contact-mail-link {
+  color: #4d7c6b;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.contact-sns {
+  margin-top: 0.5rem;
+}
+
+.contact-heading {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #522e1d;
+  margin: 0 0 1rem;
+}
+
+.contact-sns-item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 18px 1.25rem;
+}
+
+.contact-sns-link {
+  display: inline-block;
+  color: #535353;
+  text-decoration: none !important;
+  position: relative;
+  padding-left: 1.4em; /* アイコン分の余白（common.cssの .icon::before と合わせる） */
+  letter-spacing: 1px;
+}
+
+@media screen and (max-width: 600px) {
+  .contact-sns-item {
+    display: flex;
+    width: 100%;
+    margin: 0 0 1.1rem;
+  }
+}
+
+
+/* ============================================ */
+/* 3. トラブル対策（これより下は触らないで） */
+/* ============================================ */
+/* (以下、既存の opacity: 1 !important などの設定をそのまま残す) */
+
+/* 重要：何があっても画面を表示させる設定 */
+/* ローディング機能がフリーズしても強制的に画面を表示させます */
+#global-container {
+  opacity: 1 !important;     /* 透明(0)ではなく、見える状態(1)を強制 */
+  transition: none !important; /* アニメーションを無効化して即表示 */
+}
+
+/* もしローディングバーが残っていたら消す */
+.pace {
+  display: none !important;
+}
+
+/* 重要：文字が表示されない問題を解決する設定 */
+/* アニメーション用の「透明待機」を無効化して、最初から表示させます */
+
+/* ヘッダーやフッターの項目 */
+.appear .item {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* 横から出てくる文字やタイトル */
+.tween-animate-title,
+.animate-title {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* 文字が1文字ずつバラバラになっている場合の対策 */
+.tween-animate-title span, 
+.tween-animate-title .char,
+.animate-title span,
+.animate-title .char {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* サイドバーの文字色を確実に茶色にする */
+.side .tween-animate-title {
+  color: #522e1d !important;
+}
+
+/* サイドバー自体を表示させる */
+.side {
+  opacity: 1 !important;
+  display: block !important;
+}
