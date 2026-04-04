@@ -1,195 +1,506 @@
-<!DOCTYPE html>
-<html lang="ja">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>所沢キャンパス祭2026</title>
-    <link rel="icon" type="image/png" href="images/tomei.png">
-    <link rel="apple-touch-icon" href="images/tomei.png">
+/* shinkan.css — 新歓ページ用スタイル */
+@import url('https://fonts.googleapis.com/css2?family=Klee+One&display=swap');
 
-    <script src="scripts/vendors/pace.js"></script>
+/* --- ページ全体のレイアウト調整 --- */
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Klee+One&display=swap" rel="stylesheet" />
+/* ヘッダーの裏に隠れないように余白を空ける */
+.new-page-main {
+  padding-top: 100px; /* ヘッダーの高さ分 */
+  width: 100%;
+  /* bodyへの指定をここに移動 */
+  font-family: "Klee One", cursive;
+  color: #522e1d;
+  overflow-x: hidden;
+}
 
-    <!-- 共通のスタイルシート -->
-    <link rel="stylesheet" href="common.css" />
-    <!-- ページ固有のスタイルシート -->
-    <link rel="stylesheet" href="shinkan.css" />
+/* コンテンツ幅を制限して中央寄せにするラッパー */
+.shinkan-wrapper {
+  width: 100%;
+  max-width: 1000px; /* PCで見やすくなる幅 */
+  margin: 0 auto;
+  padding: 20px;
+}
 
-    <script src="scripts/vendors/gsap.min.js" defer></script>
-    <script src="scripts/vendors/swiper-bundle.min.js" defer></script>
-    <script src="scripts/libs/hero-slider.js" defer></script>
-    <script src="scripts/vendors/scroll-polyfill.js" defer></script>
-    <script src="scripts/libs/scroll.js" defer></script>
-    <script src="scripts/libs/mobile-menu.js" defer></script>
-    <script src="scripts/libs/text-animation.js" defer></script>
-    <script src="scripts/main.js" defer></script>
-  </head>
-  <body>
-    <div id="global-container">
-      <div id="container">
-        <div class="mobile-menu__cover"></div>
-        <div class="nav-trigger"></div>
+/* リンクの設定（このページ内限定） */
+.shinkan-wrapper a {
+  color: greenyellow;
+  text-decoration: none;
+}
+.shinkan-wrapper a:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
 
-        <header class="header">
-          <div class="header__inner appear up">
-            <div class="logo item">
-              <span class="logo__stay">所沢キャンパス祭</span>
-              <span class="logo__world">2026</span>
-            </div>
-            <button class="mobile-menu__btn">
-              <span></span><span></span><span></span>
-            </button>
-          </div>
-        </header>
+/* --- トップエリア（旧header, .top） --- */
 
-        <div id="content">
-          <div id="main-content">
-            <main class="new-page-main">
+/* 旧headerタグのデザインをdivで再現 */
+.shinkan-top-bar {
+  background-color: #fff3e1;
+  color: #522e1d;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+}
+.shinkan-top-bar img {
+  width: 50px;
+  height: 50px;
+}
 
-              <div class="shinkan-wrapper">
-                <div class="blackboard">
-                  <div class="blackboard-title"><span>新歓日程</span></div>
-                  <div class="blackboard-month-wrapper"><span class="blackboard-month">4月</span></div>
-                  <ul class="blackboard-list">
-                    <li><span class="highlight-yellow">4/4（土）</span> 新歓ピクニック<br>@石神井公園 12:00〜<br>定員なし！</li>
-                    <li><span class="highlight-yellow">4/11（土）</span> 新歓定例会①<br>@所沢キャンパス 15:00〜17:00</li>
-                    <li><span class="highlight-yellow">4/18（土）</span> 新歓BBQ<br>@吉祥寺パルコ 14:30〜16:30<br>定員あり！お早めに！</li>
-                    <li><span class="highlight-yellow">4/25（土）</span> 新歓定例会②<br>@所沢キャンパス 15:00〜17:00</li>
-                  </ul>
-                  <div class="blackboard-month-wrapper"><span class="blackboard-month">5月</span></div>
-                  <ul class="blackboard-list">
-                    <li><span class="highlight-yellow">5/16（土）</span> 局発表定例会<br>@所沢キャンパス 11:00〜</li>
-                    <li><span class="highlight-yellow">5/16（土）、17（日）</span> 新歓合宿<br>@秩父 定例会後、出発</li>
-                  </ul>
-                  <div class="blackboard-footer">
-                    <p>※新歓の予定は変更・中止になる場合があります<br>最新の情報をご確認ください！</p>
-                    <p>新しい仲間と出会えるチャンス！<br>みなさんのご参加お待ちしています！</p>
-                    <p><span class="highlight-yellow">局ごとの新歓もあります！</span><br>局の新歓インスタや下記のボタンからチェック！</p>
-                  </div>
-                </div>
-              </div>
+/* ★重要：クラス名を変更 (.logo -> .shinkan-logo) */
+.shinkan-logo {
+  margin: 1.5rem auto; /* 中央寄せ */
+  width: 380px;
+  height: 380px;
+  border-radius: 70px;
+  display: block; /* 画像をブロック要素化 */
+  object-fit: cover;
+}
 
-              <div class="wind-decoration-area reverse-wind">
-                <div class="wind-wave purple"></div>
-                <div class="wind-wave pink"></div>
-                <div class="wind-wave cyan"></div>
-                <div class="wind-wave orange"></div>
-              </div>
+.top {
+  text-align: center;
+  padding: 0 1rem;
+  padding-bottom: 3rem;
+  font-size: 1.25rem;
+}
 
-              <div class="shinkan-wrapper">
-                <h2 id="midashi">局紹介</h2>
+.top h1 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+.top h2 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.top h5 {
+  margin-bottom: 3rem;
+}
+.top p {
+  margin-bottom: 1.1rem;
+}
 
-                <div class="circle-main-area">
-                  <div class="circle-container">
-                    <div class="circle" id="circle-1" data-modal="modal-1"><div class="circle-info">外務局</div></div>
-                    <div class="circle" id="circle-2" data-modal="modal-2"><div class="circle-info">企画開発局</div></div>
-                    <div class="circle" id="circle-3" data-modal="modal-3"><div class="circle-info">広報局</div></div>
-                    <div class="circle" id="circle-4" data-modal="modal-4"><div class="circle-info">参加団体局</div></div>
-                    <div class="circle" id="circle-5" data-modal="modal-5"><div class="circle-info">渉外局</div></div>
-                    <div class="circle" id="circle-6" data-modal="modal-6"><div class="circle-info">総務局</div></div>
-                    <div class="circle" id="circle-7" data-modal="modal-7"><div class="circle-info">編集局</div></div>
-                  </div>
-                </div>
+/* ボーダーのデザイン調整 */
+.border {
+  width: 100%;
+  max-width: 800px;
+  margin: 3rem auto; /* 上下の余白 */
+  
+  /* 高さをなくして線だけにする */
+  height: 1px; 
+  border: none; 
+  background-color: #522e1d; /* 文字と同じ茶色に変更 */
+  padding: 0;
+}
 
-                <div id="modal-1" class="modal"><div class="modal-content"><span class="close">&times;</span><h2>外務局</h2><br><p>仕事も遊びも全力で楽しむことができる局！</p><br><p>外部団体との連携により所祭に活気をもたらす役割を担っています。</p><br><p>メンバーも個性豊かで情熱のある温かい人たちばかりです！</p><br><h3>人数</h3><br><h5>＜男女別＞</h5><br><p>女子：24人 男子：24人</p><br><h5>＜学年別＞</h5><br><p>2年：25人 3年：23人</p><br><h3>局新歓日程</h3><ul class="blackboard-list"><br><li>①ご飯会<br>4/13 19時〜</li><li>②ご飯会<br>4/15 19時〜</li><li>③ご飯会<br>4/22 19時〜</li><li>④ご飯会（予備日）<br>4/27 19時〜</li><li>⑤ご飯会<br>4/29 19時〜</li></ul></div></div>
+/* --- サークル（局紹介）エリア --- */
 
-                <div id="modal-2" class="modal"><div class="modal-content"><span class="close">&times;</span><h2>企画開発局</h2><br><p>所祭の局のなかで当日行う企画を1から考え、準備、運営を行います！</p><br><p>企画の立案や運営方法の検討、当日の進行づくりまで幅広く関わります。</p><br><p>自分のアイデアが実際の企画として来場者の楽しさにつながる、やりがいの大きい役割を担っています！</p><br><h3>人数</h3><br><h5>＜男女別＞</h5><br><p>女子：22人 男子：24人</p><br><h5>＜学年別＞</h5><br><p>2年：25人 3年：21人</p><br><h3>局新歓日程</h3><ul class="blackboard-list"><br><li>①BBQ<br>4/19（日）10:30〜15:00<br>@小金井公園</li><li>②ご飯会<br>4/23（木）18:30〜20:30<br>@菜香所沢</li><li>③ご飯会<br>4/27（月）18:00〜20:30<br>@しゃぶ葉所沢店</li><li>④ご飯会<br>4/29（水）18:30〜21:00<br>@味鮮亭所沢店</li></ul></div></div>
+#midashi {
+  color: #522e1d;
+  text-align: center;
+  padding-top: 4rem;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
 
-                <div id="modal-3" class="modal"><div class="modal-content"><span class="close">&times;</span><h2>広報局</h2><br><p>所祭の来場者数を左右する重要な役割を担う局！</p><br><p>地域・学内・SNSの3部門から、多方面に向けて所祭の魅力を発信しています！</p><br><p>広告企画や地域イベントへの参加、SNS運用など幅広く活動し、「伝える」ことを通して所祭を盛り上げます！</p><br><h3>人数</h3><br><h5>＜男女別＞</h5><br><p>女子：16人 男子：10人</p><br><h5>＜学年別＞</h5><br><p>2年：13人 3年：13人</p><br><h3>局新歓日程</h3><ul class="blackboard-list"><br><li>①ご飯会<br>4/9（木）11:00〜16:00<br>@しゃぶ葉 池袋</li><li>②ご飯会<br>4/14（火）18:00〜20:00<br>@アジアン酒場 ヒマラヤンダイニング所沢</li><li>③ご飯会<br>4/22（水）18:00〜20:00<br>@菜香</li><li>④ボウリング<br>5/1（金）18:00〜20:00<br>@所沢スターレーン</li></ul></div></div>
+/* mainタグの代わりにセクションで囲む */
+.circle-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+  padding: 20px 0;
+}
 
-                <div id="modal-4" class="modal"><div class="modal-content"><span class="close">&times;</span><h2>参加団体局</h2><br><p>参加団体局は所祭の柱です！</p><br><p>所祭に参加するパフォーマーや屋台団体、教室企画団体の準備・運営を支えています！</p><br><p>参加団体局なくして所祭なし。</p><br><p>前日当日は間違いなく1番盛り上がる局です！</p><br><h3>人数</h3><br><h5>＜男女別＞</h5><br><p>女子：8人 男子：10人</p><br><h5>＜学年別＞</h5><br><p>2年：9人 3年：9人</p><br><h3>局新歓日程</h3><ul class="blackboard-list"><br><li>①ご飯会<br>4/13(月)19:00-21:00<br>＠サイゼリヤ 所沢プロぺ通り店</li><li>②ご飯会<br>4/16(木)19:00-21:00<br>＠ちばチャン 池袋東口店</li><li>③ご飯会<br>4/21(火)19:00-21:00<br>@め組 所沢店</li><li>④ご飯会<br>4/30(木)19:00〜21:00<br>@福龍 所沢店</li></ul></div></div>
+.circle-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center; /* 中央寄せ */
+}
 
-                <div id="modal-5" class="modal"><div class="modal-content"><span class="close">&times;</span><h2>渉外局</h2><br><p>学外の企業やOB・OG、地域の方々に協力をお願いして、所祭の資金を集める局です！</p><br><p>活動を通してマナーや交渉力が身につくので、最強のガクチカになります。</p><br><p>合宿やディズニー、ご飯会など遊びも全力で楽しむアットホームな雰囲気なので、成長も遊びも欲張りたい人はぜひ渉外局へ！！</p><br><h3>人数</h3><br><h5>＜男女別＞</h5><br><p>女子：25人 男子：20人</p><br><h5>＜学年別＞</h5><br><p>2年：24人 3年：21人</p><br><h3>局新歓日程</h3><ul class="blackboard-list"><br><li>① ご飯会<br>4月15日(水)18:30～20:30<br>@味鮮亭 ファルマン通り店</li><li>② ご飯会<br>4月23日(木) 18:00～20:00<br>@しゃぶ葉 池袋西口店</li><li>③ ご飯会<br>4月28日(火)18:30～20:00<br>@もんじゃ め組 所沢店</li><li>④ご飯会<br>5月1日(金) 18:00～20:00<br>@サイゼリヤ 所沢プロペ通り店</li></ul></div></div>
+.circle {
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-                <div id="modal-6" class="modal"><div class="modal-content"><span class="close">&times;</span><h2>総務局</h2><br><p>局のなかで自由さを誇りながら、他局とも関わって人脈を広げられる局です。</p><br><p>いろんな意味で自由なので、サークルを盛り上げたい人や真面目に仕事をしたい人、暇なときに顔を出したい人など様々な人が集まっています。</p><br><p>また、所祭の遊びをすべて企画できるので、人を巻き込んで大学生活を送りたい人にもおすすめです。</p><br><h3>人数</h3><br><h5>＜男女別＞</h5><br><p>女子：21人 男子：27人</p><br><h5>＜学年別＞</h5><br><p>2年：22人 3年：26人</p><br><h3>局新歓日程</h3><ul class="blackboard-list"><br><li>① ご飯会<br>4/14(火)19:00〜21:00<br>@味鮮亭/さいか</li><li>② ご飯会<br>4/16(木)19:00〜21:00<br>@サイゼリヤ所沢プロペ通り店</li><li>③ ご飯会<br>4/22(水)19:00〜21:00<br>@牛角</li><li>④ご飯会<br>4/24(金)19:00〜21:00<br>@ニューナマステインディア</li></ul></div></div>
+.circle-info {
+  position: absolute;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  pointer-events: none; /* クリックを透過 */
+}
 
-                <div id="modal-7" class="modal"><div class="modal-content"><span class="close">&times;</span><br><iframe src="https://www.youtube.com/embed/P3kqXA6_KxY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><h2>編集局</h2><br><p>画像・PV・サイト制作、キャンパス内装飾を担当しています！</p><br><p>デジタル制作はもちろん、高校の文化祭らしく、自分たちの手でキャンパスを彩ることも！</p><br><p>情報系に強いので1年生にとって、頼れる先輩がたくさんいるのも強みです！</p><br><p>落ち着いていながらも、温かく笑顔あふれる雰囲気に、あなたも虜になること間違いなし！？</p><br><h3>人数</h3><br><h5>＜男女別＞</h5><br><p>女子：21人 男子：16人</p><br><h5>＜学年別＞</h5><br><p>2年：17人 3年：20人</p><br><h3>局新歓日程</h3><ul class="blackboard-list"><br><li>①ボドゲカフェ<br>4/6(月)12:00〜17:00<br>＠池袋周辺</li><li>②ピクニック<br>4/19(日)11:00〜17:00<br>＠航空公園</li><li>③ご飯会<br>4/22(水)18:00〜20:00<br>@ニューナマステインディア小手指</li><li>④ご飯会<br>4/30(木)20:00〜22:00<br>@もんじゃ　め組　所沢店</li><li>⑤ご飯会<br>5/8(金)18:00〜20:00<br>@ニューナマステインディア小手指</li></ul></div></div>
-              </div>
+.circle:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+}
 
-              <div class="wind-decoration-area">
-                <div class="wind-wave purple"></div>
-                <div class="wind-wave pink"></div>
-                <div class="wind-wave cyan"></div>
-                <div class="wind-wave orange"></div>
-              </div>
+/* 各円の色指定 */
+#circle-1 { background-color: black; }
+#circle-2 { background-color: #f4e511; }
+#circle-3 { background-color: orange; }
+#circle-4 { background-color: #f44336; }
+#circle-5 { background-color: blue; }
+#circle-6 { background-color: rgb(243, 37, 185); }
+#circle-7 { background-color: #9c27b0; }
 
-              <div class="shinkan-wrapper">
-                <div class="sns">
-                  <h2>新歓オープンチャットはこちらから！</h2>
-                  <img class="qr" src="images/opc2026.jpg">
-                  <p><a href="https://line.me/ti/g2/7O0Qgr2tNw6hVTxKQXPvQIeMP_ZlSo2yHtZjvQ?utm_source=invitation&utm_medium=link_copy&utm_campaign=default">LINEオープンチャット</a>に参加して新歓情報をチェック！</p>
-                </div>
-              </div>
-            </main>
-          </div>
-        </div>
+/* 黄色の円だけ文字を見やすく黒にする調整（任意） */
+#circle-2 .circle-info { color: #522e1d; }
 
-        <div class="footer appear up">
-          <div class="logo item"><span class="logo__stay">所沢キャンパス祭</span><span class="logo__world">2026</span></div>
-          <nav class="footer__nav">
-            <ul class="footer__ul">
-              <li class="footer__li item"><a href="https://wasedasai.net/">早稲田祭</a></li>
-              <li class="footer__li item"><a href="https://www.rikoten.com/">理工展</a></li>
-            </ul>
-            <div class="footer__copyright item">&copy; 所沢キャンパス祭実行委員会</div>
-          </nav>
-          <div class="footer__bottom">
-            <div class="footer__social">
-              <a href="https://x.com/tokosai_waseda" class="footer__social-link icon twitter">X</a>
-              <a href="https://www.instagram.com/waseda.tokosai/" class="footer__social-link icon fb">Instagram</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <nav class="mobile-menu">
-        <ul class="mobile-menu__main">
-          <li class="mobile-menu__item">
-            <a class="mobile-menu__link" href="index.html">
-              <span class="main-title">トップ</span>
-            </a>
-          </li>
-          <li class="mobile-menu__item">
-            <a class="mobile-menu__link" href="coming.html">
-              <span class="main-title">とこ祭について</span>
-            </a>
-          </li>
-          <li class="mobile-menu__item">
-            <a class="mobile-menu__link" href="coming.html">
-              <span class="main-title">企画一覧</span>
-            </a>
-          </li>
-          <li class="mobile-menu__item">
-            <a class="mobile-menu__link" href="access.html">
-              <span class="main-title">アクセス</span>
-            </a>
-          </li>
-          <li class="mobile-menu__item">
-            <a class="mobile-menu__link" href="contact.html">
-              <span class="main-title">お問い合わせ</span>
-            </a>
-          </li>
-          <li class="mobile-menu__item">
-            <a class="mobile-menu__link" href="coming.html">
-              <span class="main-title">協賛</span>
-            </a>
-          </li>
-          <li class="mobile-menu__item">
-            <a class="mobile-menu__link" href="coming.html">
-              <span class="main-title">他大学の情報</span>
-            </a>
-          </li>
-          <li class="mobile-menu__item">
-            <a class="mobile-menu__link" href="shinkan.html">
-              <span class="main-title">新歓</span>
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-    <script src="shinkan.js"></script>
-  </body>
-</html>
+/* --- モーダル（ポップアップ） --- */
+
+.modal {
+  display: none; 
+  position: fixed;
+  z-index: 9999; /* 共通ヘッダーより上に表示 */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.modal-content {
+  background-color: #fff3e1;
+  color: #522e1d;
+  padding: 30px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 600px;
+  max-height: 60vh; 
+  overflow-y: auto;
+  margin: auto;
+  text-align: center;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-content h2 {
+  margin-bottom: 10px;
+  font-size: 1.8rem;
+  color: #522e1d;
+}
+
+.modal-content h3,
+.modal-content h5 {
+  text-align: center;
+}
+
+.modal-content iframe {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  display: block;
+  margin: 0 auto;
+}
+
+.modal-content video {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  display: block;
+  margin: 0 auto;
+}
+
+.modal-content img {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  object-fit: cover;
+  margin: 10px auto;
+}
+
+.modal-content p {
+  font-size: 1rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #522e1d;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- SNSエリア --- */
+
+.sns {
+  color: #522e1d;
+  text-align: center;
+  margin-bottom: 4rem;
+  padding: 20px;
+}
+.sns h2 {
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+}
+.qr {
+  margin: 1.5rem auto;
+  width: 280px;
+  height: 280px;
+  display: block; /* 画像を中央寄せしやすく */
+}
+.snsimg {
+  margin: 1.5rem auto;
+  width: 300px;
+  height: 300px;
+  border-radius: 90px;
+  display: block;
+}
+
+/* 編集局モーダルの文章を中央揃え */
+#modal-7 .modal-content p {
+  text-align: center;
+}
+
+/* --- スマホ対応 (レスポンシブ) --- */
+
+@media (max-width: 700px) {
+  /* ロゴサイズ調整 */
+  .shinkan-logo {
+    width: 250px;
+    height: 250px;
+  }
+  
+  /* 円サイズ調整 */
+  .circle {
+    width: 140px;
+    height: 140px;
+  }
+  
+  /* 余白調整 */
+  .top {
+    padding: 0 1rem;
+  }
+  
+  .border {
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0; /* ← これが1.5remになっていると太くなります！0にしてください */
+  }
+}
+
+/* ============================================ */
+/* 重要：何があっても画面を表示させる設定 */
+/* ============================================ */
+/* これを入れれば、ローディング機能がフリーズしても
+   強制的に画面が表示されるようになります */
+
+#global-container {
+  opacity: 1 !important;     /* 透明(0)ではなく、見える状態(1)を強制 */
+  transition: none !important; /* ふわっと出るアニメーションも無効化 */
+}
+
+/* もしローディングバーが残っていたら消す */
+.pace {
+  display: none !important;
+}
+
+/* ============================================ */
+/* 重要：文字が表示されない問題を解決する設定 */
+/* ============================================ */
+
+/* アニメーション用の「透明待機」を無効化して、最初から表示させます */
+
+/* 1. ヘッダーやフッターの項目 */
+.appear .item {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* 2. 横から出てくる文字（サイドバー）やタイトル */
+.tween-animate-title,
+.animate-title {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* 文字が1文字ずつバラバラになっている場合の対策 */
+.tween-animate-title span, 
+.tween-animate-title .char,
+.animate-title span,
+.animate-title .char {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* 3. サイドバーの文字色を確実に茶色にする */
+.side .tween-animate-title {
+  color: #522e1d !important;
+}
+
+/* 4. サイドバー自体を表示させる（念のため） */
+.side {
+  opacity: 1 !important;
+  display: block !important;
+}
+
+/* ============================================ */
+/* 黒板風デザイン */
+/* ============================================ */
+.blackboard {
+  border: 8px solid #aa6600; /* 木枠 */
+  background: #104300; /* 黒板の緑 */
+  color: #ffffff; /* 基本の文字色（白チョーク） */
+  box-shadow: 2px 2px 4px #999999, 2px 2px 2px #002200 inset;
+  padding: 30px 20px;
+  margin: 3rem auto;
+  border-radius: 4px;
+  max-width: 800px; /* PCでも広がりすぎないように制限 */
+  line-height: 1.6;
+  font-size: 20px; /* ★ここに追加：PC画面では少し大きくする */
+}
+
+/* タイトル部分 */
+.blackboard-title {
+  text-align: center;
+  margin-bottom: 2em;
+  font-size: 1.4em;
+}
+.blackboard-title span {
+  border-bottom: 1px solid #ffffff;
+  padding-bottom: 5px;
+}
+
+/* 4月・5月の見出し（中央揃え） */
+.blackboard-month-wrapper {
+  text-align: center;
+  margin-top: 2.5em;
+  margin-bottom: 1em;
+}
+.blackboard-month {
+  font-size: 1.2em;
+  font-weight: bold;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.6); /* チョークの擦れ感を出す点線 */
+  display: inline-block;
+  padding: 0 15px 5px;
+}
+
+/* 箇条書きリスト */
+.blackboard-list {
+  list-style-type: none; /* 「・」を消す */
+  padding: 0;
+  margin: 0 auto; /* 左右の余白を均等にして中央寄せ */
+  width: fit-content; /* ★重要：リストの塊の幅を文字に合わせる */
+  text-align: center; /* 文字の頭出しは揃える */
+}
+
+.blackboard-list li {
+  margin-bottom: 1.5em;
+}
+
+/* ★追加：日付の黄色ハイライト */
+.highlight-yellow {
+  color: #ffe66d; /* チョーク風の柔らかい黄色 */
+  font-weight: bold;
+  font-size: 1.1em;
+  margin-right: 5px;
+}
+
+/* 黒板下部の注意書き・メッセージ */
+.blackboard-footer {
+  text-align: center;
+  font-size: 0.95em;
+  margin-top: 3em;
+  border-top: 1px dashed rgba(255, 255, 255, 0.5);
+  padding-top: 2em;
+}
+.blackboard-footer p {
+  margin-bottom: 1.5em;
+}
+.blackboard-footer p:last-child {
+  margin-bottom: 0;
+}
+
+/* ============================================ */
+/* スマホ対応 (レスポンシブ) — */
+/* ============================================ */
+@media (max-width: 700px) {
+  /* 黒板全体の余白を少し詰める */
+  .blackboard {
+    padding: 20px 10px;
+    margin: 1.5rem auto;
+  }
+
+  /* ★修正：スマホでもリストの塊が中央にくるように直しました */
+  .blackboard-list {
+    margin: 0 auto; 
+    padding-left: 0;
+    width: 100%; /* スマホでは幅いっぱいに広げて中央揃えしやすくする */
+  }
+
+  /* 日付の下にイベント名が来るように調整 */
+  .blackboard-list li {
+    text-align: center; /* スマホでは全体を中央揃えに */
+  }
+
+  .highlight-yellow {
+    display: block; /* 日付をブロック要素にして改行させる */
+    margin-bottom: 5px; /* イベント名との間隔を作る */
+    margin-right: 0; /* 右余白をなくす（中央揃えにするため） */
+  }
+}
+
+/* ============================================ */
+/* 新歓ページ専用：風の強制上書き設定 */
+/* ============================================ */
+
+/* 1. 帯の高さ（ここを変えれば見た目がすぐ変わります） */
+.new-page-main .wind-decoration-area {
+  height: 120px !important; /* 90pxから150pxに強制変更 */
+  margin: 0px 0 !important; /* 前後の余白をわざと広く設定 */
+}
+
+/* 2. 波の動きをトップページと同じ速度に戻す */
+.new-page-main .wind-wave.purple { animation-duration: 15s !important; }
+.new-page-main .wind-wave.pink   { animation-duration: 12s !important; }
+.new-page-main .wind-wave.cyan   { animation-duration: 18s !important; }
+.new-page-main .wind-wave.orange { animation-duration: 20s !important; }
+
+/* 3. 線の太さを変える（SVGの中身を上書き） */
+.new-page-main .wind-wave.purple {
+  background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1000 100" xmlns="http://www.w3.org/2000/svg"><path d="M 0 50 Q 250 10, 500 50 T 1000 50" fill="none" stroke="%23DCD3E6" stroke-width="20"/></svg>') !important;
+}
+
+/* 4. 新歓ページで風を確実に見せる（透明化・重なりなどを強制解除） */
+.new-page-main .wind-decoration-area {
+  opacity: 1 !important;
+  z-index: 10 !important;
+}
+
+.new-page-main .wind-wave {
+  opacity: 1 !important;
+  mix-blend-mode: normal !important;
+}
+
+.new-page-main .wind-wave.purple,
+.new-page-main .wind-wave.pink,
+.new-page-main .wind-wave.cyan,
+.new-page-main .wind-wave.orange {
+  background-repeat: repeat-x !important;
+  animation-play-state: running !important;
+}
+
