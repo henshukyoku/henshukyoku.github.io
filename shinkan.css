@@ -217,6 +217,14 @@
   margin: 0 auto;
 }
 
+.modal-content blockquote {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  display: block;
+  margin: 0 auto !important;
+}
+
 .modal-content img {
   width: 100%;
   max-width: 250px;

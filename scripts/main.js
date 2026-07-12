@@ -1,6 +1,7 @@
 class Main {
 
     #observers = [];
+    #scrollStarted = false;
 
     constructor() {
         this.header = document.querySelector('.header');
@@ -11,19 +12,43 @@ class Main {
 
     #init() {
         new MobileMenu();
-        Pace.on('done', this.#scrollInit.bind(this));
+        Pace.on('done', this.#onLoadingDone.bind(this));
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const body = document.querySelector('body');
+	                if (!body.classList.contains('pace-done')) {
+	                    body.classList.add('pace-done');
+	                    this.#onLoadingDone();
+	                }
+	            }, 900);
+        });
     }
 
     destroy() {
         this.#observers.forEach(so => so.destroy());
     }
 
+    #onLoadingDone() {
+        document.body.classList.add('pace-done');
+        requestAnimationFrame(() => {
+            document.body.classList.remove('kikaku-motion-start');
+            document.body.offsetHeight;
+            document.body.classList.add('kikaku-motion-start');
+        });
+        this.#scrollInit();
+    }
+
     #scrollInit() {
+        if (this.#scrollStarted) {
+            return;
+        }
+        this.#scrollStarted = true;
         this.#observers.push(
             new ScrollObserver('#main-content', this.#sideAnimation.bind(this), { once: false, rootMargin: "-300px 0px" }),
             new ScrollObserver('.nav-trigger', this.#navAnimation.bind(this), { once: false }),
             new ScrollObserver('.swiper', this.#toggleSlideAnimation.bind(this), { once: false }),
             new ScrollObserver('.cover-slide', this.#inviewAnimation),
+            new ScrollObserver('.shine', this.#inviewAnimation, { once: false }),
             new ScrollObserver('.appear', this.#inviewAnimation),
             new ScrollObserver('.tween-animate-title', this.#textAnimation)
         );
@@ -70,14 +95,3 @@ class Main {
     }
 }
 const main = new Main;
-
-// 読み込みが遅い場合でも、最大3秒後に強制的にローディング画面を消す
-window.addEventListener('load', function() {
-    setTimeout(function() {
-      const body = document.querySelector('body');
-      if (!body.classList.contains('pace-done')) {
-        body.classList.add('pace-done');
-        console.log('Forced loading completion');
-      }
-    }, 3000); // 3000ms = 3秒（必要に応じて調整してください）
-  });

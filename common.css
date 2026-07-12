@@ -80,9 +80,9 @@
 #global-container {
   opacity: 0;
 }
-/* ★修正点1：爆速で読み込まれても「2秒待ってから」メインコンテンツを出す */
+/* ★修正点1：読み込み完了後、短い余韻を置いてメインコンテンツを出す */
 .pace-done #global-container {
-  transition: opacity 1s 2s; 
+  transition: opacity 0.8s 0.2s;
   opacity: 1;
 }
 
@@ -101,11 +101,11 @@
   transition: opacity 0.8s ease-out, visibility 0.8s ease-out;
 }
 
-/* ★修正点2：爆速で読み込まれても「2秒待ってから」ローディング画面を消す */
+/* ★修正点2：読み込み完了後、短い余韻を置いてローディング画面を消す */
 body.pace-done #loading-screen {
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.8s ease-out 2s, visibility 0.8s ease-out 2s;
+  transition: opacity 0.8s ease-out 0.2s, visibility 0.8s ease-out 0.2s;
 }
 
 /* --- 4つの画像をまとめる枠 --- */

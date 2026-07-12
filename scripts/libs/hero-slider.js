@@ -1,7 +1,7 @@
 class HeroSlider {
     constructor(el) {
-        this.el = el;
-        this.swiper = this._initSwiper();
+        this.el = document.querySelector(el);
+        this.swiper = this.el ? this._initSwiper() : null;
     }
 
     _initSwiper() {
@@ -23,6 +23,7 @@ class HeroSlider {
     }
 
     start(options = {}) {
+        if (!this.swiper) return;
         options = Object.assign({
             delay: 4000,
             disableOnInteraction: false
@@ -32,6 +33,7 @@ class HeroSlider {
         this.swiper.autoplay.start();
     }
     stop() {
+        if (!this.swiper) return;
         this.swiper.autoplay.stop();
     }
 }

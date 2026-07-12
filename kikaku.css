@@ -1,0 +1,1004 @@
+.logo {
+  text-decoration: none;
+}
+
+:root {
+  --rose-red-svg: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20120%20120'%3E%3Cg%20fill='%23c93c64'%20fill-opacity='.58'%20stroke='%23ffe8ee'%20stroke-opacity='.78'%20stroke-width='2'%3E%3Cellipse%20cx='60'%20cy='31'%20rx='19'%20ry='31'/%3E%3Cellipse%20cx='82'%20cy='47'%20rx='18'%20ry='29'%20transform='rotate(54%2082%2047)'/%3E%3Cellipse%20cx='38'%20cy='47'%20rx='18'%20ry='29'%20transform='rotate(-54%2038%2047)'/%3E%3Cellipse%20cx='60'%20cy='72'%20rx='28'%20ry='18'/%3E%3Cellipse%20cx='72'%20cy='67'%20rx='16'%20ry='25'%20transform='rotate(34%2072%2067)'/%3E%3Cellipse%20cx='48'%20cy='67'%20rx='16'%20ry='25'%20transform='rotate(-34%2048%2067)'/%3E%3Ccircle%20cx='60'%20cy='58'%20r='13'%20fill='%238f1736'%20fill-opacity='.52'/%3E%3C/g%3E%3C/svg%3E");
+  --rose-pale-svg: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20120%20120'%3E%3Cg%20fill='%23e77f9a'%20fill-opacity='.52'%20stroke='%23fff1f4'%20stroke-opacity='.82'%20stroke-width='2'%3E%3Cellipse%20cx='60'%20cy='31'%20rx='19'%20ry='31'/%3E%3Cellipse%20cx='82'%20cy='47'%20rx='18'%20ry='29'%20transform='rotate(54%2082%2047)'/%3E%3Cellipse%20cx='38'%20cy='47'%20rx='18'%20ry='29'%20transform='rotate(-54%2038%2047)'/%3E%3Cellipse%20cx='60'%20cy='72'%20rx='28'%20ry='18'/%3E%3Cellipse%20cx='72'%20cy='67'%20rx='16'%20ry='25'%20transform='rotate(34%2072%2067)'/%3E%3Cellipse%20cx='48'%20cy='67'%20rx='16'%20ry='25'%20transform='rotate(-34%2048%2067)'/%3E%3Ccircle%20cx='60'%20cy='58'%20r='13'%20fill='%23c93c64'%20fill-opacity='.38'/%3E%3C/g%3E%3C/svg%3E");
+  --leaf-svg: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20120%20120'%3E%3Cpath%20d='M18%2068C28%2020%2078%2012%2098%2052C74%2088%2044%2094%2018%2068Z'%20fill='%23558969'%20fill-opacity='.34'%20stroke='%23558969'%20stroke-opacity='.28'%20stroke-width='3'/%3E%3C/svg%3E");
+  --mobile-vine-svg: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20720%201160'%3E%3Cpath%20d='M92%2042C210%2036%20508%2036%20622%2046C672%2050%20682%2092%20678%20142C668%20284%20670%20952%20666%201062C664%201096%20638%201118%20594%201120C456%201126%20232%201126%20104%201116C54%201112%2038%201074%2042%201026C54%20860%2048%20328%2042%20148C40%2086%2042%2046%2092%2042Z'%20fill='none'%20stroke='%23558969'%20stroke-opacity='.30'%20stroke-width='8'%20stroke-linecap='round'/%3E%3Cpath%20d='M78%20386C186%20334%20262%20338%20374%20374C484%20410%20542%20392%20642%20338'%20fill='none'%20stroke='%23558969'%20stroke-opacity='.18'%20stroke-width='6'%20stroke-linecap='round'/%3E%3Cpath%20d='M646%20442C590%20536%20590%20636%20652%20722C690%20774%20676%20848%20626%20896'%20fill='none'%20stroke='%23558969'%20stroke-opacity='.24'%20stroke-width='8'%20stroke-linecap='round'/%3E%3Cpath%20d='M650%20618C604%20692%20608%20766%20666%20832'%20fill='none'%20stroke='%23558969'%20stroke-opacity='.20'%20stroke-width='6'%20stroke-linecap='round'/%3E%3Cpath%20d='M94%20816C202%20874%20318%20876%20434%20822C512%20786%20574%20798%20634%20848'%20fill='none'%20stroke='%23558969'%20stroke-opacity='.16'%20stroke-width='6'%20stroke-linecap='round'/%3E%3Cpath%20d='M172%20354C210%20310%20262%20328%20254%20382C220%20396%20194%20386%20172%20354Z'%20fill='%23558969'%20fill-opacity='.21'/%3E%3Cpath%20d='M574%20344C616%20308%20662%20332%20650%20384C616%20396%20594%20384%20574%20344Z'%20fill='%23558969'%20fill-opacity='.23'/%3E%3Cpath%20d='M600%20728C642%20690%20690%20714%20678%20768C642%20782%20620%20768%20600%20728Z'%20fill='%23558969'%20fill-opacity='.23'/%3E%3Cpath%20d='M182%20842C220%20804%20272%20824%20262%20878C226%20894%20202%20880%20182%20842Z'%20fill='%23558969'%20fill-opacity='.18'/%3E%3C/svg%3E");
+}
+
+#container {
+  overflow: hidden;
+  background: #fff;
+  animation: none;
+}
+
+#container::before,
+#container::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  z-index: 0;
+  width: min(1320px, 132vw);
+  height: 980px;
+  pointer-events: none;
+  transform: translateX(-50%);
+}
+
+#container::before {
+  top: 520px;
+  background-image: var(--rose-pale-svg), var(--rose-red-svg), var(--leaf-svg), var(--rose-pale-svg), var(--leaf-svg);
+  background-repeat: no-repeat;
+  background-position: 2% 8%, 96% 16%, 98% 56%, 4% 64%, 2% 86%;
+  background-size: 120px 120px, 86px 86px, 118px 118px, 104px 104px, 112px 112px;
+  opacity: 0;
+}
+
+#container::after {
+  top: 1500px;
+  background-image: var(--rose-red-svg), var(--rose-pale-svg), var(--leaf-svg), var(--rose-pale-svg), var(--rose-red-svg);
+  background-repeat: no-repeat;
+  background-position: 10% 10%, 88% 22%, 9% 66%, 92% 76%, 58% 92%;
+  background-size: 90px 90px, 126px 126px, 118px 118px, 132px 132px, 76px 76px;
+  opacity: 0;
+}
+
+body.kikaku-motion-start #container::before {
+  animation: kikaku-floral-arrive 1.15s ease-out 0.35s both, kikaku-floral-drift 9s ease-in-out 1.5s infinite alternate;
+}
+
+body.kikaku-motion-start #container::after {
+  animation: kikaku-floral-arrive 1.15s ease-out 0.55s both, kikaku-floral-drift 10s ease-in-out 1.8s infinite alternate-reverse;
+}
+
+#content,
+#main-content {
+  position: relative;
+  z-index: 1;
+  background: transparent;
+}
+
+.footer {
+  position: relative;
+  z-index: 1;
+}
+
+.kikaku-main {
+  position: relative;
+  isolation: isolate;
+  width: min(90%, 1080px);
+  margin: 0 auto;
+  padding: 150px 0 96px;
+  color: #2b1217;
+  text-align: center;
+}
+
+.kikaku-main::before,
+.kikaku-main::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.52;
+}
+
+.kikaku-main::before {
+  top: 70px;
+  left: 50%;
+  width: min(1180px, 116vw);
+  height: 980px;
+  transform: translateX(-50%);
+  background-image: var(--rose-pale-svg), var(--leaf-svg), var(--rose-pale-svg), var(--rose-red-svg), var(--leaf-svg);
+  background-repeat: no-repeat;
+  background-position: 92% 26%, 17% 30%, 2% 72%, 96% 78%, 84% 39%;
+  background-size: 124px 124px, 112px 112px, 98px 98px, 84px 84px, 118px 118px;
+  opacity: 0;
+}
+
+.kikaku-main::after {
+  top: 820px;
+  left: 50%;
+  width: min(1240px, 122vw);
+  height: 900px;
+  transform: translateX(-50%);
+  background-image: var(--rose-pale-svg), var(--leaf-svg), var(--rose-red-svg), var(--leaf-svg), var(--rose-pale-svg);
+  background-repeat: no-repeat;
+  background-position: 12% 26%, 7% 51%, 88% 18%, 94% 48%, 54% 94%;
+  background-size: 116px 116px, 126px 126px, 88px 88px, 132px 132px, 98px 98px;
+  opacity: 0;
+}
+
+body.kikaku-motion-start .kikaku-main::before {
+  animation: kikaku-floral-arrive 1s ease-out 0.2s both, kikaku-floral-drift 8.5s ease-in-out 1.3s infinite alternate;
+}
+
+body.kikaku-motion-start .kikaku-main::after {
+  animation: kikaku-floral-arrive 1s ease-out 0.45s both, kikaku-floral-drift 9.5s ease-in-out 1.55s infinite alternate-reverse;
+}
+
+.talk-hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 430px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  background:
+    radial-gradient(circle at 18% 24%, rgba(185, 13, 55, 0.16), transparent 32%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(255, 247, 248, 0.9));
+  border: 1px solid rgba(146, 11, 39, 0.18);
+  border-radius: 8px;
+  box-shadow: 0 28px 70px rgba(66, 13, 25, 0.2);
+  padding: 76px 22px;
+}
+
+.talk-hero::before,
+.talk-hero::after {
+  content: "";
+  position: absolute;
+  inset: 18px;
+  border: 1px solid rgba(146, 11, 39, 0.26);
+  border-radius: 6px;
+  pointer-events: none;
+}
+
+.talk-hero::after {
+  inset: 30px;
+  border-color: rgba(255, 255, 255, 0.88);
+}
+
+.talk-hero__rose {
+  position: absolute;
+  inset: 0;
+  opacity: 0.84;
+  pointer-events: none;
+}
+
+.talk-hero__rose svg {
+  width: 100%;
+  height: 100%;
+}
+
+.rose-line {
+  fill: none;
+  stroke: rgba(161, 80, 98, 0.42);
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-dasharray: 1900;
+  stroke-dashoffset: 1900;
+  filter: drop-shadow(0 8px 10px rgba(116, 9, 34, 0.14));
+}
+
+.rose-line--sub {
+  stroke: rgba(211, 112, 132, 0.34);
+  stroke-width: 3;
+  stroke-dasharray: 980;
+  stroke-dashoffset: 980;
+}
+
+.rose-bloom {
+  fill: rgba(171, 13, 49, 0.74);
+  stroke: rgba(255, 236, 239, 0.74);
+  stroke-width: 1;
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
+  filter: drop-shadow(0 10px 12px rgba(116, 9, 34, 0.24));
+}
+
+.rose-bloom--a,
+.rose-bloom--b {
+  display: none;
+}
+
+.rose-bloom circle {
+  fill: rgba(111, 9, 32, 0.84);
+}
+
+.talk-hero.inview .rose-line {
+  animation: kikaku-rose-grow 2.1s ease-out 0.2s forwards;
+}
+
+body.kikaku-motion-start .talk-hero .rose-line {
+  animation: kikaku-rose-grow 2.1s ease-out 1.05s forwards;
+}
+
+.talk-hero.inview .rose-line--sub {
+  animation-duration: 1.55s;
+  animation-delay: 0.65s;
+}
+
+body.kikaku-motion-start .talk-hero .rose-line--sub {
+  animation-duration: 1.55s;
+  animation-delay: 1.45s;
+}
+
+.talk-hero.inview .rose-bloom {
+  animation: kikaku-rose-bloom 0.85s ease-out 1.35s forwards;
+}
+
+body.kikaku-motion-start .talk-hero .rose-bloom {
+  animation: kikaku-rose-bloom 0.85s ease-out 2.05s forwards;
+}
+
+.talk-hero.inview .rose-bloom--b {
+  animation-delay: 1.65s;
+}
+
+body.kikaku-motion-start .talk-hero .rose-bloom--b {
+  animation-delay: 2.25s;
+}
+
+.talk-hero.inview .rose-bloom--c {
+  animation-delay: 1.9s;
+}
+
+body.kikaku-motion-start .talk-hero .rose-bloom--c {
+  animation-delay: 2.45s;
+}
+
+.talk-hero__label,
+.talk-hero__title,
+.talk-hero__date {
+  position: relative;
+  z-index: 1;
+}
+
+.talk-hero__label {
+  color: #9b0f31;
+  font-size: 13px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.talk-hero__title {
+  max-width: 780px;
+  color: #5e0b1f;
+  font-size: clamp(34px, 7vw, 70px);
+  line-height: 1.22;
+  text-shadow: 0 10px 24px rgba(98, 12, 30, 0.12);
+}
+
+.talk-hero__title span,
+.talk-card__content h2 span {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.talk-hero__date {
+  margin-top: 24px;
+  color: #7c1a2e;
+  font-size: 18px;
+  letter-spacing: 0.1em;
+}
+
+.talk-card,
+.info-panel,
+.social-panel {
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(137, 13, 37, 0.14);
+  border-radius: 8px;
+  box-shadow: 0 24px 56px rgba(66, 13, 25, 0.16);
+}
+
+.talk-card {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  gap: 32px;
+  margin-top: 46px;
+  padding: 32px 20px;
+}
+
+.talk-card::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: 18px;
+  border: 2px solid rgba(84, 137, 105, 0.28);
+  border-radius: 8px 36px 8px 36px;
+  pointer-events: none;
+}
+
+.talk-card::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  background-image: var(--rose-pale-svg), var(--rose-pale-svg), var(--rose-pale-svg), var(--leaf-svg);
+  background-repeat: no-repeat;
+  background-position: calc(100% + 22px) 8%, -20px calc(100% - 30px), calc(100% + 18px) calc(100% - 18px), 50% -44px;
+  background-size: 108px 108px, 96px 96px, 86px 86px, 120px 120px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(18px) scale(0.96);
+  transform-origin: center;
+}
+
+.talk-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.talk-card__vine-frame {
+  position: absolute;
+  z-index: 0;
+  inset: 16px;
+  opacity: 0.62;
+  pointer-events: none;
+}
+
+.talk-card__vine-frame svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.card-vine-stem {
+  fill: none;
+  stroke: rgba(68, 125, 86, 0.76);
+  stroke-width: 6;
+  stroke-linecap: round;
+  stroke-dasharray: 2600;
+  stroke-dashoffset: 2600;
+  filter: drop-shadow(0 2px 3px rgba(43, 81, 58, 0.16));
+}
+
+.card-vine-stem--accent {
+  stroke: rgba(69, 126, 86, 0.5);
+  stroke-width: 4;
+  stroke-dasharray: 1400;
+  stroke-dashoffset: 1400;
+}
+
+.card-vine-leaf {
+  fill: rgba(76, 138, 94, 0.45);
+  stroke: rgba(49, 104, 70, 0.42);
+  stroke-width: 1;
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.card-vine-rose {
+  fill: rgba(177, 13, 49, 0.66);
+  stroke: rgba(255, 226, 231, 0.68);
+  stroke-width: 1;
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
+  filter: drop-shadow(0 8px 10px rgba(112, 16, 48, 0.22));
+}
+
+.card-vine-rose circle {
+  fill: rgba(123, 12, 36, 0.76);
+}
+
+.card-vine-rose--small {
+  fill: rgba(190, 32, 73, 0.58);
+}
+
+.talk-card.inview .card-vine-stem {
+  animation: kikaku-rose-grow 2.2s ease-out 0.15s forwards;
+}
+
+.talk-card.inview .card-vine-stem--accent {
+  animation-duration: 1.75s;
+  animation-delay: 0.55s;
+}
+
+.talk-card.inview .card-vine-leaf {
+  animation: kikaku-leaf-bloom 0.8s ease-out 1.25s forwards;
+}
+
+.talk-card.inview .leaf-c,
+.talk-card.inview .leaf-d,
+.talk-card.inview .leaf-g {
+  animation-delay: 1.45s;
+}
+
+.talk-card.inview .leaf-e,
+.talk-card.inview .leaf-f,
+.talk-card.inview .leaf-h {
+  animation-delay: 1.65s;
+}
+
+.talk-card.inview .card-vine-rose {
+  animation: kikaku-rose-bloom 0.85s ease-out 1.65s forwards;
+}
+
+.talk-card.inview::after {
+  animation: kikaku-floral-scatter 1.35s ease-out 0.25s forwards, kikaku-floral-sway 6s ease-in-out 1.7s infinite alternate;
+}
+
+.talk-card.inview .rose-b,
+.talk-card.inview .rose-d {
+  animation-delay: 1.9s;
+}
+
+.talk-card.inview .rose-c {
+  animation-delay: 2.1s;
+}
+
+.talk-card.inview .rose-e,
+.talk-card.inview .rose-g {
+  animation-delay: 2.25s;
+}
+
+.talk-card.inview .rose-f,
+.talk-card.inview .rose-h {
+  animation-delay: 2.4s;
+}
+
+.talk-card__visual {
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
+  background: #fff;
+  box-shadow: 0 16px 34px rgba(66, 13, 25, 0.18);
+}
+
+.talk-card__visual::after {
+  content: none;
+}
+
+.talk-card__visual.inview::after {
+  animation: none;
+}
+
+.talk-card__visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.talk-card__content {
+  padding: 4px 4px 12px;
+  text-align: center;
+}
+
+.talk-card__content h2,
+.section-title {
+  color: #6f0d24;
+  line-height: 1.5;
+}
+
+.talk-card__content h2 {
+  font-size: 25px;
+  margin-bottom: 22px;
+}
+
+.talk-card__content p {
+  font-size: 16px;
+  line-height: 2.05;
+  max-width: 640px;
+  margin: 18px auto 0;
+  text-align: center;
+}
+
+.info-panel,
+.social-panel {
+  margin-top: 38px;
+  padding: 30px 20px;
+}
+
+.section-title {
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 26px;
+}
+
+.event-info {
+  margin: 0;
+}
+
+.event-info__row {
+  display: grid;
+  gap: 8px;
+  padding: 20px 0;
+  border-top: 1px solid rgba(112, 13, 35, 0.18);
+  text-align: center;
+}
+
+.event-info__row:last-child {
+  border-bottom: 1px solid rgba(112, 13, 35, 0.18);
+}
+
+.event-info dt {
+  color: #8a0f2c;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.event-info dd {
+  margin: 0;
+  line-height: 1.9;
+}
+
+.event-info span,
+.notice {
+  color: #6b4d53;
+  font-size: 14px;
+}
+
+.ticket-box {
+  width: min(100%, 620px);
+  margin: 32px auto 0;
+  padding: 24px 18px;
+  text-align: center;
+  background: linear-gradient(135deg, #8e0f2e, #c1173f);
+  border-radius: 8px;
+  color: #fff;
+  box-shadow: 0 18px 36px rgba(141, 13, 43, 0.26);
+}
+
+.ticket-box p {
+  margin-bottom: 14px;
+  font-size: 17px;
+}
+
+.kikaku-btn {
+  display: inline-block;
+  min-width: min(100%, 280px);
+  padding: 13px 28px;
+  color: #8e0f2e;
+  background: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.74);
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.kikaku-btn:hover {
+  background: #fff7f8;
+  box-shadow: 0 12px 24px rgba(42, 7, 15, 0.24);
+  transform: translateY(-2px);
+}
+
+.notice {
+  margin-top: 22px;
+  text-align: center;
+}
+
+.social-panel {
+  text-align: center;
+}
+
+.social-panel__lead {
+  margin-bottom: 18px;
+  color: #432229;
+}
+
+.social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: center;
+}
+
+.social-links a {
+  width: min(100%, 320px);
+  padding: 13px 24px;
+  color: #fff;
+  background: linear-gradient(135deg, #8e0f2e, #c1173f);
+  border: 1px solid rgba(255, 255, 255, 0.74);
+  border-radius: 999px;
+  text-decoration: none;
+  box-shadow: 0 14px 28px rgba(141, 13, 43, 0.2);
+  transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.social-links a:hover {
+  background: linear-gradient(135deg, #a91337, #d0224a);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.sp-only {
+  display: inline;
+}
+
+.mobile-break {
+  display: none;
+}
+
+@media screen and (min-width: 760px) {
+  .talk-card {
+    grid-template-columns: minmax(280px, 0.82fr) 1fr;
+    align-items: center;
+    padding: 64px 58px;
+  }
+
+  .talk-card__content {
+    padding: 10px;
+  }
+
+  .info-panel,
+  .social-panel {
+    padding: 44px;
+  }
+
+  .event-info__row {
+    grid-template-columns: 180px 1fr;
+    gap: 28px;
+    align-items: center;
+  }
+
+  .social-links {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .sp-only {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .kikaku-main {
+    padding-top: 170px;
+  }
+
+  .talk-hero {
+    min-height: 500px;
+  }
+
+  .talk-card__content h2 {
+    font-size: 30px;
+  }
+
+  .talk-card__content p {
+    font-size: 17px;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .mobile-break {
+    display: block;
+  }
+
+  .kikaku-main {
+    width: min(92%, 1080px);
+    padding-top: 128px;
+    padding-bottom: 72px;
+  }
+
+  .talk-hero {
+    min-height: 380px;
+    padding: 62px 18px;
+  }
+
+  .talk-hero::before {
+    inset: 12px;
+  }
+
+  .talk-hero::after {
+    inset: 22px;
+  }
+
+  .talk-hero__rose {
+    inset: -18px;
+  }
+
+  .talk-hero__label {
+    letter-spacing: 0.16em;
+  }
+
+  .talk-hero__date {
+    font-size: 15px;
+  }
+
+  .talk-card__content h2,
+  .section-title {
+    font-size: 23px;
+  }
+
+  .talk-card {
+    gap: 24px;
+    padding: 40px 18px;
+  }
+
+  .talk-card__vine-frame {
+    display: block;
+    inset: 0;
+    opacity: 1;
+    background: none;
+  }
+
+  .talk-card__vine-frame svg {
+    display: none;
+  }
+
+  .talk-card__vine-frame::before {
+    content: "";
+    position: absolute;
+    inset: 18px 18px 34px;
+    border: 5px solid rgba(68, 125, 86, 0.24);
+    border-radius: 36px;
+    box-shadow: 0 3px 8px rgba(68, 125, 86, 0.08);
+  }
+
+  .talk-card::before {
+    inset: 12px;
+    border-width: 2px;
+    border-color: rgba(84, 137, 105, 0.34);
+    border-radius: 10px 32px 10px 32px;
+    box-shadow:
+      0 0 0 8px rgba(255, 255, 255, 0.58) inset,
+      0 0 38px rgba(181, 18, 62, 0.08);
+  }
+
+  .talk-card::after {
+    z-index: 0;
+  }
+
+  .talk-card__vine-frame::after {
+    content: "";
+    position: absolute;
+    inset: 18px 18px 34px;
+    background-image:
+      url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20720%201120'%3E%3Cpath%20d='M614%20418C690%20496%20676%20592%20620%20680C558%20778%20616%20884%20572%20982C538%201056%20442%201098%20314%201074'%20fill='none'%20stroke='%23558969'%20stroke-opacity='.32'%20stroke-width='10'%20stroke-linecap='round'/%3E%3Cpath%20d='M42%201012C196%201064%20414%201064%20578%201020'%20fill='none'%20stroke='%23558969'%20stroke-opacity='.18'%20stroke-width='7'%20stroke-linecap='round'/%3E%3Cpath%20d='M526%20484C574%20438%20638%20466%20622%20528C580%20544%20550%20526%20526%20484Z'%20fill='%23558969'%20fill-opacity='.24'/%3E%3Cpath%20d='M250%20424C294%20380%20354%20404%20340%20466C302%20482%20274%20466%20250%20424Z'%20fill='%23558969'%20fill-opacity='.20'/%3E%3Cpath%20d='M574%20792C618%20746%20678%20774%20662%20834C622%20850%20596%20834%20574%20792Z'%20fill='%23558969'%20fill-opacity='.22'/%3E%3Cpath%20d='M306%201008C350%20962%20410%20988%20394%201048C354%201064%20328%201048%20306%201008Z'%20fill='%23558969'%20fill-opacity='.20'/%3E%3C/svg%3E"),
+      url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20720%20180'%3E%3Cpath%20d='M-40%2098C74%20142%20154%2058%20262%2092C354%20120%20416%20174%20536%20124C622%2088%20680%20148%20748%20164'%20fill='none'%20stroke='%23558969'%20stroke-opacity='.24'%20stroke-width='9'%20stroke-linecap='round'/%3E%3Cpath%20d='M154%2098C196%2056%20252%2078%20240%20138C204%20154%20176%20140%20154%2098Z'%20fill='%23558969'%20fill-opacity='.20'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center, 50% 94%;
+    background-size: 100% 100%, 118% 180px;
+    opacity: 0;
+    transform: translateY(22px) scale(0.985);
+    transform-origin: center;
+    clip-path: inset(0 100% 0 0);
+  }
+
+  .talk-card.inview .talk-card__vine-frame::after {
+    animation: kikaku-mobile-vine-grow 2.1s ease-out 0.25s forwards;
+  }
+
+  .talk-card::after {
+    background-image:
+      var(--rose-pale-svg),
+      var(--rose-pale-svg),
+      var(--rose-pale-svg),
+      var(--rose-pale-svg),
+      var(--leaf-svg),
+      var(--leaf-svg);
+    background-repeat: no-repeat;
+    background-position:
+      -26px -22px,
+      calc(100% + 18px) 18px,
+      -20px calc(100% - 78px),
+      calc(100% + 18px) calc(100% - 92px),
+      30% 31%,
+      50% calc(100% + 8px);
+    background-size:
+      82px 82px,
+      92px 92px,
+      76px 76px,
+      88px 88px,
+      72px 72px,
+      92px 92px;
+  }
+
+  .card-vine-stem {
+    stroke-width: 4;
+    stroke: rgba(68, 125, 86, 0.42);
+  }
+
+  .card-vine-stem--accent {
+    display: none;
+  }
+
+  .talk-card.inview .card-vine-stem--accent {
+    animation: none;
+  }
+
+  .card-vine-leaf {
+    fill: rgba(76, 138, 94, 0.34);
+    stroke: rgba(49, 104, 70, 0.24);
+  }
+
+  .talk-card .leaf-f {
+    display: none;
+  }
+
+  .card-vine-rose {
+    fill: rgba(202, 37, 80, 0.34);
+    stroke: rgba(255, 226, 231, 0.38);
+    opacity: 0;
+    filter: none;
+  }
+
+  .card-vine-rose--small {
+    fill: rgba(202, 37, 80, 0.3);
+  }
+
+  .kikaku-main::before {
+    top: 80px;
+    width: 146vw;
+    height: 850px;
+    opacity: 0.78;
+    background-image:
+      var(--rose-red-svg),
+      var(--rose-pale-svg),
+      var(--rose-red-svg),
+      var(--rose-pale-svg),
+      var(--rose-pale-svg),
+      var(--leaf-svg),
+      var(--leaf-svg);
+    background-repeat: no-repeat;
+    background-position: 5% 14%, 92% 18%, 6% 48%, 96% 54%, 18% 86%, 2% 30%, 98% 34%;
+    background-size: 76px 76px, 96px 96px, 86px 86px, 104px 104px, 92px 92px, 86px 86px, 92px 92px;
+  }
+
+  .kikaku-main::after {
+    top: 620px;
+    width: 150vw;
+    height: 1380px;
+    opacity: 0.74;
+    background-image:
+      var(--rose-pale-svg),
+      var(--rose-red-svg),
+      var(--rose-pale-svg),
+      var(--rose-red-svg),
+      var(--rose-pale-svg),
+      var(--rose-pale-svg),
+      var(--leaf-svg),
+      var(--leaf-svg);
+    background-repeat: no-repeat;
+    background-position: 8% 8%, 94% 12%, 2% 32%, 96% 48%, 12% 70%, 88% 86%, 4% 52%, 98% 66%;
+    background-size: 98px 98px, 82px 82px, 112px 112px, 82px 82px, 92px 92px, 110px 110px, 92px 92px, 102px 102px;
+  }
+
+  #container::before {
+    top: 340px;
+    width: 154vw;
+    height: 1150px;
+    opacity: 0.9;
+  }
+
+  #container::after {
+    top: 1280px;
+    width: 156vw;
+    height: 1350px;
+    opacity: 0.86;
+  }
+}
+
+body:not(.pace-done) #container::before,
+body:not(.pace-done) #container::after,
+body:not(.pace-done) .kikaku-main::before,
+body:not(.pace-done) .kikaku-main::after {
+  opacity: 0;
+}
+
+body:not(.kikaku-motion-start) #container::before,
+body:not(.kikaku-motion-start) #container::after,
+body:not(.kikaku-motion-start) .kikaku-main::before,
+body:not(.kikaku-motion-start) .kikaku-main::after {
+  animation: none;
+  opacity: 0;
+}
+
+@keyframes kikaku-rose-grow {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes kikaku-floral-arrive {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 22px) scale(0.96);
+  }
+  100% {
+    opacity: 0.78;
+    transform: translate(-50%, 0) scale(1);
+  }
+}
+
+@keyframes kikaku-floral-drift {
+  0% {
+    transform: translate(-50%, 0) rotate(-0.6deg);
+  }
+  100% {
+    transform: translate(-50%, 14px) rotate(0.6deg);
+  }
+}
+
+@keyframes kikaku-floral-scatter {
+  0% {
+    opacity: 0;
+    transform: translateY(18px) scale(0.96) rotate(-1deg);
+  }
+  72% {
+    opacity: 0.88;
+    transform: translateY(-4px) scale(1.015) rotate(0.4deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotate(0);
+  }
+}
+
+@keyframes kikaku-floral-sway {
+  0% {
+    transform: translateY(0) rotate(-0.35deg);
+  }
+  100% {
+    transform: translateY(7px) rotate(0.35deg);
+  }
+}
+
+@keyframes kikaku-vine-wake {
+  0% {
+    opacity: 0;
+    transform: translateY(22px) scale(0.985);
+    filter: blur(1px);
+  }
+  70% {
+    opacity: 1;
+    transform: translateY(-4px) scale(1.01);
+    filter: blur(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes kikaku-mobile-vine-grow {
+  0% {
+    opacity: 0;
+    clip-path: inset(0 100% 0 0);
+    transform: translateY(14px) scale(0.985);
+    filter: blur(1px);
+  }
+  35% {
+    opacity: 1;
+  }
+  78% {
+    clip-path: inset(0 0 0 0);
+    transform: translateY(-3px) scale(1.006);
+    filter: blur(0);
+  }
+  100% {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes kikaku-vine-breathe {
+  0% {
+    transform: translateY(0) rotate(-0.25deg);
+  }
+  100% {
+    transform: translateY(8px) rotate(0.25deg);
+  }
+}
+
+@keyframes kikaku-rose-bloom {
+  0% {
+    opacity: 0;
+    transform: scale(0.76) rotate(-8deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0);
+  }
+}
+
+@keyframes kikaku-leaf-bloom {
+  0% {
+    opacity: 0;
+    transform: scale(0.45) rotate(-12deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0);
+  }
+}
