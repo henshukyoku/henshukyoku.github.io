@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>所沢キャンパス祭2026</title>
+    <link rel="icon" type="image/png" href="images/tomei.png" />
+    <link rel="apple-touch-icon" href="images/tomei.png" />
+
+    <script src="scripts/vendors/pace.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Klee+One&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="common.css" />
+    <link rel="stylesheet" href="tadai.css" />
+
+    <script src="scripts/vendors/gsap.min.js" defer></script>
+    <script src="scripts/vendors/swiper-bundle.min.js" defer></script>
+    <script src="scripts/libs/hero-slider.js" defer></script>
+    <script src="scripts/vendors/scroll-polyfill.js" defer></script>
+    <script src="scripts/libs/scroll.js" defer></script>
+    <script src="scripts/libs/mobile-menu.js" defer></script>
+    <script src="scripts/libs/text-animation.js" defer></script>
+    <script src="scripts/main.js" defer></script>
+  </head>
+  <body>
+    <div id="global-container">
+      <div id="container">
+        <div class="mobile-menu__cover"></div>
+        <div class="nav-trigger"></div>
+
+        <header class="header">
+          <div class="header__inner appear up">
+            <div class="logo item">
+              <span class="logo__stay">所沢キャンパス祭</span>
+              <span class="logo__world">2026</span>
+            </div>
+            <button class="mobile-menu__btn" type="button" aria-label="メニューを開く">
+              <span></span><span></span><span></span>
+            </button>
+          </div>
+        </header>
+
+        <div id="content">
+          <div id="main-content">
+            <main class="tadai-main">
+              <section class="tadai-hero content-inner">
+                <h2 class="tadai-title main-title tween-animate-title">他大学の学園祭情報</h2>
+              </section>
+
+              <section class="tadai-list content-inner" aria-label="他大学の学園祭一覧">
+                <article class="festival-window">
+                  <div class="festival-window__image">
+                    <a href="https://circle.rikoten.com/" target="_blank" rel="noopener noreferrer" aria-label="理工展のHPを開く">
+                      <img src="images/tadai/rikoten.jpg" alt="理工展" />
+                    </a>
+                  </div>
+                  <div class="festival-window__body">
+                    <p class="festival-window__number">01</p>
+                    <h2>理工展</h2>
+                    <p class="festival-window__campus">早稲田大学 西早稲田キャンパス</p>
+                    <div class="festival-window__links">
+                      <a href="https://circle.rikoten.com/" target="_blank" rel="noopener noreferrer">HP</a>
+                      <a href="https://www.instagram.com/waseda_rikoten/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                      <a href="https://x.com/rikoten_waseda" target="_blank" rel="noopener noreferrer">X</a>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="festival-window">
+                  <div class="festival-window__image">
+                    <a href="https://ivyfesta.com/" target="_blank" rel="noopener noreferrer" aria-label="IVY FestaのHPを開く">
+                      <img src="images/tadai/ivyfesta.jpeg" alt="IVY Festa" />
+                    </a>
+                  </div>
+                  <div class="festival-window__body">
+                    <p class="festival-window__number">02</p>
+                    <h2>IVY Festa</h2>
+                    <p class="festival-window__campus">立教大学 新座キャンパス</p>
+                    <div class="festival-window__links">
+                      <a href="https://ivyfesta.com/" target="_blank" rel="noopener noreferrer">HP</a>
+                      <a href="https://www.instagram.com/ivy_festa/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                      <a href="https://x.com/ivy_festa" target="_blank" rel="noopener noreferrer">X</a>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="festival-window">
+                  <div class="festival-window__image">
+                    <a href="https://www.hosei-tamafes.com/" target="_blank" rel="noopener noreferrer" aria-label="多摩祭のHPを開く">
+                      <img src="images/tadai/tamasai.jpg" alt="多摩祭" />
+                    </a>
+                  </div>
+                  <div class="festival-window__body">
+                    <p class="festival-window__number">03</p>
+                    <h2>多摩祭</h2>
+                    <p class="festival-window__campus">法政大学 多摩キャンパス</p>
+                    <div class="festival-window__links">
+                      <a href="https://www.hosei-tamafes.com/" target="_blank" rel="noopener noreferrer">HP</a>
+                      <a href="https://www.instagram.com/tamajitsu2026/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                      <a href="https://x.com/tamafes" target="_blank" rel="noopener noreferrer">X</a>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="festival-window">
+                  <div class="festival-window__image">
+                    <a href="https://www.hakumon-myougadani.com/" target="_blank" rel="noopener noreferrer" aria-label="白門祭 茗荷谷のHPを開く">
+                      <img src="images/tadai/hakumon.png" alt="白門祭 茗荷谷" />
+                    </a>
+                  </div>
+                  <div class="festival-window__body">
+                    <p class="festival-window__number">04</p>
+                    <h2>白門祭（茗荷谷）</h2>
+                    <p class="festival-window__campus">中央大学 茗荷谷キャンパス</p>
+                    <div class="festival-window__links">
+                      <a href="https://www.hakumon-myougadani.com/" target="_blank" rel="noopener noreferrer">HP</a>
+                      <a href="https://www.instagram.com/chuo_hakumonfes_myougadani/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                      <a href="https://x.com/my_hakumonfes" target="_blank" rel="noopener noreferrer">X</a>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="festival-window">
+                  <div class="festival-window__image">
+                    <a href="https://itlfest.com/" target="_blank" rel="noopener noreferrer" aria-label="iTLFest.のHPを開く">
+                      <img src="images/tadai/iTLFest..jpg" alt="iTLFest." />
+                    </a>
+                  </div>
+                  <div class="festival-window__body">
+                    <p class="festival-window__number">05</p>
+                    <h2>iTLFest.</h2>
+                    <p class="festival-window__campus">中央大学 市ヶ谷田町キャンパス</p>
+                    <div class="festival-window__links">
+                      <a href="https://itlfest.com/" target="_blank" rel="noopener noreferrer">HP</a>
+                      <a href="https://www.instagram.com/festival_itl/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                      <a href="https://x.com/Festival_iTL" target="_blank" rel="noopener noreferrer">X</a>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="festival-window">
+                  <div class="festival-window__image">
+                    <a href="https://rikohaku.net/" target="_blank" rel="noopener noreferrer" aria-label="理工白門祭のHPを開く">
+                      <img src="images/tadai/rikohakumon.png" alt="理工白門祭" />
+                    </a>
+                  </div>
+                  <div class="festival-window__body">
+                    <p class="festival-window__number">06</p>
+                    <h2>理工白門祭</h2>
+                    <p class="festival-window__campus">中央大学 後楽園キャンパス</p>
+                    <div class="festival-window__links">
+                      <a href="https://rikohaku.net/" target="_blank" rel="noopener noreferrer">HP</a>
+                      <a href="https://www.instagram.com/rikohaku_chuo/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                      <a href="https://x.com/hakumonkey" target="_blank" rel="noopener noreferrer">X</a>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="festival-window">
+                  <div class="festival-window__image">
+                    <a href="https://www.icualumni.com/event/21475" target="_blank" rel="noopener noreferrer" aria-label="ICU祭のHPを開く">
+                      <img src="images/tadai/icu.png" alt="ICU祭" />
+                    </a>
+                  </div>
+                  <div class="festival-window__body">
+                    <p class="festival-window__number">07</p>
+                    <h2>ICU祭</h2>
+                    <p class="festival-window__campus">国際基督教大学 三鷹キャンパス</p>
+                    <div class="festival-window__links">
+                      <a href="https://www.icualumni.com/event/21475" target="_blank" rel="noopener noreferrer">HP</a>
+                      <a href="https://www.instagram.com/icu_fes/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                      <a href="https://x.com/ICU_festival" target="_blank" rel="noopener noreferrer">X</a>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="festival-window">
+                  <div class="festival-window__image">
+                    <a href="https://katsufes.com/2025/" target="_blank" rel="noopener noreferrer" aria-label="東京理科大学 葛飾地区理大祭のHPを開く">
+                      <img src="images/tadai/rika_katsushika.jpg" alt="東京理科大学 葛飾地区理大祭" />
+                    </a>
+                  </div>
+                  <div class="festival-window__body">
+                    <p class="festival-window__number">08</p>
+                    <h2>東京理科大学 葛飾地区理大祭</h2>
+                    <p class="festival-window__campus">東京理科大学 葛飾キャンパス</p>
+                    <div class="festival-window__links">
+                      <a href="https://katsufes.com/2025/" target="_blank" rel="noopener noreferrer">HP</a>
+                      <a href="https://www.instagram.com/katsu_ridaisai/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                      <a href="https://x.com/katsu_ridaisai" target="_blank" rel="noopener noreferrer">X</a>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="festival-window">
+                  <div class="festival-window__image">
+                    <a href="https://www.instagram.com/gakusai_collab/" target="_blank" rel="noopener noreferrer" aria-label="学園祭コラボのInstagramを開く">
+                      <img src="images/tadai/gakuensai_colab.jpeg" alt="学園祭コラボ" />
+                    </a>
+                  </div>
+                  <div class="festival-window__body">
+                    <p class="festival-window__number">09</p>
+                    <h2>学園祭コラボ</h2>
+                    <p class="festival-window__campus">学園祭コラボレーション企画</p>
+                    <div class="festival-window__links">
+                      <a href="https://www.instagram.com/gakusai_collab/" target="_blank" rel="noopener noreferrer" aria-label="学園祭コラボのInstagram">Instagram</a>
+                      <a href="https://x.com/gakusai_collab" target="_blank" rel="noopener noreferrer" aria-label="学園祭コラボのX">X</a>
+                      <a href="#" aria-label="学園祭コラボのTikTok">TikTok</a>
+                    </div>
+                  </div>
+                </article>
+              </section>
+            </main>
+          </div>
+        </div>
+
+        <footer class="footer appear up">
+          <div class="logo item">
+            <span class="logo__stay">所沢キャンパス祭</span>
+            <span class="logo__world">2026</span>
+          </div>
+          <nav class="footer__nav">
+            <ul class="footer__ul">
+              <li class="footer__li item"><a href="https://wasedasai.net/">早稲田祭</a></li>
+              <li class="footer__li item"><a href="https://www.rikoten.com/">理工展</a></li>
+            </ul>
+            <div class="footer__copyright item">&copy; 所沢キャンパス祭実行委員会</div>
+          </nav>
+          <div class="footer__bottom">
+            <div class="footer__social">
+              <a href="https://x.com/tokosai_waseda" class="footer__social-link icon twitter">X</a>
+              <a href="https://www.instagram.com/waseda.tokosai/" class="footer__social-link icon fb">Instagram</a>
+            </div>
+          </div>
+        </footer>
+      </div>
+
+      <nav class="mobile-menu">
+        <ul class="mobile-menu__main">
+          <li class="mobile-menu__item"><a class="mobile-menu__link" href="index.html"><span class="main-title">トップ</span></a></li>
+          <li class="mobile-menu__item"><a class="mobile-menu__link" href="coming.html"><span class="main-title">とこ祭について</span></a></li>
+          <li class="mobile-menu__item"><a class="mobile-menu__link" href="kikaku.html"><span class="main-title">企画一覧</span></a></li>
+          <li class="mobile-menu__item"><a class="mobile-menu__link" href="access.html"><span class="main-title">アクセス</span></a></li>
+          <li class="mobile-menu__item"><a class="mobile-menu__link" href="contact.html"><span class="main-title">お問い合わせ</span></a></li>
+          <li class="mobile-menu__item"><a class="mobile-menu__link" href="coming.html"><span class="main-title">協賛</span></a></li>
+          <li class="mobile-menu__item"><a class="mobile-menu__link" href="tadai.html"><span class="main-title">他大学の情報</span></a></li>
+          <li class="mobile-menu__item"><a class="mobile-menu__link" href="shinkan.html"><span class="main-title">新歓</span></a></li>
+        </ul>
+      </nav>
+    </div>
+  </body>
+</html>
