@@ -68,6 +68,12 @@
   transform: scale(1.05);
 }
 
+.about-section__image picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 .about-section__image a {
   display: block;
   width: 100%;
