@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>早稲田大学 所沢キャンパス祭</title>
+    <link rel="icon" type="image/png" href="images/tomei.png">
+    <link rel="apple-touch-icon" href="images/tomei.png">
+
+    <script src="scripts/vendors/pace.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Klee+One&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="common.css" />
+    <link rel="stylesheet" href="about.css" />
+
+    <script src="scripts/vendors/gsap.min.js" defer></script>
+    <script src="scripts/vendors/swiper-bundle.min.js" defer></script>
+    <script src="scripts/libs/hero-slider.js" defer></script>
+    <script src="scripts/vendors/scroll-polyfill.js" defer></script>
+    <script src="scripts/libs/scroll.js" defer></script>
+    <script src="scripts/libs/mobile-menu.js" defer></script>
+    <script src="scripts/libs/text-animation.js" defer></script>
+    <script src="scripts/main.js" defer></script>
+  </head>
+  <body>
+    <div id="global-container">
+      <div id="container">
+        <div class="mobile-menu__cover"></div>
+        <div class="nav-trigger"></div>
+
+        <header class="header">
+          <div class="header__inner appear up">
+            <div class="logo item">
+              <span class="logo__stay">所沢キャンパス祭</span>
+              <span class="logo__world">2026</span>
+            </div>
+            <button class="mobile-menu__btn" type="button" aria-label="メニューを開く">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+        </header>
+
+        <div id="content">
+          <div id="main-content">
+            <main class="new-page-main about-main">
+              <section class="about-section about-section--tokosai content-inner appear up">
+                <div class="about-section__image item">
+                  <img src="images/iriguchi.jpg" alt="とこ祭とは">
+                </div>
+                <div class="about-section__body item">
+                  <h2 class="about-section__title">とこ祭とは</h2>
+                  <div class="about-section__text">
+                    <p>早稲田大学 所沢キャンパス祭（通称：所祭）は、埼玉県所沢市の緑豊かなキャンパスで毎年秋に開催される学園祭です。</p>
+                    <p>人間科学部とスポーツ科学部の学生を中心に組織された実行委員会が、企画から運営までをゼロから全力で創り上げています。都心の学園祭とは異なり、地域の方々や子どもたちとの距離が非常に近く、アットホームで温かい雰囲気に包まれるのが所祭の最大の魅力です。</p>
+                  </div>
+                </div>
+              </section>
+
+              <div class="wind-decoration-area reverse-wind about-wind" aria-hidden="true">
+                <div class="wind-wave purple"></div>
+                <div class="wind-wave pink"></div>
+                <div class="wind-wave cyan"></div>
+                <div class="wind-wave orange"></div>
+              </div>
+
+              <section class="about-section about-section--reverse about-section--crowdfunding content-inner appear up">
+                <div class="about-section__image item">
+                  <a href="https://camp-fire.jp/projects/960396/view/backers" target="_blank" rel="noopener noreferrer" aria-label="クラウドファンディング支援ページを見る">
+                    <img src="images/find.png" alt="クラウドファンディング">
+                  </a>
+                </div>
+                <div class="about-section__body item">
+                  <h2 class="about-section__title">クラファン</h2>
+                  <div class="about-section__text">
+                    <p>10月25日（日）に開催される早稲田大学所沢キャンパス祭。学生550名が、キャンパスの枠を越え、地域の皆様とともに所沢を盛り上げる祭を目指しています。</p>
+                    <p>より魅力的なステージ企画や展示、会場装飾、広報活動を実現するため、皆様のご支援をお願いいたします。</p>
+                    <p class="about-link-row">
+                      <a class="btn filled about-link" href="https://camp-fire.jp/projects/960396/view/backers" target="_blank" rel="noopener noreferrer">支援ページを見る</a>
+                    </p>
+                  </div>
+                </div>
+              </section>
+
+              <div class="wind-decoration-area about-wind about-wind--middle" aria-hidden="true">
+                <div class="wind-wave purple"></div>
+                <div class="wind-wave pink"></div>
+                <div class="wind-wave cyan"></div>
+                <div class="wind-wave orange"></div>
+              </div>
+
+              <section class="about-section about-section--slogan content-inner appear up">
+                <div class="about-section__image item">
+                  <img src="images/sg.jpg" alt="スローガン">
+                </div>
+                <div class="about-section__body item">
+                  <h2 class="about-section__title">スローガン「祭風」</h2>
+                  <div class="about-section__text">
+                    <p>所沢キャンパスは、豊かな自然に囲まれた場所です。</p>
+                    <p>所祭は、私立大学の文化祭の中でも珍しく、開催日がわずか一日だけという特別な形で行われています。</p>
+                    <p>その一日にすべてを懸け、私たちは本気で向き合います。</p>
+                    <p>広大な森に風が吹き荒れるキャンパスの中で、実行委員一人ひとりが全力を尽くし、想いを形にしていく。</p>
+                    <p>その姿勢こそが、このスローガンに込められています。</p>
+                  </div>
+                </div>
+              </section>
+
+              <div class="wind-decoration-area about-wind reverse-wind" aria-hidden="true">
+                <div class="wind-wave purple"></div>
+                <div class="wind-wave pink"></div>
+                <div class="wind-wave cyan"></div>
+                <div class="wind-wave orange"></div>
+              </div>
+
+              <section class="about-section about-section--reverse about-section--tokomidori content-inner appear up">
+                <div class="about-section__image item">
+                  <img src="images/midori.jpg" alt="とこみどり">
+                </div>
+                <div class="about-section__body item">
+                  <h2 class="about-section__title">とこみどり</h2>
+                  <div class="about-section__text">
+                    <p>とこ祭公式マスコットキャラクター</p>
+                    <dl class="about-profile">
+                      <div>
+                        <dt>誕生日</dt>
+                        <dd>10/5</dd>
+                      </div>
+                      <div>
+                        <dt>趣味</dt>
+                        <dd>写真を撮ること</dd>
+                      </div>
+                      <div>
+                        <dt>好きなもの</dt>
+                        <dd>お茶、綺麗な景色、笑顔</dd>
+                      </div>
+                      <div>
+                        <dt>嫌いなもの</dt>
+                        <dd>激しい気温の変化</dd>
+                      </div>
+                    </dl>
+                  </div>
+                </div>
+              </section>
+            </main>
+          </div>
+        </div>
+
+        <footer class="footer appear up">
+          <div class="logo item">
+            <span class="logo__stay">所沢キャンパス祭</span>
+            <span class="logo__world">2026</span>
+          </div>
+          <nav class="footer__nav">
+            <ul class="footer__ul">
+              <li class="footer__li item"><a href="https://wasedasai.net/">早稲田祭</a></li>
+              <li class="footer__li item"><a href="https://www.rikoten.com/">理工展</a></li>
+            </ul>
+            <div class="footer__copyright item">&copy; 所沢キャンパス祭実行委員会</div>
+          </nav>
+          <div class="footer__bottom">
+            <div class="footer__social">
+              <a href="https://x.com/tokosai_waseda" class="footer__social-link icon twitter">X</a>
+              <a href="https://www.instagram.com/waseda.tokosai/" class="footer__social-link icon fb">Instagram</a>
+            </div>
+          </div>
+        </footer>
+      </div>
+
+      <nav class="mobile-menu">
+        <ul class="mobile-menu__main">
+          <li class="mobile-menu__item"><a class="mobile-menu__link" href="index.html"><span class="main-title">トップ</span></a></li>
+          <li class="mobile-menu__item"><a class="mobile-menu__link" href="about.html"><span class="main-title">とこ祭について</span></a></li>
+          <li class="mobile-menu__item"><a class="mobile-menu__link" href="kikaku.html"><span class="main-title">企画一覧</span></a></li>
+          <li class="mobile-menu__item"><a class="mobile-menu__link" href="access.html"><span class="main-title">アクセス</span></a></li>
+          <li class="mobile-menu__item"><a class="mobile-menu__link" href="contact.html"><span class="main-title">お問い合わせ</span></a></li>
+          <li class="mobile-menu__item"><a class="mobile-menu__link" href="coming.html"><span class="main-title">協賛</span></a></li>
+          <li class="mobile-menu__item"><a class="mobile-menu__link" href="tadai.html"><span class="main-title">他大学の情報</span></a></li>
+          <li class="mobile-menu__item"><a class="mobile-menu__link" href="shinkan.html"><span class="main-title">新歓</span></a></li>
+        </ul>
+      </nav>
+    </div>
+  </body>
+</html>
