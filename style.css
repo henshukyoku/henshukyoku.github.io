@@ -59,7 +59,7 @@
   
   /* 2. 背景色を透明にして、画像を指定します */
   /* background-color: transparent; 
-  background-image: url("images/logo.webp"); /* ←ここにロゴ画像のパスを入れる */
+  background-image: url("images/index/logo.webp"); /* ←ここにロゴ画像のパスを入れる */
   /* background-size: contain;   ロゴ全体が見えるように縮小 */
   /* background-repeat: no-repeat; */
   /* background-position: center; */
@@ -1825,9 +1825,39 @@ main {
 /* ============================================ */
 /* 注目企画（ハイライト） */
 /* ============================================ */
+.highlight {
+  margin-bottom: 80px;
+}
+@media screen and (min-width: 960px) {
+  .highlight {
+    margin-bottom: 150px;
+  }
+}
 /* ハイライトセクションのコンテナ */
 .highlight__inner {
   position: relative;
+}
+.highlight-reveal .highlight__item {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.highlight-reveal.inview .highlight__item {
+  opacity: 1;
+  transform: translateY(0);
+}
+.highlight-reveal.inview .highlight__item:nth-child(2) {
+  transition-delay: 0.15s;
+}
+.highlight-reveal.inview .highlight__item:nth-child(3) {
+  transition-delay: 0.3s;
+}
+@media (prefers-reduced-motion: reduce) {
+  .highlight-reveal .highlight__item {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
 /* 背景色（下部90%をグレーに） */
 .highlight__inner::before {
@@ -1867,12 +1897,12 @@ main {
 }
 @media screen and (min-width: 960px) {
   .highlight__item {
-    flex-basis: 25%;
+    flex-basis: 31%;
   }
 }
 @media screen and (min-width: 1280px) {
   .highlight__item {
-    flex-basis: 23%;
+    flex-basis: 31%;
   }
 }
 @media screen and (max-width: 599px) {
@@ -1883,26 +1913,34 @@ main {
 }
 /* 観光地画像 */
 .highlight__img {
-  height: 150px;
+  aspect-ratio: 707 / 1000;
+  height: auto;
   margin-bottom: 5px;
+  background: #fff;
 }
 @media screen and (min-width: 960px) {
   .highlight__img {
-    height: 335px;
+    height: auto;
   }
 }
-.highlight__img > img {
+.highlight__img > a {
+  display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+}
+.highlight__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 @media screen and (max-width: 599px) {
   .highlight__img {
     height: auto;
-    aspect-ratio: 3 / 4;
+    aspect-ratio: 707 / 1000;
     position: relative;
     overflow: hidden;
   }
+  .highlight__img > a,
   .highlight__img > img {
     position: absolute;
     inset: 0;
@@ -2087,11 +2125,11 @@ main {
 }
 /* Twitterアイコン */
 .icon.twitter::before {
-  background-image: url(images/twitter.svg);
+  background-image: url(images/common/twitter.svg);
 }
 /* Facebookアイコン */
 .icon.fb::before {
-  background-image: url(images/instagram.svg);
+  background-image: url(images/common/instagram.svg);
 }
 
 /* ============================================ */

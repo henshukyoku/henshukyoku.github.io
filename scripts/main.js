@@ -50,6 +50,7 @@ class Main {
             new ScrollObserver('.cover-slide', this.#inviewAnimation),
             new ScrollObserver('.shine', this.#inviewAnimation, { once: false }),
             new ScrollObserver('.appear', this.#inviewAnimation),
+            new ScrollObserver('.highlight-reveal', this.#inviewAnimation),
             new ScrollObserver('.tween-animate-title', this.#textAnimation)
         );
         console.log(this.#observers);
