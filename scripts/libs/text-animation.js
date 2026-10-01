@@ -2,14 +2,18 @@ class TextAnimation {
     constructor(el) {
         this.DOM = {};
         this.DOM.el = el instanceof HTMLElement ? el : document.querySelector(el);
-        this.chars = this.DOM.el.innerHTML.trim().split("");
-        this.DOM.el.innerHTML = this._splitText();
+        this.chars = Array.from(this.DOM.el.textContent.trim());
+        this.DOM.el.replaceChildren(this._splitText());
     }
     _splitText() {
-        return this.chars.reduce((acc, curr) => {
-            curr = curr.replace(/\s+/, '&nbsp;');
-            return `${acc}<span class="char">${curr}</span>`;
-        }, "");
+        const fragment = document.createDocumentFragment();
+        this.chars.forEach(char => {
+            const span = document.createElement('span');
+            span.className = 'char';
+            span.textContent = /\s/.test(char) ? '\u00a0' : char;
+            fragment.appendChild(span);
+        });
+        return fragment;
     }
     animate() {
         this.DOM.el.classList.toggle('inview');
