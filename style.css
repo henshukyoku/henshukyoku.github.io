@@ -1890,6 +1890,16 @@ main {
   }
 }
 /* 観光地カード（レスポンシブ: モバイル1列、タブレット2列、PC4列） */
+.highlight__item {
+  display: flex;
+  flex-direction: column;
+}
+
+.highlight__detail {
+  align-self: center;
+  margin: auto 0 24px;
+}
+
 @media screen and (min-width: 600px) {
   .highlight__item {
     flex-basis: 47%;
@@ -2062,6 +2072,7 @@ main {
   display: none;
   position: fixed;
   top: 70%;
+  z-index: 10;
   transform: translateY(-50%);
   transition: all 0.3s ease;
 }
