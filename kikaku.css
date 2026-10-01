@@ -1,0 +1,302 @@
+/* 共通のヘッダー・フッターを使いつつ、企画一覧は読み込み直後から表示。 */
+.program-page #global-container {
+  opacity: 1;
+  transition: none;
+}
+
+.program-page .pace {
+  display: none;
+}
+
+.program-page .logo {
+  text-decoration: none;
+}
+
+.program-page .footer {
+  max-width: none;
+}
+
+.program-main {
+  z-index: 0;
+  min-height: calc(100vh - 240px);
+  padding-top: 150px;
+  overflow: hidden;
+  color: #522e1d;
+  background: linear-gradient(rgba(255, 255, 255, 0.76), rgba(255, 255, 255, 0.45));
+}
+
+.program-inner {
+  width: 90%;
+  max-width: 1070px;
+  margin: 0 auto;
+}
+
+.program-heading {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.program-heading__eyebrow {
+  margin-bottom: 6px;
+  color: #4d7c6b;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+}
+
+.program-heading h1 {
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+}
+
+.program-heading h1::after {
+  content: "";
+  display: block;
+  width: 72px;
+  height: 4px;
+  margin: 17px auto;
+  border-radius: 2px;
+  background: linear-gradient(to right, #aa94c1 25%, #d798b2 25% 50%, #7bbaad 50% 75%, #dfa76c 75%);
+}
+
+.program-heading__lead {
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* スマホでも2列。900px以上では3列にして6企画を2段に配置。 */
+.program-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  padding: 0;
+  list-style: none;
+}
+
+.program-grid > li {
+  min-width: 0;
+}
+
+.event-banner {
+  --banner-accent: #557e73;
+  --banner-tint: #e5f1ed;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid rgba(82, 46, 29, 0.12);
+  border-radius: 14px;
+  background: #fffdfa;
+  box-shadow: 0 5px 18px rgba(82, 46, 29, 0.06);
+  color: inherit;
+  text-decoration: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.event-banner--shigematsu {
+  --banner-accent: #927123;
+  --banner-tint: #f7efcc;
+}
+
+.event-banner--jumonji {
+  --banner-accent: #7c659e;
+  --banner-tint: #eee7f5;
+}
+
+.event-banner--stage {
+  --banner-accent: #3d7e8e;
+  --banner-tint: #e3f0f3;
+}
+
+.event-banner--classroom {
+  --banner-accent: #a55777;
+  --banner-tint: #f7e7ed;
+}
+
+.event-banner--food {
+  --banner-accent: #a96a30;
+  --banner-tint: #f8ecdd;
+}
+
+.event-banner__visual {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--banner-tint);
+  border-bottom: 4px solid var(--banner-accent);
+}
+
+.event-banner__visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 縦長のポスターは文字や顔を切らず、全体を見せる。 */
+.event-banner__visual--poster {
+  padding: 14px;
+  background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.6), transparent);
+}
+
+.event-banner__visual--poster img {
+  object-fit: contain;
+}
+
+.event-banner__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 19px 22px 17px;
+}
+
+.event-banner__title {
+  font-size: clamp(16px, 2.1vw, 24px);
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.event-banner__subtitle {
+  margin-top: 3px;
+  margin-bottom: 18px;
+  color: #765e51;
+  font-size: 12px;
+  line-height: 1.6;
+  letter-spacing: 0.04em;
+}
+
+.event-banner__action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+  margin-top: auto;
+  color: #6b5143;
+  font-size: 12px;
+}
+
+.event-banner__arrow {
+  display: grid;
+  flex: 0 0 30px;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--banner-tint);
+  color: var(--banner-accent);
+  font-family: sans-serif;
+  font-size: 18px;
+  transition: transform 0.25s ease;
+}
+
+.event-banner:focus-visible {
+  outline: 3px solid #4d7c6b;
+  outline-offset: 5px;
+}
+
+.program-page .mobile-menu__btn:focus-visible {
+  outline: 3px solid #4d7c6b !important;
+  outline-offset: 6px;
+}
+
+.program-note {
+  margin-top: 30px;
+  text-align: center;
+  color: #6b5143;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.program-main .wind-decoration-area {
+  margin: 16px 0 0;
+}
+
+.program-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@media (hover: hover) {
+  .event-banner:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 26px rgba(82, 46, 29, 0.12);
+  }
+
+  .event-banner:hover .event-banner__arrow {
+    transform: translateX(3px);
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .program-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .program-main {
+    padding-top: 128px;
+  }
+
+  .program-heading {
+    margin-bottom: 26px;
+  }
+
+  .program-grid {
+    gap: 16px 12px;
+  }
+
+  .event-banner {
+    border-radius: 10px;
+  }
+
+  .event-banner__visual--poster {
+    padding: 8px;
+  }
+
+  .event-banner__body {
+    padding: 12px 11px;
+  }
+
+  .event-banner__subtitle {
+    margin-bottom: 12px;
+    font-size: 11px;
+    letter-spacing: 0;
+  }
+
+  .event-banner__action {
+    font-size: 11px;
+  }
+
+  .event-banner__arrow {
+    flex-basis: 25px;
+    width: 25px;
+    height: 25px;
+    font-size: 16px;
+  }
+
+  .program-note {
+    font-size: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .program-page #container,
+  .program-page .wind-wave {
+    animation: none;
+  }
+
+  .event-banner,
+  .event-banner__arrow {
+    transition: none;
+  }
+
+  .event-banner:hover,
+  .event-banner:hover .event-banner__arrow {
+    transform: none;
+  }
+}
