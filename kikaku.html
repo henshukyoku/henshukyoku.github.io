@@ -52,81 +52,112 @@
                   <p class="program-heading__lead">気になる企画を見つけよう。</p>
                 </header>
 
-                <!-- リンク先が未公開の企画は coming.html に接続。公開時に各 href を変更してください。 -->
-                <ul class="program-grid" aria-label="企画一覧">
-                  <li>
-                    <a class="event-banner event-banner--ai" href="yoshikawa.html">
-                      <div class="event-banner__visual">
-                        <img src="images/kikaku/yoshikawabana.jpg" alt="吉川愛トークショーのバナー" width="1078" height="1078" decoding="async" />
-                      </div>
-                      <div class="event-banner__body">
-                        <h2 class="event-banner__title">吉川愛</h2>
-                        <p class="event-banner__subtitle">TALK SHOW</p>
-                        <span class="event-banner__action">詳細を見る<span class="event-banner__arrow" aria-hidden="true">↗</span></span>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a class="event-banner event-banner--shigematsu" href="https://livepocket.jp/e/2dd8o" target="_blank" rel="noopener noreferrer">
-                      <div class="event-banner__visual event-banner__visual--poster">
-                        <img src="images/common/shigematsu.png" alt="重松清アンコール特別授業のポスター" width="1414" height="2000" decoding="async" />
-                      </div>
-                      <div class="event-banner__body">
-                        <h2 class="event-banner__title">重松清</h2>
-                        <p class="event-banner__subtitle">アンコール特別授業</p>
-                        <span class="event-banner__action">チケット情報<span class="event-banner__arrow" aria-hidden="true">↗</span><span class="program-sr-only">（新しいタブで開きます）</span></span>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a class="event-banner event-banner--jumonji" href="coming.html">
-                      <div class="event-banner__visual event-banner__visual--poster">
-                        <img src="images/common/zyumonzi.jpg" alt="十文字幻斎 閃光の催眠術師のポスター" width="1024" height="1536" decoding="async" />
-                      </div>
-                      <div class="event-banner__body">
-                        <h2 class="event-banner__title">十文字幻斎</h2>
-                        <p class="event-banner__subtitle">閃光の催眠術師</p>
-                        <span class="event-banner__action">詳細は準備中<span class="event-banner__arrow" aria-hidden="true">↗</span></span>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a class="event-banner event-banner--stage" href="coming.html">
-                      <div class="event-banner__visual">
-                        <img src="images/kikaku/stage.jpg" alt="屋外ステージでのパフォーマンスの様子" width="2048" height="1365" loading="lazy" decoding="async" />
-                      </div>
-                      <div class="event-banner__body">
-                        <h2 class="event-banner__title">ステージ企画</h2>
-                        <p class="event-banner__subtitle">STAGE</p>
-                        <span class="event-banner__action">詳細は準備中<span class="event-banner__arrow" aria-hidden="true">↗</span></span>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a class="event-banner event-banner--classroom" href="coming.html">
-                      <div class="event-banner__visual">
-                        <img src="images/kikaku/TOKOSAI.jpg" alt="校舎内のTOKOSAIの装飾" width="2364" height="1774" loading="lazy" decoding="async" />
-                      </div>
-                      <div class="event-banner__body">
-                        <h2 class="event-banner__title">教室内企画</h2>
-                        <p class="event-banner__subtitle">CLASSROOM</p>
-                        <span class="event-banner__action">詳細は準備中<span class="event-banner__arrow" aria-hidden="true">↗</span></span>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a class="event-banner event-banner--food" href="coming.html">
-                      <div class="event-banner__visual">
-                        <img src="images/kikaku/72961.jpg" alt="キャンパスに屋台のテントが並ぶ様子" width="1477" height="1108" loading="lazy" decoding="async" />
-                      </div>
-                      <div class="event-banner__body">
-                        <h2 class="event-banner__title">屋台企画</h2>
-                        <p class="event-banner__subtitle">FOOD</p>
-                        <span class="event-banner__action">詳細は準備中<span class="event-banner__arrow" aria-hidden="true">↗</span></span>
-                      </div>
-                    </a>
-                  </li>
-                </ul>
+                <div class="program-wheel-tools" hidden>
+                  <button class="program-wheel-view" type="button" aria-controls="program-list">一覧で見る</button>
+                  <p class="program-wheel-hint">バナーにカーソルを合わせると止まります。</p>
+                </div>
+
+                <div class="program-wheel">
+                  <svg class="program-wheel__wind" viewBox="0 0 1070 960" preserveAspectRatio="none" fill="none" aria-hidden="true" focusable="false">
+                    <defs>
+                      <linearGradient id="program-wind-color" x1="-100" y1="300" x2="1200" y2="140" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#7bbaad" stop-opacity="0.2" />
+                        <stop offset="0.25" stop-color="#7bbaad" stop-opacity="0.55" />
+                        <stop offset="0.75" stop-color="#7bbaad" stop-opacity="0.4" />
+                        <stop offset="1" stop-color="#7bbaad" stop-opacity="0.2" />
+                      </linearGradient>
+                    </defs>
+                    <!-- 時計回りの接線に沿い、左上から右上へ、右下から左下へ流れる風。 -->
+                    <g class="program-wheel__wind-stream">
+                      <path d="M -70 350 C 90 350 140 190 290 140 S 530 75 680 135 S 970 280 1140 230" />
+                      <path d="M -90 305 C 75 305 125 155 270 105 S 535 40 710 110 S 990 245 1160 190" />
+                      <path d="M -45 395 C 110 395 155 225 310 175 S 525 110 650 160 S 950 315 1120 270" />
+                    </g>
+                    <g class="program-wheel__wind-stream" transform="rotate(180 535 480)">
+                      <path d="M -70 350 C 90 350 140 190 290 140 S 530 75 680 135 S 970 280 1140 230" />
+                      <path d="M -90 305 C 75 305 125 155 270 105 S 535 40 710 110 S 990 245 1160 190" />
+                      <path d="M -45 395 C 110 395 155 225 310 175 S 525 110 650 160 S 950 315 1120 270" />
+                    </g>
+                  </svg>
+                  <!-- リンク先が未公開の企画は coming.html に接続。公開時に各 href を変更してください。 -->
+                  <ul class="program-grid" id="program-list" aria-label="企画一覧">
+                    <li>
+                      <a class="event-banner event-banner--ai" href="yoshikawa.html">
+                        <div class="event-banner__visual">
+                          <img src="images/kikaku/yoshikawabana.jpg" alt="吉川愛トークショーのバナー" width="1078" height="1078" decoding="async" />
+                        </div>
+                        <div class="event-banner__body">
+                          <h2 class="event-banner__title">吉川愛</h2>
+                          <p class="event-banner__subtitle">TALK SHOW</p>
+                          <span class="event-banner__action">詳細を見る<span class="event-banner__arrow" aria-hidden="true">↗</span></span>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="event-banner event-banner--shigematsu" href="https://livepocket.jp/e/2dd8o" target="_blank" rel="noopener noreferrer">
+                        <div class="event-banner__visual event-banner__visual--poster">
+                          <img src="images/common/shigematsu.png" alt="重松清アンコール特別授業のポスター" width="1414" height="2000" decoding="async" />
+                        </div>
+                        <div class="event-banner__body">
+                          <h2 class="event-banner__title">重松清</h2>
+                          <p class="event-banner__subtitle">アンコール特別授業</p>
+                          <span class="event-banner__action">チケット情報<span class="event-banner__arrow" aria-hidden="true">↗</span><span class="program-sr-only">（新しいタブで開きます）</span></span>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="event-banner event-banner--jumonji" href="coming.html">
+                        <div class="event-banner__visual event-banner__visual--poster">
+                          <img src="images/common/zyumonzi.jpg" alt="十文字幻斎 閃光の催眠術師のポスター" width="1024" height="1536" decoding="async" />
+                        </div>
+                        <div class="event-banner__body">
+                          <h2 class="event-banner__title">十文字幻斎</h2>
+                          <p class="event-banner__subtitle">閃光の催眠術師</p>
+                          <span class="event-banner__action">詳細は準備中<span class="event-banner__arrow" aria-hidden="true">↗</span></span>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="event-banner event-banner--stage" href="coming.html">
+                        <div class="event-banner__visual">
+                          <img src="images/kikaku/stage.jpg" alt="屋外ステージでのパフォーマンスの様子" width="2048" height="1365" loading="lazy" decoding="async" />
+                        </div>
+                        <div class="event-banner__body">
+                          <h2 class="event-banner__title">ステージ企画</h2>
+                          <p class="event-banner__subtitle">STAGE</p>
+                          <span class="event-banner__action">詳細は準備中<span class="event-banner__arrow" aria-hidden="true">↗</span></span>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="event-banner event-banner--classroom" href="coming.html">
+                        <div class="event-banner__visual">
+                          <img src="images/kikaku/TOKOSAI.jpg" alt="校舎内のTOKOSAIの装飾" width="2364" height="1774" loading="lazy" decoding="async" />
+                        </div>
+                        <div class="event-banner__body">
+                          <h2 class="event-banner__title">教室内企画</h2>
+                          <p class="event-banner__subtitle">CLASSROOM</p>
+                          <span class="event-banner__action">詳細は準備中<span class="event-banner__arrow" aria-hidden="true">↗</span></span>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="event-banner event-banner--food" href="coming.html">
+                        <div class="event-banner__visual">
+                          <img src="images/kikaku/72961.jpg" alt="キャンパスに屋台のテントが並ぶ様子" width="1477" height="1108" loading="lazy" decoding="async" />
+                        </div>
+                        <div class="event-banner__body">
+                          <h2 class="event-banner__title">屋台企画</h2>
+                          <p class="event-banner__subtitle">FOOD</p>
+                          <span class="event-banner__action">詳細は準備中<span class="event-banner__arrow" aria-hidden="true">↗</span></span>
+                        </div>
+                      </a>
+                    </li>
+                  </ul>
+                  <div class="program-wheel__mascot">
+                    <img src="images/kikaku/tokomidori.png" alt="とこみどり" width="1028" height="1410" decoding="async" />
+                  </div>
+                </div>
                 <p class="program-note">各企画の詳細は、順次公開していきます。</p>
               </div>
             </main>
