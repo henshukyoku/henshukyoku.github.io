@@ -66,7 +66,7 @@
   line-height: 1.8;
 }
 
-/* スマホでも2列。900px以上では3列にして6企画を2段に配置。 */
+/* スマホは1列、タブレットは2列、1200px以上では3列に配置。 */
 .program-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -238,7 +238,7 @@
   transition-duration: 0.12s;
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 1200px) {
   .program-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -254,36 +254,25 @@
   }
 
   .program-grid {
-    gap: 16px 12px;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
   }
 
   .event-banner {
-    border-radius: 10px;
-  }
-
-  .event-banner__visual--poster {
-    padding: 8px;
+    border-radius: 12px;
   }
 
   .event-banner__body {
-    padding: 12px 11px;
+    padding: 18px 20px;
+  }
+
+  .event-banner__title {
+    font-size: 22px;
   }
 
   .event-banner__subtitle {
     margin-bottom: 12px;
-    font-size: 11px;
     letter-spacing: 0;
-  }
-
-  .event-banner__action {
-    font-size: 11px;
-  }
-
-  .event-banner__arrow {
-    flex-basis: 25px;
-    width: 25px;
-    height: 25px;
-    font-size: 16px;
   }
 
   .program-note {
