@@ -112,7 +112,91 @@
     resetInteractions();
   });
 
+  setupMobileOrbit();
   setupWindmill();
+
+  function setupMobileOrbit() {
+    if (typeof wheel.animate !== 'function') return;
+    const mobile = window.matchMedia('(max-width: 599px)');
+    const section = document.createElement('section');
+    section.className = 'program-mobile-orbit';
+    section.setAttribute('aria-label', 'とこみどりと企画めぐり');
+    const scene = document.createElement('div');
+    scene.className = 'program-mobile-orbit__scene';
+    scene.setAttribute('aria-hidden', 'true');
+
+    // 一覧と同じ画像・企画名を使い、動く装飾にはリンクを重複させない。
+    const wind = wheel.querySelector('.program-wheel__wind').cloneNode(true);
+    wind.querySelector('defs').remove();
+    wind.removeAttribute('class');
+    wind.classList.add('program-mobile-orbit__wind');
+    scene.append(wind);
+    const mascot = wheel.querySelector('.program-wheel__mascot img').cloneNode(true);
+    mascot.className = 'program-mobile-orbit__mascot';
+    mascot.alt = '';
+    scene.append(mascot);
+    const cards = banners.map(banner => {
+      const card = document.createElement('div');
+      card.className = 'program-mobile-orbit__card';
+      const visual = banner.querySelector('.event-banner__visual').cloneNode(true);
+      visual.querySelector('img').alt = '';
+      const title = document.createElement('span');
+      title.textContent = banner.querySelector('.event-banner__title').textContent;
+      card.append(visual, title);
+      scene.append(card);
+      return card;
+    });
+    const jump = document.createElement('a');
+    jump.className = 'program-mobile-orbit__jump';
+    jump.href = '#program-list';
+    jump.textContent = '気になる企画を見つけよう ↓';
+    section.append(scene, jump);
+    wheel.before(section);
+
+    let animations = [];
+    let visible = true;
+    let elapsed = 0;
+    const globalContainer = document.querySelector('#global-container');
+    const playback = () => {
+      const paused = !mobile.matches || !visible || reducedMotion.matches ||
+        document.hidden || globalContainer.classList.contains('menu-open');
+      section.classList.toggle('is-wind-paused', paused);
+      animations.forEach(animation => paused ? animation.pause() : animation.play());
+    };
+    const layout = () => {
+      if (animations.length) elapsed = animations[0].currentTime || 0;
+      animations.forEach(animation => animation.cancel());
+      animations = [];
+      if (!mobile.matches) return;
+      const radiusX = Math.max(0, (scene.clientWidth - 122) / 2);
+      cards.forEach((card, index) => {
+        // 横幅に合わせた楕円。カード自体はほぼ正面を保つ。
+        const frames = Array.from({ length: 97 }, (_, step) => {
+          const angle = (index / cards.length + step / 96) * Math.PI * 2;
+          return { transform: `translate(-50%, -50%) translate(${Math.sin(angle) * radiusX}px, ${-Math.cos(angle) * 196}px) rotate(${Math.sin(angle) * 7}deg)` };
+        });
+        const animation = card.animate(frames, { duration: 90000, iterations: Infinity, easing: 'linear' });
+        animation.pause();
+        animation.currentTime = elapsed;
+        animations.push(animation);
+      });
+      playback();
+    };
+    new ResizeObserver(layout).observe(scene);
+    mobile.addEventListener('change', layout);
+    reducedMotion.addEventListener('change', playback);
+    document.addEventListener('visibilitychange', playback);
+    window.addEventListener('pageshow', playback);
+    window.addEventListener('pagehide', () => animations.forEach(animation => animation.pause()));
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(([entry]) => {
+        visible = entry.isIntersecting;
+        playback();
+      }).observe(section);
+    }
+    new MutationObserver(playback).observe(globalContainer, { attributes: true, attributeFilter: ['class'] });
+    layout();
+  }
 
   function setupWindmill() {
     if (typeof wheel.animate !== 'function') return;
@@ -122,7 +206,6 @@
     const blades = [...grid.children];
     const controls = page.querySelector('.program-wheel-tools');
     const viewButton = controls.querySelector('.program-wheel-view');
-    const hint = controls.querySelector('.program-wheel-hint');
     const globalContainer = document.querySelector('#global-container');
     const duration = 120000;
     let rotations = [];
@@ -158,9 +241,6 @@
     const updateControls = () => {
       controls.hidden = !desktop.matches;
       viewButton.textContent = enabled ? '一覧で見る' : '風車で見る';
-      hint.textContent = !enabled ? '風車表示で、とこみどりと企画めぐり。' :
-        reducedMotion.matches ? 'バナーを選ぶと、正面で詳しく見られます。' :
-        'バナーにカーソルを合わせると止まります。';
     };
 
     const updateMode = () => {
