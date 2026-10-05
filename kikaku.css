@@ -380,18 +380,10 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    z-index: 1;
+    z-index: var(--program-layer, 1);
     width: 260px;
     height: 320px;
     transform: translate(-50%, -50%) rotate(var(--blade-angle)) translateY(-260px) rotate(20deg);
-  }
-
-  .is-windmill .program-grid > li.is-selected {
-    z-index: 4;
-  }
-
-  .is-windmill .program-grid > li.program-item--ai {
-    z-index: 5;
   }
 
   .is-windmill .event-banner {
@@ -550,7 +542,7 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    z-index: 4;
+    z-index: 7;
     width: 50%;
     max-width: 202px;
     height: auto;
@@ -562,7 +554,7 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    z-index: 1;
+    z-index: var(--program-layer, 1);
     width: 118px;
     overflow: hidden;
     border: 1px solid #522e1d18;
@@ -575,10 +567,6 @@
     height: 94px;
     aspect-ratio: auto;
     border-bottom: 2px solid #7bbaad;
-  }
-
-  .program-mobile-orbit__card.program-item--ai {
-    z-index: 3;
   }
 
   .program-mobile-orbit__card .event-banner__visual--poster { padding: 3px; }

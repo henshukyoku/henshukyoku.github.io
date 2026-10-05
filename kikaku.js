@@ -6,6 +6,13 @@
   const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
   const banners = [...page.querySelectorAll('.event-banner')];
   const wheel = page.querySelector('.program-wheel');
+  // 吉川愛を起点に、時計回りの並びに沿って一段ずつ奥へ重ねる。
+  const frontIndex = banners.findIndex(banner => banner.classList.contains('event-banner--ai'));
+  const layers = banners.map((_, index) =>
+    banners.length - (index - Math.max(0, frontIndex) + banners.length) % banners.length);
+  banners.forEach((banner, index) => {
+    banner.parentElement.style.setProperty('--program-layer', layers[index]);
+  });
   const reveals = new Map();
 
   // CSSで隠さず、アニメーション中だけ透明にする。JSが使えなくても内容は表示される。
@@ -135,10 +142,10 @@
     mascot.className = 'program-mobile-orbit__mascot';
     mascot.alt = '';
     scene.append(mascot);
-    const cards = banners.map(banner => {
+    const cards = banners.map((banner, index) => {
       const card = document.createElement('div');
       card.className = 'program-mobile-orbit__card';
-      card.classList.toggle('program-item--ai', banner.classList.contains('event-banner--ai'));
+      card.style.setProperty('--program-layer', layers[index]);
       const visual = banner.querySelector('.event-banner__visual').cloneNode(true);
       visual.querySelector('img').alt = '';
       const title = document.createElement('span');
