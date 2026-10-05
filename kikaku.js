@@ -138,6 +138,7 @@
     const cards = banners.map(banner => {
       const card = document.createElement('div');
       card.className = 'program-mobile-orbit__card';
+      card.classList.toggle('program-item--ai', banner.classList.contains('event-banner--ai'));
       const visual = banner.querySelector('.event-banner__visual').cloneNode(true);
       visual.querySelector('img').alt = '';
       const title = document.createElement('span');

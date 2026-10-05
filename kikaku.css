@@ -140,6 +140,19 @@
   object-fit: cover;
 }
 
+/* 吉川愛のバナーは下端を基準に拡大し、右下の権利表記を残す。
+   visual側のクラスなので、スマホの回転用コピーにも同じ指定が適用される。 */
+.event-banner__visual--ai {
+  background: #c6e8e7;
+}
+
+.event-banner__visual--ai img {
+  width: 96%;
+  margin-inline: auto;
+  object-fit: cover;
+  object-position: center bottom;
+}
+
 /* 縦長のポスターは文字や顔を切らず、全体を見せる。 */
 .event-banner__visual--poster {
   padding: 14px;
@@ -322,6 +335,7 @@
   .is-windmill .program-grid {
     position: absolute;
     inset: 0;
+    /* カード同士の重なり順は、とこみどりの背面にまとめる。 */
     z-index: 1;
     display: block;
   }
@@ -374,6 +388,10 @@
 
   .is-windmill .program-grid > li.is-selected {
     z-index: 4;
+  }
+
+  .is-windmill .program-grid > li.program-item--ai {
+    z-index: 5;
   }
 
   .is-windmill .event-banner {
@@ -532,7 +550,7 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    z-index: 2;
+    z-index: 4;
     width: 50%;
     max-width: 202px;
     height: auto;
@@ -557,6 +575,10 @@
     height: 94px;
     aspect-ratio: auto;
     border-bottom: 2px solid #7bbaad;
+  }
+
+  .program-mobile-orbit__card.program-item--ai {
+    z-index: 3;
   }
 
   .program-mobile-orbit__card .event-banner__visual--poster { padding: 3px; }
