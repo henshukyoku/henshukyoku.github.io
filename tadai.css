@@ -187,9 +187,29 @@
   display: none !important;
 }
 
-.appear .item {
+.header .appear .item,
+.footer.appear .item {
   opacity: 1 !important;
   transform: none !important;
+}
+
+.tadai-main .festival-window.appear.up {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.tadai-main .festival-window.appear.up.inview {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tadai-main .festival-window.appear.up {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
 
 .tween-animate-title,
