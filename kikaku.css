@@ -159,6 +159,10 @@
   background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.6), transparent);
 }
 
+.event-banner--shigematsu .event-banner__visual--poster {
+  padding: 6px;
+}
+
 .event-banner__visual--poster img {
   object-fit: contain;
 }
@@ -403,6 +407,10 @@
 
   .is-windmill .event-banner__visual--poster {
     padding: 8px;
+  }
+
+  .is-windmill .event-banner--shigematsu .event-banner__visual--poster {
+    padding: 4px;
   }
 
   .is-windmill .event-banner__body {
