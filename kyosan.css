@@ -122,3 +122,13 @@
 @media (max-width: 600px) {
   .special-sponsor-list { grid-template-columns: minmax(0, 300px); }
 }
+
+/* 校友会は幅300pxを維持し、正方形の枠で生じていた上下の空白を除く。 */
+#alumni .sponsor-image { height: auto; }
+#alumni .sponsor-image img { height: auto; }
+
+/* PCでは横並びのロゴの中心と団体名の高さを揃える。 */
+@media (min-width: 601px) {
+  #alumni .sponsor-image { height: 200px; }
+  #alumni .sponsor-image img { max-height: 100%; object-fit: contain; }
+}
