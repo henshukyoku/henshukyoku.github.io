@@ -24,6 +24,8 @@
     <script src="scripts/libs/mobile-menu.js" defer></script>
     <script src="scripts/libs/text-animation.js" defer></script>
     <script src="scripts/main.js" defer></script>
+    <script src="scripts/access.js" defer></script>
+    <script src="scripts/access-forest.js" defer></script>
   </head>
   <body>
     <div id="global-container">
@@ -46,13 +48,20 @@
         <div id="content">
           <div id="main-content">
             <main class="new-page-main">
+              <div class="access-forest" aria-hidden="true"></div>
               <div class="content-inner">
-                <h1 class="access-page-title main-title tween-animate-title">Access / Campus Map</h1>
-                <section class="access-block access-lead">
-                  <h3>お車でのご来場はご遠慮しております。</h3>
-                  <p>
-                    ご来場の際は公共交通機関をご利用の上、「西武池袋線　小手指駅」「西武池袋線・新宿線　所沢駅」発の無料送迎バスをご利用ください。
-                  </p>
+                <header class="access-intro">
+                  <h1 class="access-page-title">アクセス /<br class="access-title-break" /> キャンパスマップ</h1>
+                  <p>所沢キャンパスへのご来場案内</p>
+                </header>
+                <nav class="access-shortcuts" aria-label="アクセスページ内の案内">
+                  <a class="btn filled" href="#bus">バス時刻表 <span aria-hidden="true">↓</span></a>
+                  <a class="btn filled" href="#rail">電車路線図 <span aria-hidden="true">↓</span></a>
+                  <a class="btn filled" href="#campus">構内マップ <span aria-hidden="true">↓</span></a>
+                </nav>
+                <section class="access-block access-lead" aria-labelledby="map-heading">
+                  <h2 class="access-heading" id="map-heading">会場へのアクセス</h2>
+                  <p class="access-venue">早稲田大学 所沢キャンパス</p>
                   <div class="access-map-embed">
                     <iframe
                       title="会場周辺の地図"
@@ -64,7 +73,7 @@
                   <p class="access-address">〒359-1192 埼玉県所沢市三ケ島２丁目５７９−１５</p>
                   <p class="access-map-link-row">
                     <a
-                      class="access-map-link"
+                      class="btn filled"
                       href="https://www.google.com/maps/search/?api=1&amp;query=%E5%9F%BC%E7%8E%89%E7%9C%8C%E6%89%80%E6%B2%A2%E5%B8%82%E4%B8%89%E3%82%B1%E5%B3%B6%EF%BC%92%E4%B8%81%E7%9B%AE%EF%BC%95%EF%BC%97%EF%BC%99%E2%88%92%EF%BC%91%EF%BC%95"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -72,64 +81,115 @@
                     >
                   </p>
                 </section>
-              </div>
+                <section class="access-block" aria-labelledby="transport-heading">
+                  <h2 class="access-heading" id="transport-heading">公共交通機関をご利用の方</h2>
+                  <p>西武池袋線小手指駅から無料送迎バスで20分</p>
+                  <p class="access-transport-note">お車でのご来場はご遠慮しております。</p>
+                  <h3 class="access-subheading" id="bus">無料送迎バス・時刻表</h3>
+                  <p>所沢キャンパス祭ご来場のお客様は無料でご利用いただけます。途中下車はできませんのでご注意ください。</p>
+                  <div class="access-timetable-card" data-bus-schedule data-operating-date="2026-10-25">
+                    <h4 class="access-bus-direction" id="outbound-heading">小手指駅北口 → 所沢キャンパス</h4>
+                    <div class="access-next-bus">
+                      <p class="access-status-label">次の出発</p>
+                      <p class="access-next-time" role="status" aria-live="polite">7時45分</p>
+                      <p class="access-fine-print">予定時刻のご案内です。道路状況等により遅れる場合があります。</p>
+                    </div>
+                    <div class="access-timetable-actions">
+                      <button type="button" class="btn filled" data-open-timetable="outbound-timetable" aria-haspopup="dialog">時刻表を見る</button>
+                    </div>
+                    <dialog class="access-timetable-dialog" id="outbound-timetable" aria-labelledby="outbound-dialog-title">
+                      <div class="access-dialog-header">
+                        <h4 id="outbound-dialog-title">小手指駅北口 → 所沢キャンパス</h4>
+                        <form method="dialog"><button class="access-dialog-close" aria-label="閉じる" autofocus><span aria-hidden="true">×</span></button></form>
+                      </div>
+                    <div class="access-timetable-body">
+                      <table class="access-timetable" aria-labelledby="outbound-dialog-title">
+                        <caption>出発時刻表</caption>
+                        <thead><tr><th scope="col">時</th><th scope="col">分</th></tr></thead>
+                        <tbody>
+                        <tr><th scope="row">7</th><td><div class="access-times"><span data-departure="07:45" aria-label="7時45分">45</span><span data-departure="07:55" aria-label="7時55分">55</span></div></td></tr>
+                        <tr><th scope="row">8</th><td><div class="access-times"><span data-departure="08:00" aria-label="8時0分">00</span><span data-departure="08:05" aria-label="8時5分">05</span><span data-departure="08:10" aria-label="8時10分">10</span><span data-departure="08:15" aria-label="8時15分">15</span><span data-departure="08:20" aria-label="8時20分">20</span><span data-departure="08:25" aria-label="8時25分">25</span><span data-departure="08:30" aria-label="8時30分">30</span><span data-departure="08:35" aria-label="8時35分">35</span><span data-departure="08:40" aria-label="8時40分">40</span><span data-departure="08:50" aria-label="8時50分">50</span></div></td></tr>
+                        <tr><th scope="row">9</th><td><div class="access-times"><span data-departure="09:00" aria-label="9時0分">00</span><span data-departure="09:05" aria-label="9時5分">05</span><span data-departure="09:10" aria-label="9時10分">10</span><span data-departure="09:15" aria-label="9時15分">15</span><span data-departure="09:20" aria-label="9時20分">20</span><span data-departure="09:25" aria-label="9時25分">25</span><span data-departure="09:30" aria-label="9時30分">30</span><span data-departure="09:35" aria-label="9時35分">35</span><span data-departure="09:40" aria-label="9時40分">40</span><span data-departure="09:45" aria-label="9時45分">45</span><span data-departure="09:50" aria-label="9時50分">50</span><span data-departure="09:55" aria-label="9時55分">55</span></div></td></tr>
+                        <tr><th scope="row">10</th><td><div class="access-times"><span data-departure="10:00" aria-label="10時0分">00</span><span data-departure="10:05" aria-label="10時5分">05</span><span data-departure="10:10" aria-label="10時10分">10</span><span data-departure="10:15" aria-label="10時15分">15</span><span data-departure="10:20" aria-label="10時20分">20</span><span data-departure="10:25" aria-label="10時25分">25</span><span data-departure="10:30" aria-label="10時30分">30</span><span data-departure="10:35" aria-label="10時35分">35</span><span data-departure="10:40" aria-label="10時40分">40</span><span data-departure="10:45" aria-label="10時45分">45</span><span data-departure="10:50" aria-label="10時50分">50</span><span data-departure="10:55" aria-label="10時55分">55</span></div></td></tr>
+                        <tr><th scope="row">11</th><td><div class="access-times"><span data-departure="11:00" aria-label="11時0分">00</span><span data-departure="11:10" aria-label="11時10分">10</span><span data-departure="11:20" aria-label="11時20分">20</span><span data-departure="11:25" aria-label="11時25分">25</span><span data-departure="11:30" aria-label="11時30分">30</span><span data-departure="11:35" aria-label="11時35分">35</span><span data-departure="11:40" aria-label="11時40分">40</span><span data-departure="11:45" aria-label="11時45分">45</span><span data-departure="11:50" aria-label="11時50分">50</span></div></td></tr>
+                        <tr><th scope="row">12</th><td><div class="access-times"><span data-departure="12:00" aria-label="12時0分">00</span><span data-departure="12:05" aria-label="12時5分">05</span><span data-departure="12:10" aria-label="12時10分">10</span><span data-departure="12:15" aria-label="12時15分">15</span><span data-departure="12:20" aria-label="12時20分">20</span><span data-departure="12:25" aria-label="12時25分">25</span><span data-departure="12:30" aria-label="12時30分">30</span><span data-departure="12:35" aria-label="12時35分">35</span><span data-departure="12:45" aria-label="12時45分">45</span><span data-departure="12:55" aria-label="12時55分">55</span></div></td></tr>
+                        <tr><th scope="row">13</th><td><div class="access-times"><span data-departure="13:00" aria-label="13時0分">00</span><span data-departure="13:05" aria-label="13時5分">05</span><span data-departure="13:10" aria-label="13時10分">10</span><span data-departure="13:15" aria-label="13時15分">15</span><span data-departure="13:20" aria-label="13時20分">20</span><span data-departure="13:25" aria-label="13時25分">25</span><span data-departure="13:30" aria-label="13時30分">30</span><span data-departure="13:35" aria-label="13時35分">35</span><span data-departure="13:45" aria-label="13時45分">45</span><span data-departure="13:50" aria-label="13時50分">50</span></div></td></tr>
+                        <tr><th scope="row">14</th><td><div class="access-times"><span data-departure="14:00" aria-label="14時0分">00</span><span data-departure="14:15" aria-label="14時15分">15</span><span data-departure="14:25" aria-label="14時25分">25</span><span data-departure="14:35" aria-label="14時35分">35</span><span data-departure="14:50" aria-label="14時50分">50</span></div></td></tr>
+                        <tr><th scope="row">15</th><td><div class="access-times"><span data-departure="15:00" aria-label="15時0分">00</span><span data-departure="15:20" aria-label="15時20分">20</span><span data-departure="15:40" aria-label="15時40分">40</span></div></td></tr>
+                        <tr><th scope="row">16</th><td><div class="access-times"><span data-departure="16:00" aria-label="16時0分">00</span><span data-departure="16:30" aria-label="16時30分">30</span></div></td></tr>
+                        <tr><th scope="row">17</th><td><div class="access-times"><span data-departure="17:00" aria-label="17時0分">00</span></div></td></tr>
+                        <tr><th scope="row">18</th><td><div class="access-times"><span data-departure="18:00" aria-label="18時0分">00</span></div></td></tr>
+                        <tr><th scope="row">19</th><td><div class="access-times"><span data-departure="19:00" aria-label="19時0分">00</span></div></td></tr>
+                        </tbody>
+                      </table>
 
-              <div class="wind-decoration-area reverse-wind">
-                <div class="wind-wave purple"></div>
-                <div class="wind-wave pink"></div>
-                <div class="wind-wave cyan"></div>
-                <div class="wind-wave orange"></div>
-              </div>
+                    </div>
+                    </dialog>
+                  </div>
+                  <div class="access-timetable-card" data-bus-schedule data-operating-date="2026-10-25">
+                    <h4 class="access-bus-direction" id="return-heading">所沢キャンパス → 小手指駅</h4>
+                    <div class="access-next-bus">
+                      <p class="access-status-label">次の出発</p>
+                      <p class="access-next-time" role="status" aria-live="polite">8時35分</p>
+                      <p class="access-fine-print">予定時刻のご案内です。道路状況等により遅れる場合があります。</p>
+                    </div>
+                    <div class="access-timetable-actions">
+                      <button type="button" class="btn filled" data-open-timetable="return-timetable" aria-haspopup="dialog">時刻表を見る</button>
+                    </div>
+                    <dialog class="access-timetable-dialog" id="return-timetable" aria-labelledby="return-dialog-title">
+                      <div class="access-dialog-header">
+                        <h4 id="return-dialog-title">所沢キャンパス → 小手指駅</h4>
+                        <form method="dialog"><button class="access-dialog-close" aria-label="閉じる" autofocus><span aria-hidden="true">×</span></button></form>
+                      </div>
+                    <div class="access-timetable-body">
+                      <table class="access-timetable" aria-labelledby="return-dialog-title">
+                        <caption>出発時刻表</caption>
+                        <thead><tr><th scope="col">時</th><th scope="col">分</th></tr></thead>
+                        <tbody>
+                        <tr><th scope="row">8</th><td><div class="access-times"><span data-departure="08:35" aria-label="8時35分">35</span></div></td></tr>
+                        <tr><th scope="row">9</th><td><div class="access-times"><span data-departure="09:25" aria-label="9時25分">25</span></div></td></tr>
+                        <tr><th scope="row">10</th><td><div class="access-times"><span data-departure="10:40" aria-label="10時40分">40</span></div></td></tr>
+                        <tr><th scope="row">11</th><td><div class="access-times"><span data-departure="11:05" aria-label="11時5分">05</span><span data-departure="11:30" aria-label="11時30分">30</span><span data-departure="11:45" aria-label="11時45分">45</span></div></td></tr>
+                        <tr><th scope="row">12</th><td><div class="access-times"><span data-departure="12:00" aria-label="12時0分">00</span><span data-departure="12:15" aria-label="12時15分">15</span><span data-departure="12:30" aria-label="12時30分">30</span><span data-departure="12:40" aria-label="12時40分">40</span><span data-departure="12:50" aria-label="12時50分">50</span></div></td></tr>
+                        <tr><th scope="row">13</th><td><div class="access-times"><span data-departure="13:00" aria-label="13時0分">00</span><span data-departure="13:10" aria-label="13時10分">10</span><span data-departure="13:15" aria-label="13時15分">15</span><span data-departure="13:24" aria-label="13時24分">24</span><span data-departure="13:30" aria-label="13時30分">30</span><span data-departure="13:36" aria-label="13時36分">36</span><span data-departure="13:45" aria-label="13時45分">45</span><span data-departure="13:54" aria-label="13時54分">54</span></div></td></tr>
+                        <tr><th scope="row">14</th><td><div class="access-times"><span data-departure="14:00" aria-label="14時0分">00</span><span data-departure="14:10" aria-label="14時10分">10</span><span data-departure="14:18" aria-label="14時18分">18</span><span data-departure="14:24" aria-label="14時24分">24</span><span data-departure="14:30" aria-label="14時30分">30</span><span data-departure="14:36" aria-label="14時36分">36</span><span data-departure="14:45" aria-label="14時45分">45</span><span data-departure="14:54" aria-label="14時54分">54</span></div></td></tr>
+                        <tr><th scope="row">15</th><td><div class="access-times"><span data-departure="15:00" aria-label="15時0分">00</span><span data-departure="15:06" aria-label="15時6分">06</span><span data-departure="15:12" aria-label="15時12分">12</span><span data-departure="15:18" aria-label="15時18分">18</span><span data-departure="15:24" aria-label="15時24分">24</span><span data-departure="15:30" aria-label="15時30分">30</span><span data-departure="15:36" aria-label="15時36分">36</span><span data-departure="15:42" aria-label="15時42分">42</span><span data-departure="15:48" aria-label="15時48分">48</span><span data-departure="15:54" aria-label="15時54分">54</span></div></td></tr>
+                        <tr><th scope="row">16</th><td><div class="access-times"><span data-departure="16:00" aria-label="16時0分">00</span><span data-departure="16:05" aria-label="16時5分">05</span><span data-departure="16:10" aria-label="16時10分">10</span><span data-departure="16:15" aria-label="16時15分">15</span><span data-departure="16:20" aria-label="16時20分">20</span><span data-departure="16:25" aria-label="16時25分">25</span><span data-departure="16:30" aria-label="16時30分">30</span><span data-departure="16:35" aria-label="16時35分">35</span><span data-departure="16:40" aria-label="16時40分">40</span><span data-departure="16:45" aria-label="16時45分">45</span><span data-departure="16:50" aria-label="16時50分">50</span><span data-departure="16:55" aria-label="16時55分">55</span></div></td></tr>
+                        <tr><th scope="row">17</th><td><div class="access-times"><span data-departure="17:00" aria-label="17時0分">00</span><span data-departure="17:06" aria-label="17時6分">06</span><span data-departure="17:12" aria-label="17時12分">12</span><span data-departure="17:18" aria-label="17時18分">18</span><span data-departure="17:24" aria-label="17時24分">24</span><span data-departure="17:30" aria-label="17時30分">30</span><span data-departure="17:36" aria-label="17時36分">36</span><span data-departure="17:42" aria-label="17時42分">42</span><span data-departure="17:48" aria-label="17時48分">48</span><span data-departure="17:54" aria-label="17時54分">54</span></div></td></tr>
+                        <tr><th scope="row">18</th><td><div class="access-times"><span data-departure="18:00" aria-label="18時0分">00</span><span data-departure="18:10" aria-label="18時10分">10</span><span data-departure="18:20" aria-label="18時20分">20</span><span data-departure="18:30" aria-label="18時30分">30</span><span data-departure="18:40" aria-label="18時40分">40</span><span data-departure="18:50" aria-label="18時50分">50</span></div></td></tr>
+                        <tr><th scope="row">19</th><td><div class="access-times"><span data-departure="19:00" aria-label="19時0分">00</span><span data-departure="19:15" aria-label="19時15分">15</span><span data-departure="19:30" aria-label="19時30分">30</span><span data-departure="19:45" aria-label="19時45分">45</span></div></td></tr>
+                        <tr><th scope="row">20</th><td><div class="access-times"><span data-departure="20:00" aria-label="20時0分">00</span><span data-departure="20:20" aria-label="20時20分">20</span><span data-departure="20:40" aria-label="20時40分">40</span></div></td></tr>
+                        <tr><th scope="row">21</th><td><div class="access-times"><span data-departure="21:00" aria-label="21時0分">00</span><span data-departure="21:10" aria-label="21時10分">10</span><span data-departure="21:20" aria-label="21時20分">20</span><span data-departure="21:30" aria-label="21時30分">30</span><span data-departure="21:40" aria-label="21時40分">40</span><span data-departure="21:45" aria-label="21時45分">45</span><span data-departure="21:50" aria-label="21時50分">50</span><span data-departure="21:55" aria-label="21時55分">55</span></div></td></tr>
+                        <tr><th scope="row">22</th><td><div class="access-times"><span data-departure="22:00" aria-label="22時0分">00</span></div></td></tr>
+                        </tbody>
+                      </table>
 
-              <div class="content-inner">
-                <section class="access-block access-train">
-                  <h2 class="access-heading">公共交通機関をご利用の方</h2>
-                  <p>
-                    西武池袋線小手指駅から無料送迎バスで20分
-                  </p>
-                  <h3 class="access-subheading">ご来場の皆様へのお願い</h3>
-                  <p>
-                    小手指駅発の送迎バスのご利用ください。<br />
-                    詳しくは下記の無料送迎バスをご覧ください。
-                  </p>
-                  <h3 class="access-subheading">路線図</h3>
-                  <p class="access-placeholder">（路線図は準備次第掲載します）</p>
+                    </div>
+                    </dialog>
+                  </div>
                 </section>
-              </div>
-
-              <div class="wind-decoration-area">
-                <div class="wind-wave purple"></div>
-                <div class="wind-wave pink"></div>
-                <div class="wind-wave cyan"></div>
-                <div class="wind-wave orange"></div>
-              </div>
-
-              <div class="content-inner">
-                <section class="access-block access-bus">
-                  <h2 class="access-heading">無料送迎バス</h2>
-                  <p>
-                    所沢キャンパス祭ご来場のお客様は無料でご利用いただけます。<br />
-                    途中下車はできませんのでご注意ください。
-                  </p>
-                  <h3 class="access-subheading">西武池袋線　小手指駅北口発</h3>
-                  <p class="access-placeholder">（時刻表は準備次第掲載します）</p>
+                <section class="access-block" id="rail" aria-labelledby="rail-heading">
+                  <h2 class="access-heading" id="rail-heading">電車路線図</h2>
+                  <figure class="access-rail-map">
+                    <figcaption>主要駅から小手指駅・所沢キャンパスへ</figcaption>
+                    <svg class="rail-diagram rail-diagram--mobile" viewBox="0 0 390 545" role="img" aria-labelledby="rail-mobile-title rail-mobile-desc">
+                      <title id="rail-mobile-title">所沢キャンパスへの路線案内</title>
+                      <desc id="rail-mobile-desc">高田馬場駅から西武新宿線で所沢駅へ。池袋駅からは西武池袋線で所沢駅を経由して小手指駅へ。所沢駅から小手指駅へは西武池袋線を利用します。飯能駅からも西武池袋線で小手指駅へ。小手指駅北口から無料送迎バスで約20分、所沢キャンパスに到着します。</desc>
+                      <path class="rail-line rail-line--shinjuku" d="M95 75 V169 Q95 190 117 190 H145"/><path class="rail-line rail-line--ikebukuro" d="M285 75 V169 Q285 190 263 190 H235"/><path class="rail-line rail-line--ikebukuro" d="M190 215 V238 Q190 250 169 250 H135 Q115 250 115 272 V305"/><path class="rail-line rail-line--ikebukuro" d="M245 330 H180"/><path class="rail-line rail-line--bus" d="M115 355 V470"/><text class="rail-line-label rail-line-label--shinjuku" x="95" y="124" text-anchor="middle">西武新宿線</text><text class="rail-line-label " x="285" y="124" text-anchor="middle">西武池袋線</text><text class="rail-line-label " x="260" y="275" text-anchor="middle">西武池袋線</text><text class="rail-line-label " x="229" y="413" text-anchor="middle">無料送迎バス</text><text class="rail-line-label " x="229" y="438" text-anchor="middle">約20分</text><g class="rail-station "><rect x="20" y="25" width="150" height="50" rx="12"/><text x="95" y="56" text-anchor="middle">高田馬場駅</text></g><g class="rail-station "><rect x="220" y="25" width="130" height="50" rx="12"/><text x="285" y="56" text-anchor="middle">池袋駅</text></g><g class="rail-station "><rect x="120" y="165" width="140" height="50" rx="12"/><text x="190" y="196" text-anchor="middle">所沢駅</text></g><g class="rail-station rail-station--focus"><rect x="40" y="305" width="150" height="50" rx="12"/><text x="115" y="336" text-anchor="middle">小手指駅</text></g><g class="rail-station "><rect x="240" y="305" width="110" height="50" rx="12"/><text x="295" y="336" text-anchor="middle">飯能駅</text></g><g class="rail-station rail-station--campus"><rect x="40" y="470" width="300" height="50" rx="12"/><text x="190" y="501" text-anchor="middle">所沢キャンパス</text></g><text class="rail-exit-label" x="115" y="378" text-anchor="middle">北口から乗車</text>
+                    </svg>
+                    <svg class="rail-diagram rail-diagram--desktop" viewBox="0 0 960 425" role="img" aria-labelledby="rail-desktop-title rail-desktop-desc">
+                      <title id="rail-desktop-title">所沢キャンパスへの路線案内</title>
+                      <desc id="rail-desktop-desc">高田馬場駅から西武新宿線で所沢駅へ。池袋駅からは西武池袋線で所沢駅を経由して小手指駅へ。所沢駅から小手指駅へは西武池袋線を利用します。飯能駅からも西武池袋線で小手指駅へ。小手指駅北口から無料送迎バスで約20分、所沢キャンパスに到着します。</desc>
+                      <path class="rail-line rail-line--shinjuku" d="M210 85 H265 Q285 85 285 107 V165 Q285 185 307 185 H330"/><path class="rail-line rail-line--ikebukuro" d="M210 285 H265 Q285 285 285 263 V205 Q285 185 307 185 H330"/><path class="rail-line rail-line--ikebukuro" d="M470 185 H620"/><path class="rail-line rail-line--ikebukuro" d="M830 110 V165 Q830 185 808 185 H770"/><path class="rail-line rail-line--bus" d="M695 210 V345"/><text class="rail-line-label rail-line-label--shinjuku" x="365" y="104" text-anchor="middle">西武新宿線</text><text class="rail-line-label " x="365" y="281" text-anchor="middle">西武池袋線</text><text class="rail-line-label " x="545" y="162" text-anchor="middle">西武池袋線</text><text class="rail-line-label " x="825" y="235" text-anchor="middle">西武池袋線</text><text class="rail-line-label " x="575" y="276" text-anchor="middle">無料送迎バス</text><text class="rail-line-label " x="575" y="303" text-anchor="middle">約20分</text><g class="rail-station "><rect x="50" y="60" width="160" height="50" rx="12"/><text x="130" y="91" text-anchor="middle">高田馬場駅</text></g><g class="rail-station "><rect x="50" y="260" width="160" height="50" rx="12"/><text x="130" y="291" text-anchor="middle">池袋駅</text></g><g class="rail-station "><rect x="330" y="160" width="140" height="50" rx="12"/><text x="400" y="191" text-anchor="middle">所沢駅</text></g><g class="rail-station rail-station--focus"><rect x="620" y="160" width="150" height="50" rx="12"/><text x="695" y="191" text-anchor="middle">小手指駅</text></g><g class="rail-station "><rect x="765" y="60" width="130" height="50" rx="12"/><text x="830" y="91" text-anchor="middle">飯能駅</text></g><g class="rail-station rail-station--campus"><rect x="570" y="345" width="250" height="50" rx="12"/><text x="695" y="376" text-anchor="middle">所沢キャンパス</text></g><text class="rail-exit-label" x="695" y="235" text-anchor="middle">北口から乗車</text>
+                    </svg>
+                  </figure>
                 </section>
-              </div>
-
-              <div class="wind-decoration-area reverse-wind">
-                <div class="wind-wave purple"></div>
-                <div class="wind-wave pink"></div>
-                <div class="wind-wave cyan"></div>
-                <div class="wind-wave orange"></div>
-              </div>
-
-              <div class="content-inner">
-                <section class="access-block access-campusmap">
-                  <h2 class="access-heading">キャンパスマップ</h2>
-                  <h3 class="access-subheading">全体マップ</h3>
-                  <p class="access-placeholder">（全体マップは準備次第掲載します）</p>
-                  <h3 class="access-subheading">100号館・101号館マップ</h3>
-                  <p class="access-placeholder">（建物マップは準備次第掲載します）</p>
+                <section class="access-block" id="campus" aria-labelledby="campus-heading">
+                  <h2 class="access-heading" id="campus-heading">キャンパスマップ</h2>
+                  <div class="access-campus-grid">
+                    <div class="access-map-placeholder"><span class="access-status-label">準備中</span><h3>全体マップ</h3><p>キャンパス全体のマップを掲載予定です。</p></div>
+                    <div class="access-map-placeholder"><span class="access-status-label">準備中</span><h3>100号館・101号館</h3><p>建物内のマップを掲載予定です。</p></div>
+                  </div>
                 </section>
               </div>
             </main>
