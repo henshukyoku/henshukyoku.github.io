@@ -13,7 +13,7 @@
 }
 
 .program-page .footer {
-  max-width: none;
+  max-width: 1070px;
 }
 
 .program-main {
@@ -617,4 +617,22 @@
     outline-offset: 3px;
   }
   #program-list { scroll-margin-top: 110px; }
+}
+
+/* 共通フッターの白い領域・幅は保ち、外側の余白だけ淡くする。 */
+.program-page .footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100vw;
+  height: 100%;
+  transform: translateX(-50%);
+  background: linear-gradient(to right,
+    #ffffff73 0,
+    #ffffff73 calc((100% - min(100%, 1070px)) / 2),
+    transparent calc((100% - min(100%, 1070px)) / 2),
+    transparent calc((100% + min(100%, 1070px)) / 2),
+    #ffffff73 calc((100% + min(100%, 1070px)) / 2));
+  pointer-events: none;
 }

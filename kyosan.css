@@ -1,0 +1,124 @@
+/* 既存サイトの共通ヘッダー・フッターに合わせた協賛ページ。 */
+.sponsors-main {
+  padding: 150px 0 70px;
+  color: #522e1d;
+  font-family: "Klee One", cursive;
+  line-height: 1.8;
+  background: linear-gradient(rgba(255, 255, 255, 0.76), rgba(255, 255, 255, 0.45));
+}
+.sponsors-inner { width: 90%; max-width: 1040px; margin: 0 auto; }
+.sponsors-intro { text-align: center; margin-bottom: 36px; }
+.sponsors-eyebrow { color: #537869; letter-spacing: .14em; font-size: 18px; }
+.sponsors-intro h1 { font-size: clamp(32px, 5vw, 44px); margin: 4px 0 24px; }
+.sponsors-intro p + p { margin-top: 12px; }
+.sponsors-nav { display: grid; grid-template-columns: repeat(4, minmax(0, 180px)); justify-content: center; gap: 10px; margin-bottom: 44px; }
+.sponsors-nav .btn { display: flex; align-items: center; justify-content: center; min-height: 52px; padding: 10px 12px; margin: 0; text-align: center; }
+.sponsors-nav a:focus-visible, .sponsors-section summary:focus-visible { outline: 3px solid #537869; outline-offset: 4px; }
+.sponsors-section { margin-bottom: 28px; scroll-margin-top: 110px; border: 1px solid #d9dece; border-radius: 12px; background: #fff; }
+.sponsors-order-note { margin: 0; padding: 12px 24px 0; color: #756b60; font-size: 14px; text-align: right; }
+.sponsor-names .sponsors-order-note { padding: 0; margin-bottom: 8px; }
+.sponsors-section summary { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 20px 24px; cursor: pointer; list-style: none; }
+.sponsors-section summary::-webkit-details-marker { display: none; }
+.sponsors-section summary::after { content: "+"; font-size: 26px; color: #537869; }
+.sponsors-section details[open] > summary::after { content: "−"; }
+.sponsors-section h2 { font-size: clamp(21px, 3vw, 26px); }
+.sponsors-panel { padding: 8px 24px 32px; }
+.sponsor-grid { display: flex; justify-content: center; align-items: flex-start; flex-wrap: wrap; gap: 28px 24px; padding: 0; margin: 16px 0 40px; list-style: none; }
+.sponsor-card { width: 300px; max-width: 100%; text-align: center; }
+/* 指定寸法は高さ×横幅：大300×300 / 中150×300 / 小50×300px。 */
+.sponsor-image { width: 300px; max-width: 100%; height: 300px; background: #fff; display: flex; align-items: center; justify-content: center; }
+.sponsor-card--medium .sponsor-image { height: 150px; }
+.sponsor-card--small .sponsor-image { height: 50px; }
+.sponsor-image img { width: 100%; height: 100%; object-fit: contain; }
+.sponsor-card figcaption { margin-top: 12px; font-size: 16px; overflow-wrap: anywhere; }
+.sponsor-image-pending, .sponsors-pending { color: #756b60; font-size: 14px; }
+.sponsor-names { padding-top: 24px; border-top: 1px solid #d9dece; margin-top: 28px; }
+.sponsor-names h3 { font-size: 18px; margin-bottom: 16px; }
+@media (max-width: 600px) {
+  .sponsors-nav { grid-template-columns: repeat(2, minmax(0, 180px)); }
+  .sponsors-main { padding-top: 120px; }
+  .sponsors-panel { padding: 8px 12px 24px; }
+  .sponsors-section summary { padding: 16px; }
+}
+/* 共通ページと同じく、読み込みアニメーションの状態に依存せず表示。 */
+#global-container { opacity: 1 !important; transition: none !important; }
+.appear .item { opacity: 1 !important; transform: none !important; }
+
+/* 画像なしのご芳名。長い団体名も列の中で折り返します。 */
+.sponsor-name-list {
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 28px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.sponsor-name-list li {
+  padding: 12px 0;
+  border-bottom: 1px solid #d9dece;
+  overflow-wrap: anywhere;
+}
+@media (max-width: 600px) {
+  .sponsor-name-list { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #container { animation: none; }
+}
+
+.sponsor-heading-break { display: none; }
+@media (max-width: 600px) {
+  .sponsor-heading-break { display: block; }
+}
+
+/* 共通フッターの白い領域・幅は保ち、外側の余白だけ淡くする。 */
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100vw;
+  height: 100%;
+  transform: translateX(-50%);
+  background: linear-gradient(to right,
+    #ffffff73 0,
+    #ffffff73 calc((100% - min(100%, 1070px)) / 2),
+    transparent calc((100% - min(100%, 1070px)) / 2),
+    transparent calc((100% + min(100%, 1070px)) / 2),
+    #ffffff73 calc((100% + min(100%, 1070px)) / 2));
+  pointer-events: none;
+}
+
+/* クラファンのご芳名は、PCでは通常の名称一覧より大きく表示。 */
+.crowdfunding-name-list { grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 601px) {
+  .crowdfunding-name-list { font-size: 24px; }
+}
+
+/* 特別協賛はロゴの縦横比を保ち、固定の画像枠による余白を避ける。 */
+.special-sponsor-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 320px));
+  justify-content: center;
+  align-items: end;
+  gap: 32px;
+  list-style: none;
+  padding: 12px 0;
+  margin: 0;
+}
+.special-sponsor-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  color: #522e1d;
+  text-align: center;
+  text-decoration: none;
+}
+.special-sponsor-link img { width: auto; max-width: 100%; height: auto; max-height: 240px; object-fit: contain; }
+.special-sponsor-link:hover span { text-decoration: underline; }
+.special-sponsor-link:focus-visible { outline: 3px solid #537869; outline-offset: 6px; }
+@media (max-width: 600px) {
+  .special-sponsor-list { grid-template-columns: minmax(0, 300px); }
+}
