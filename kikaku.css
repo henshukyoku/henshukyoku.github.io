@@ -47,20 +47,12 @@
 }
 
 .program-heading h1 {
-  font-size: clamp(28px, 4vw, 40px);
+  font-size: clamp(32px, 5vw, 44px);
   font-weight: 600;
   letter-spacing: 0.12em;
 }
 
-.program-heading h1::after {
-  content: "";
-  display: block;
-  width: 72px;
-  height: 4px;
-  margin: 17px auto;
-  border-radius: 2px;
-  background: linear-gradient(to right, #aa94c1 25%, #d798b2 25% 50%, #7bbaad 50% 75%, #dfa76c 75%);
-}
+
 
 .program-heading__lead {
   font-size: 14px;
@@ -277,14 +269,6 @@
     margin-bottom: 0;
     text-align: left;
     pointer-events: none;
-  }
-
-  .program-page.has-windmill .program-heading h1 {
-    font-size: 34px;
-  }
-
-  .program-page.has-windmill .program-heading h1::after {
-    margin: 12px 0;
   }
 
   .program-wheel-tools:not([hidden]) {
