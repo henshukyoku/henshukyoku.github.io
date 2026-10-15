@@ -3,6 +3,7 @@
   if (!page) return;
 
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const mobileScreen = window.matchMedia('(max-width: 599px)');
   const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
   const banners = [...page.querySelectorAll('.event-banner')];
   const wheel = page.querySelector('.program-wheel');
@@ -17,7 +18,7 @@
 
   // CSSで隠さず、アニメーション中だけ透明にする。JSが使えなくても内容は表示される。
   const reveal = (element, delay = 0) => {
-    if (reducedMotion.matches || typeof element.animate !== 'function') return;
+    if (mobileScreen.matches || reducedMotion.matches || typeof element.animate !== 'function') return;
     if (wheel.classList.contains('is-windmill') && element.matches('.program-grid > li')) return;
 
     const animation = element.animate(
@@ -80,7 +81,7 @@
     }, { passive: true });
 
     banner.addEventListener('pointerdown', event => {
-      if (!reducedMotion.matches && event.isPrimary && event.button === 0) {
+      if (!mobileScreen.matches && !reducedMotion.matches && event.isPrimary && event.button === 0) {
         banner.classList.add('is-pressed');
       }
     }, { passive: true });
@@ -113,6 +114,12 @@
     }
   });
   finePointer.addEventListener('change', resetInteractions);
+  mobileScreen.addEventListener('change', () => {
+    if (mobileScreen.matches) {
+      finishReveals();
+      resetInteractions();
+    }
+  });
   window.addEventListener('blur', resetInteractions);
   window.addEventListener('pagehide', () => {
     finishReveals();
