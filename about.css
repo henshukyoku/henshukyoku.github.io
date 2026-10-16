@@ -111,17 +111,6 @@
   transform: translateX(2vw);
 }
 
-.about-section--crowdfunding .about-section__image img {
-  object-fit: contain;
-  background: #ffffff;
-  transform: none;
-}
-
-.about-section--crowdfunding .about-section__body {
-  width: min(430px, 34vw);
-  transform: translateX(clamp(-460px, -25vw, -240px));
-}
-
 .about-section--greeting {
   min-height: 780px;
   padding-top: 80px;
@@ -165,20 +154,13 @@
     transform: translateX(2vw);
   }
 
-  .about-section--crowdfunding .about-section__image,
   .about-section--tokomidori .about-section__image {
     width: min(66vw, 700px);
   }
 
-  .about-section--crowdfunding .about-section__body {
-    position: relative;
-    left: -4vw;
-    width: min(520px, 46%);
-  }
-
   .about-section--tokomidori .about-section__body {
     position: relative;
-    right: -4vw;
+    left: -4vw;
     width: min(520px, 46%);
   }
 
@@ -312,22 +294,12 @@
   }
 
   .about-section--tokomidori .about-section__body {
+    left: auto;
     width: 100%;
     max-width: none;
     margin-right: auto;
     margin-left: auto;
     transform: none;
-  }
-
-  .about-section--crowdfunding .about-section__body {
-    width: 100%;
-    max-width: none;
-    transform: none;
-  }
-
-  .about-section--crowdfunding .about-section__image {
-    width: 100%;
-    right: auto;
   }
 
   .about-section--greeting {
