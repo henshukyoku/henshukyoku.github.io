@@ -157,7 +157,12 @@
       visual.querySelector('img').alt = '';
       const title = document.createElement('span');
       title.textContent = banner.querySelector('.event-banner__title').textContent;
-      card.append(visual, title);
+      card.append(visual);
+      if (banner.classList.contains('event-banner--applicants')) {
+        card.classList.add('program-mobile-orbit__card--applicants');
+      } else {
+        card.append(title);
+      }
       scene.append(card);
       return card;
     });
@@ -219,6 +224,7 @@
     const desktop = window.matchMedia('(min-width: 1200px) and (hover: hover) and (pointer: fine)');
     const grid = wheel.querySelector('.program-grid');
     const blades = [...grid.children];
+    const angleStep = 360 / blades.length;
     const controls = page.querySelector('.program-wheel-tools');
     const viewButton = controls.querySelector('.program-wheel-view');
     const globalContainer = document.querySelector('#global-container');
@@ -247,7 +253,7 @@
         blade.classList.toggle('is-selected', blade === selected);
         if (blade === selected) {
           const turn = ((rotations[index].currentTime || 0) % duration) / duration * 360;
-          const angle = (index * 60 + 20 + turn) % 360;
+          const angle = (index * angleStep + 20 + turn) % 360;
           blade.style.setProperty('--upright-angle', `${angle > 180 ? 360 - angle : -angle}deg`);
         }
       });
@@ -274,13 +280,13 @@
         reveals.delete(blade);
         blade.classList.remove('is-selected');
         blade.style.removeProperty('--upright-angle');
-        blade.style.setProperty('--blade-angle', `${index * 60}deg`);
+        blade.style.setProperty('--blade-angle', `${index * angleStep}deg`);
         if (!enabled) return;
 
-        // 6枚を同じ速度で回す。中央のキャラクターは別レイヤーで静止させる。
-        const transform = angle => `translate(-50%, -50%) rotate(${angle}deg) translateY(-260px) rotate(20deg)`;
+        // 企画数に合わせて等間隔に回す。中央のキャラクターは別レイヤーで静止させる。
+        const transform = angle => `translate(-50%, -50%) rotate(${angle}deg) translateY(var(--wheel-radius)) rotate(20deg)`;
         const rotation = blade.animate(
-          [{ transform: transform(index * 60) }, { transform: transform(index * 60 + 360) }],
+          [{ transform: transform(index * angleStep) }, { transform: transform(index * angleStep + 360) }],
           { duration, iterations: Infinity, easing: 'linear' }
         );
         rotation.pause();

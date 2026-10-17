@@ -1907,12 +1907,12 @@ main {
 }
 @media screen and (min-width: 960px) {
   .highlight__item {
-    flex-basis: 31%;
+    flex-basis: 23%;
   }
 }
 @media screen and (min-width: 1280px) {
   .highlight__item {
-    flex-basis: 31%;
+    flex-basis: 23%;
   }
 }
 @media screen and (max-width: 599px) {
