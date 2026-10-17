@@ -334,8 +334,8 @@
   .is-windmill .program-grid {
     position: absolute;
     inset: 0;
-    /* カード同士の重なり順は、とこみどりの背面にまとめる。 */
-    z-index: 1;
+    /* カードととこみどりの重なり順を、同じ階層で制御する。 */
+    z-index: auto;
     display: block;
   }
 
@@ -383,6 +383,11 @@
     width: 240px;
     height: 296px;
     transform: translate(-50%, -50%) rotate(var(--blade-angle)) translateY(var(--wheel-radius)) rotate(20deg);
+  }
+
+  .is-windmill .program-grid > li.is-selected {
+    /* 選択中は他のカードより手前、とこみどりより奥に置く。 */
+    z-index: calc(var(--program-count, 7) + 1);
   }
 
   .is-windmill .event-banner {
@@ -438,7 +443,7 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    z-index: 3;
+    z-index: calc(var(--program-count, 7) + 2);
     display: block;
     width: 314px;
     transform: translate(-50%, -50%);

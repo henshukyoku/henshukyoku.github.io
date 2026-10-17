@@ -225,6 +225,7 @@
     const grid = wheel.querySelector('.program-grid');
     const blades = [...grid.children];
     const angleStep = 360 / blades.length;
+    wheel.style.setProperty('--program-count', blades.length);
     const controls = page.querySelector('.program-wheel-tools');
     const viewButton = controls.querySelector('.program-wheel-view');
     const globalContainer = document.querySelector('#global-container');
