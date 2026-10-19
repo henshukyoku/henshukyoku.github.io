@@ -1,0 +1,282 @@
+/* とこ祭の4色。屋台の屋根・のれん・提灯で共通の色を繰り返す。 */
+.yatai-page {
+  --yatai-pink: #deb6c4;
+  --yatai-orange: #dfbd99;
+  --yatai-cyan: #a1cfca;
+  --yatai-purple: #bfb1d7;
+  --yatai-ink: #522e1d;
+  --yatai-paper: #fffaf0;
+  --yatai-line: #d9cbb9;
+  height: auto;
+  color: var(--yatai-ink);
+  background: var(--yatai-paper);
+  font-family: "Klee One", cursive;
+}
+
+.yatai-page #global-container { opacity: 1; transition: none; }
+.yatai-page #container { background: var(--yatai-paper); animation: none; }
+.yatai-page .logo { text-decoration: none; }
+.yatai-page .footer { max-width: none; width: 100%; }
+.yatai-page [hidden] { display: none !important; }
+.yatai-page a { color: inherit; }
+.yatai-page a:focus-visible,
+.yatai-page button:focus-visible { outline: 3px solid #765e91 !important; outline-offset: 6px; }
+.yatai-page .mobile-menu { max-height: calc(100dvh - 70px); overflow-y: auto; }
+.yatai-main { z-index: 0; padding-top: 100px; }
+.yatai-main [id] { scroll-margin-top: 125px; }
+.yatai-main a { text-decoration: none; }
+.yatai-wrap { width: min(1100px, calc(100% - 80px)); margin-inline: auto; }
+.yatai-sr-only,
+.yatai-skip:not(:focus) { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.yatai-skip:focus { position: fixed; top: 12px; left: 12px; z-index: 300; padding: 12px; background: white; }
+
+/* 提灯の並ぶ、明るい縁日の入口。 */
+.yatai-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 114px 0 48px;
+  text-align: center;
+  background: radial-gradient(ellipse at 50% 100%, #fffdf8 15%, transparent 70%), #f5ecdc;
+}
+.yatai-hero__inner { position: relative; }
+.yatai-eyebrow { font-family: Georgia, serif; font-size: 12px; letter-spacing: .22em; }
+.yatai-hero h1 { margin: 8px 0 13px; font-size: clamp(44px, 5.5vw, 68px); font-weight: 600; letter-spacing: .2em; text-indent: .2em; }
+.yatai-quicklinks { display: flex; justify-content: center; gap: 16px; margin-top: 26px; }
+.yatai-quicklinks a { display: flex; gap: 32px; align-items: center; padding: 11px 20px; border: 1px solid var(--yatai-ink); background: var(--yatai-paper); box-shadow: 3px 3px 0 var(--yatai-cyan); font-size: 14px; transition: transform .2s; }
+.yatai-quicklinks a:last-child { box-shadow: 3px 3px 0 var(--yatai-purple); }
+.yatai-quicklinks a:hover { transform: translateY(-3px); }
+.yatai-four-colors { position: absolute; bottom: 0; left: 0; display: flex; width: 100%; height: 7px; }
+.yatai-four-colors i { flex: 1; background: var(--stall-color); }
+.yatai-lanterns { position: absolute; inset: 0 0 auto; display: flex; justify-content: space-around; height: 108px; max-width: 1500px; margin-inline: auto; border-top: 2px solid #79604d; }
+.yatai-lantern {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 54px;
+  height: 66px;
+  margin-top: 12px;
+  border: 1px solid #522e1d33;
+  border-radius: 40%;
+  background: repeating-linear-gradient(0deg, transparent 0 8px, #522e1d16 8px 9px), var(--stall-color);
+  box-shadow: inset 8px 0 10px #ffffff38, inset -8px 0 10px #522e1d0d;
+}
+.yatai-lantern:nth-child(even) { margin-top: 31px; }
+.yatai-lantern::before { content: ""; position: absolute; top: -14px; left: calc(50% - .5px); width: 1px; height: 12px; background: #79604d; }
+.yatai-lantern:nth-child(even)::before { top: -33px; height: 31px; }
+.yatai-lantern::after { content: ""; position: absolute; inset: -3px 16px; border-block: 4px solid #71503d; border-radius: 4px; }
+.yatai-lantern > span { font-size: 23px; }
+.yatai-lantern:nth-child(4n + 1), .yatai-stall:nth-child(4n + 1), .yatai-four-colors i:nth-child(1) { --stall-color: var(--yatai-pink); }
+.yatai-lantern:nth-child(4n + 2), .yatai-stall:nth-child(4n + 2), .yatai-four-colors i:nth-child(2) { --stall-color: var(--yatai-orange); }
+.yatai-lantern:nth-child(4n + 3), .yatai-stall:nth-child(4n + 3), .yatai-four-colors i:nth-child(3) { --stall-color: var(--yatai-cyan); }
+.yatai-lantern:nth-child(4n + 4), .yatai-stall:nth-child(4n + 4), .yatai-four-colors i:nth-child(4) { --stall-color: var(--yatai-purple); }
+
+/* 画像が主役の屋台。画面が広いときは必ず3列。 */
+.yatai-lineup { padding-block: 64px 76px; }
+.yatai-section-heading { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 35px; }
+.yatai-section-heading h2 { margin-top: 8px; font-size: clamp(27px, 3vw, 34px); font-weight: 600; letter-spacing: .1em; }
+.yatai-content-note { color: #786c60; font-size: 12px; font-weight: 400; line-height: 1.8; }
+.yatai-area-nav { display: flex; flex-wrap: wrap; gap: 12px 28px; margin-bottom: 36px; }
+.yatai-area-nav a { display: inline-flex; align-items: center; gap: 18px; padding: 10px 0; border-bottom: 1px solid var(--yatai-ink); font-size: 14px; }
+.yatai-area + .yatai-area { margin-top: 64px; }
+.yatai-area__title { margin-bottom: 30px; padding: 10px 16px; border-left: 5px solid var(--yatai-pink); background: #deb6c426; font-size: 22px; font-weight: 600; }
+#yatai-area-101 .yatai-area__title { border-left-color: var(--yatai-cyan); background: #a1cfca30; }
+.yatai-grid { display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; gap: 48px 30px; list-style: none; padding: 0; }
+.yatai-stall { width: calc((100% - 60px) / 3); min-width: 0; padding-bottom: 13px; }
+.yatai-stall article { position: relative; }
+.yatai-stall article::before,
+.yatai-stall article::after { content: ""; position: absolute; z-index: 0; width: 9px; top: 39px; bottom: -12px; background: #9e7a5e; border: 1px solid #79563f; }
+.yatai-stall article::before { left: 12px; }
+.yatai-stall article::after { right: 12px; }
+.yatai-stall__roof { height: 34px; margin-inline: 1px; background: repeating-linear-gradient(90deg, var(--stall-color) 0 12.5%, #fff9e9 12.5% 25%); clip-path: polygon(7% 0, 93% 0, 100% 100%, 0 100%); }
+.yatai-stall__awning {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 22px;
+  background: var(--stall-color);
+  border-block: 1px solid #522e1d26;
+  box-shadow: 0 3px 3px #522e1d0a;
+}
+.yatai-stall__awning::after { content: ""; position: absolute; bottom: -9px; width: 100%; height: 10px; background: radial-gradient(ellipse at 50% 0, var(--stall-color) 69%, transparent 72%) 0 0 / 12.5% 100% repeat-x; }
+.yatai-stall__frame {
+  position: relative;
+  margin-inline: 20px;
+  padding: 18px 8px 10px;
+  background: repeating-linear-gradient(90deg, #ffffff35 0 2px, transparent 2px 8px), var(--stall-color);
+  border-inline: 1px solid #522e1d26;
+}
+.yatai-stall__image-panel {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 4 / 5;
+  padding: 18px 12px;
+  overflow: hidden;
+  border: 1px solid #522e1d26;
+  background: #fff8e8;
+  box-shadow: inset 0 0 20px #9e7a5e12;
+}
+.yatai-stall__image-panel::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  opacity: .3;
+  background:
+    radial-gradient(circle at 50% 100%, transparent 9px, var(--stall-color) 9px 11px, transparent 11px 17px, var(--stall-color) 17px 19px, transparent 19px) 0 0 / 38px 24px,
+    radial-gradient(circle at 50% 100%, transparent 9px, var(--stall-color) 9px 11px, transparent 11px 17px, var(--stall-color) 17px 19px, transparent 19px) 19px 12px / 38px 24px;
+}
+.yatai-stall__image {
+  position: relative;
+  z-index: 1;
+  display: block;
+  flex: 0 1 auto;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  min-width: 0;
+  min-height: 0;
+  object-fit: contain;
+  border: 4px solid #fffdf5;
+  box-shadow: 0 3px 0 #9e7a5e25, 0 8px 15px #522e1d26;
+}
+.yatai-stall__decor { position: absolute; z-index: 0; inset: 0; overflow: hidden; pointer-events: none; }
+.yatai-stall__fan {
+  position: absolute;
+  width: 128px;
+  height: 128px;
+  border: 1px solid #522e1d1a;
+  border-radius: 50%;
+  background: repeating-conic-gradient(from 0deg, var(--stall-color) 0deg 15deg, #fff7e4 15deg 30deg);
+  box-shadow: 0 2px 4px #522e1d12;
+}
+.yatai-stall__fan--top { top: -52px; left: -42px; }
+.yatai-stall__fan--bottom { bottom: -47px; right: -36px; width: 142px; height: 142px; }
+.yatai-stall__paper { position: absolute; width: 8px; height: 20px; background: var(--yatai-pink); transform: rotate(-28deg); }
+.yatai-stall__paper:nth-of-type(3) { top: 24px; right: 26%; background: var(--yatai-purple); transform: rotate(32deg); }
+.yatai-stall__paper:nth-of-type(4) { bottom: 30px; left: 19%; background: var(--yatai-cyan); }
+.yatai-stall__paper:nth-of-type(5) { bottom: 58px; left: 8%; width: 6px; height: 12px; background: var(--yatai-orange); transform: rotate(24deg); }
+.yatai-stall__placeholder { display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 18px; width: 100%; aspect-ratio: 4 / 5; border: 1px dashed var(--yatai-line); background: repeating-linear-gradient(-45deg, transparent 0 5px, #dfbd9912 5px 6px); text-align: center; }
+.yatai-stall__placeholder p { font-size: 13px; line-height: 1.9; }
+.yatai-stall__coming { margin: 14px 0 7px; font-family: Georgia, serif; font-size: 10px; letter-spacing: .2em; }
+.yatai-stall__counter { position: relative; z-index: 1; padding: 14px 20px; border: 1px solid #522e1d26; border-bottom: 5px solid #9e7a5e; background: var(--stall-color); }
+.yatai-stall__counter h4 { font-size: 17px; font-weight: 600; line-height: 1.6; }
+.yatai-stall__group { margin-top: 6px; font-size: 12px; line-height: 1.7; }
+.yatai-stall__catchcopy { margin-top: 10px; padding-top: 10px; border-top: 1px solid #522e1d26; font-size: 13px; line-height: 1.85; white-space: pre-line; overflow-wrap: anywhere; }
+.yatai-stall__details { position: relative; margin-inline: 20px; padding: 14px 12px; border: 1px solid var(--yatai-line); border-top: 0; background: #fffcf5; font-size: 12px; line-height: 1.8; }
+.yatai-stall__details dl { display: grid; gap: 6px; }
+.yatai-stall__details dl > div { display: grid; grid-template-columns: 2em minmax(0, 1fr); gap: 12px; }
+.yatai-stall__details dd { margin: 0; overflow-wrap: anywhere; }
+.yatai-stall__details time { white-space: nowrap; }
+.yatai-stall__extra { display: inline-block; margin-top: 12px; border-bottom: 1px solid currentColor; }
+.yatai-stall__order {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 52px;
+  margin-top: 18px;
+  padding: 12px 10px;
+  border: 2px solid #783229;
+  border-radius: 6px;
+  background: #913d32;
+  color: #fffaf0 !important;
+  box-shadow: 0 3px 0 #612820;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+}
+.yatai-stall__order:hover { background: #783229; }
+.yatai-pinwheel { display: grid; grid-template-columns: repeat(2, 1fr); width: 40px; height: 40px; transform: rotate(-12deg); }
+.yatai-pinwheel i:nth-child(1) { background: var(--yatai-pink); border-radius: 100% 0 0; }
+.yatai-pinwheel i:nth-child(2) { background: var(--yatai-orange); border-radius: 0 100% 0 0; }
+.yatai-pinwheel i:nth-child(3) { background: var(--yatai-cyan); border-radius: 0 0 0 100%; }
+.yatai-pinwheel i:nth-child(4) { background: var(--yatai-purple); border-radius: 0 0 100%; }
+.yatai-noscript { margin-top: 24px; font-size: 14px; text-align: center; }
+
+.yatai-map-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 38px 24px; padding-top: 14px; }
+
+/* マップは固定比率や切り抜きをせず、届いた画像をそのまま掲載。 */
+.yatai-map-section { padding-block: 60px 70px; border-block: 1px solid var(--yatai-line); background: #edf3ed; }
+.yatai-map-board { position: relative; padding: 38px 24px 24px; margin-top: 0; border: 7px solid #b79777; box-shadow: inset 0 0 0 1px #79563f, 0 5px 0 #79563f; background: var(--yatai-paper); }
+.yatai-map-board__label { position: absolute; top: -23px; left: 50%; transform: translateX(-50%) rotate(-2deg); width: max-content; padding: 9px 28px; background: var(--yatai-purple); border: 1px solid #522e1d55; font-size: 16px; letter-spacing: .12em; }
+.yatai-map-link { display: block; cursor: zoom-in; }
+.yatai-map-image { width: 100%; height: auto; object-fit: contain; }
+.yatai-map-link > span { display: block; width: fit-content; margin: 20px auto 0; border-bottom: 1px solid currentColor; font-size: 14px; }
+
+/* ネイティブdialogでフォーカスを管理。拡大後は縦横にスクロールできる。 */
+.yatai-map-viewer {
+  position: fixed;
+  inset: 0;
+  width: min(1440px, calc(100vw - 40px));
+  height: min(1000px, calc(100dvh - 40px));
+  max-width: none;
+  max-height: none;
+  margin: auto;
+  padding: 0;
+  border: 1px solid var(--yatai-line);
+  color: var(--yatai-ink);
+  background: #fff;
+  overflow: hidden;
+}
+.yatai-map-viewer[open] { display: flex; flex-direction: column; }
+.yatai-map-viewer::backdrop { background: #241b15cc; }
+.yatai-map-viewer__toolbar { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 12px 20px; padding: 16px 20px; border-bottom: 1px solid var(--yatai-line); }
+.yatai-map-viewer h2 { font-size: 20px; font-weight: 600; }
+.yatai-map-viewer__controls { grid-column: 1 / -1; display: flex; align-items: center; gap: 10px; }
+.yatai-map-viewer button { min-width: 44px; min-height: 44px; padding: 6px 12px; color: inherit; background: #fff; border: 1px solid var(--yatai-line); cursor: pointer; }
+.yatai-map-viewer button:hover:not(:disabled) { background: #edf3ed; }
+.yatai-map-viewer button:disabled { opacity: .4; cursor: default; }
+.yatai-map-viewer__close { background: var(--yatai-cyan) !important; }
+.yatai-map-viewer__scale { min-width: 54px; text-align: center; font-variant-numeric: tabular-nums; font-size: 14px; }
+.yatai-map-viewer__original { margin-left: auto; font-size: 14px; text-underline-offset: 4px; }
+.yatai-map-viewer__viewport { flex: 1; min-height: 0; overflow: auto; overscroll-behavior: contain; padding: 16px; background: #e9e9e6; }
+.yatai-map-viewer__viewport:focus-visible { outline: 3px solid #765e91; outline-offset: -3px; }
+.yatai-map-viewer__image { display: block; max-width: none; height: auto; margin-inline: auto; background: #fff; }
+
+@media (max-width: 767px) {
+  .yatai-wrap { width: calc(100% - 56px); }
+  .yatai-hero { padding: 88px 0 28px; }
+  .yatai-lanterns { height: 90px; }
+  .yatai-lantern { width: 36px; height: 46px; }
+  .yatai-lantern:nth-child(n + 5) { display: none; }
+  .yatai-lantern::after { inset-inline: 12px; }
+  .yatai-lantern > span { font-size: 18px; }
+  .yatai-hero h1 { margin-top: 12px; font-size: 38px; }
+  .yatai-quicklinks { gap: 12px; }
+  .yatai-quicklinks a { gap: 10px; padding: 10px; font-size: 12px; min-height: 44px; }
+  .yatai-lineup { padding-block: 34px 40px; }
+  .yatai-section-heading { flex-direction: column; align-items: start; gap: 12px; margin-bottom: 22px; }
+  .yatai-section-heading h2 { font-size: 25px; }
+  .yatai-area__title { margin-bottom: 24px; font-size: 20px; }
+  .yatai-area + .yatai-area { margin-top: 48px; }
+  .yatai-grid { gap: 28px; max-width: 320px; margin-inline: auto; }
+  .yatai-stall { width: 100%; }
+  .yatai-stall__roof { height: 28px; }
+  .yatai-stall__awning { height: 18px; }
+  .yatai-stall__frame { padding-top: 14px; }
+  .yatai-stall__counter { padding: 12px 16px; }
+  .yatai-stall__counter h4 { font-size: 16px; }
+  .yatai-stall__details { padding: 12px 10px; }
+  .yatai-map-section { padding-block: 32px 36px; }
+  .yatai-map-grid { grid-template-columns: minmax(0, 1fr); }
+  .yatai-map-board { padding: 28px 10px 12px; border-width: 5px; }
+  .yatai-map-board__label { padding-inline: 20px; font-size: 14px; }
+  .yatai-map-viewer { width: calc(100vw - 16px); height: calc(100dvh - 16px); }
+  .yatai-map-viewer__toolbar { padding: 12px; gap: 12px 8px; }
+  .yatai-map-viewer h2 { font-size: 16px; }
+  .yatai-map-viewer__controls { gap: 6px; }
+  .yatai-map-viewer__controls button { padding-inline: 8px; font-size: 13px; }
+  .yatai-map-viewer__original { font-size: 12px; }
+  .yatai-map-viewer__scale { min-width: 44px; font-size: 12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .yatai-page *, .yatai-page *::before, .yatai-page *::after { animation: none !important; transition: none !important; }
+  .yatai-stall article { transform: none; }
+}

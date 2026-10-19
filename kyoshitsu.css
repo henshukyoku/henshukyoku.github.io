@@ -1,0 +1,157 @@
+/* 共通の4色と、100号館の白い壁・窓・回廊を組み合わせる。 */
+.classroom-page {
+  --room-pink: #deb6c4;
+  --room-orange: #dfbd99;
+  --room-cyan: #a1cfca;
+  --room-purple: #bfb1d7;
+  --room-ink: #38433e;
+  --room-muted: #626d67;
+  --room-line: #cbd2cd;
+  --room-paper: #f5f6f2;
+  height: auto;
+  color: var(--room-ink);
+  background: var(--room-paper);
+  font-family: "Klee One", cursive;
+}
+.classroom-page #global-container { opacity: 1; transition: none; }
+.classroom-page #container { background: var(--room-paper); animation: none; }
+.classroom-page .logo { text-decoration: none; }
+.classroom-page .footer { max-width: none; width: 100%; background-color: var(--room-paper); border-top: 1px solid var(--room-line); }
+.classroom-page [hidden] { display: none !important; }
+.classroom-page a { color: inherit; }
+.classroom-page :is(a, button):focus-visible { outline: 3px solid #765e91 !important; outline-offset: 5px; }
+.classroom-page .mobile-menu { max-height: calc(100dvh - 70px); overflow-y: auto; }
+.classroom-main { z-index: 0; padding-top: 100px; }
+.classroom-main [id] { scroll-margin-top: 124px; }
+.classroom-main a { text-decoration: none; }
+.classroom-wrap { width: min(1000px, calc(100% - 80px)); margin-inline: auto; }
+.classroom-sr-only, .classroom-skip:not(:focus) { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.classroom-skip:focus { position: fixed; top: 12px; left: 12px; z-index: 300; padding: 12px; background: #fff; }
+
+/* 白い建築のボリューム、ガラス窓、4色の案内ライン。 */
+.classroom-hero { position: relative; isolation: isolate; overflow: hidden; min-height: 350px; border-bottom: 1px solid var(--room-line); background: #eef1ed; }
+.classroom-hero::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, #eef1ed 8%, #eef1edf0 32%, transparent 62%), url("images/kyoshitsu/campus-lab.svg") right bottom / auto 100% no-repeat; }
+.classroom-hero__inner { position: relative; padding-block: 60px 56px; }
+.classroom-hero h1 { margin-top: 21px; font-size: clamp(36px, 4vw, 54px); font-weight: 600; letter-spacing: .12em; line-height: 1.5; }
+.classroom-hero__entry { display: inline-flex; align-items: center; gap: 40px; margin-top: 24px; padding: 10px 16px; border: 1px solid #89998e; background: #f9faf6eb; box-shadow: 4px 4px 0 #c5d4cc; font-size: 14px; transition: transform .2s; }
+.classroom-hero__entry:hover { transform: translateY(-3px); }
+.classroom-color-line { display: flex; position: absolute; inset: auto 0 0; height: 5px; }
+.classroom-color-line i { flex: 1; }
+.classroom-color-line i:nth-child(1) { background: var(--room-pink); }
+.classroom-color-line i:nth-child(2) { background: var(--room-orange); }
+.classroom-color-line i:nth-child(3) { background: var(--room-cyan); }
+.classroom-color-line i:nth-child(4) { background: var(--room-purple); }
+
+/* エリア案内はページ内リンクなので、JavaScriptなしでも利用できる。 */
+.classroom-directory { padding-block: 26px; border-bottom: 1px solid var(--room-line); background: #fafbf7; }
+.classroom-directory__inner { display: flex; align-items: center; gap: 36px; }
+.classroom-directory h2 { flex-shrink: 0; font-size: 15px; font-weight: 600; }
+.classroom-floor-nav { display: flex; flex: 1; gap: 10px; }
+.classroom-floor-nav a { flex: 1; display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 56px; padding: 8px 11px; border: 1px solid var(--room-line); border-top: 3px solid var(--floor-color, var(--room-cyan)); background: #fff; font-size: 11px; transition: background .2s; }
+.classroom-floor-nav a:nth-child(1) { --floor-color: var(--room-pink); }
+.classroom-floor-nav a:nth-child(2) { --floor-color: var(--room-orange); }
+.classroom-floor-nav a:nth-child(3) { --floor-color: var(--room-cyan); }
+.classroom-floor-nav a:nth-child(4) { --floor-color: var(--room-purple); }
+.classroom-floor-nav strong { display: block; font-size: 18px; font-weight: 600; }
+.classroom-floor-nav a:last-child { flex: 1.3; }
+.classroom-floor-nav a:last-child strong { font-size: 14px; }
+.classroom-floor-nav a:hover { background: #edf2ed; }
+
+/* コンクリートの目地と、廊下を通る4色の細い配管。 */
+.classroom-lineup { position: relative; padding-block: 44px 56px; }
+.classroom-lineup, .classroom-page .footer { background-image: linear-gradient(90deg, #95a39a0b 1px, transparent 1px), linear-gradient(#95a39a0b 1px, transparent 1px); background-position: center top; background-size: 160px 160px; }
+.classroom-lineup::before, .classroom-lineup::after, .classroom-page .footer::before, .classroom-page .footer::after { content: ""; position: absolute; top: 0; bottom: 0; width: 13px; pointer-events: none; opacity: .55; background: linear-gradient(90deg, var(--room-pink) 0 2px, transparent 2px 4px, var(--room-orange) 4px 6px, transparent 6px 8px, var(--room-cyan) 8px 10px, transparent 10px 12px, var(--room-purple) 12px); }
+.classroom-lineup::before, .classroom-page .footer::before { left: 16px; }
+.classroom-lineup::after, .classroom-page .footer::after { right: 16px; }
+.classroom-section-heading { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 34px; }
+.classroom-section-heading h2 { font-size: 28px; font-weight: 600; letter-spacing: .1em; }
+.classroom-content-note { font-size: 12px; color: var(--room-muted); line-height: 1.8; }
+.classroom-floor { --floor-color: var(--room-pink); }
+.classroom-floor + .classroom-floor { margin-top: 54px; }
+#floor-100-2 { --floor-color: var(--room-orange); }
+#floor-100-3, #floor-101 { --floor-color: var(--room-cyan); }
+#floor-100-4 { --floor-color: var(--room-purple); }
+.classroom-floor__heading { display: flex; align-items: center; gap: 14px; margin-bottom: 26px; padding-bottom: 11px; border-bottom: 1px solid #aab6ac; }
+.classroom-floor__heading::after { content: ""; flex: 1; height: 6px; background: repeating-linear-gradient(90deg, #b8c2b7 0 1px, transparent 1px 7px); opacity: .6; }
+.classroom-floor__number { display: grid; place-items: center; width: 56px; height: 48px; border: 1px solid #9eaaa0; background: var(--floor-color); font: 23px "Helvetica Neue", Arial, sans-serif; }
+.classroom-floor__heading h3 { font-size: 20px; font-weight: 600; letter-spacing: .08em; }
+.classroom-floor__heading small { display: block; margin-top: 2px; color: var(--room-muted); font: 10px "Helvetica Neue", Arial, sans-serif; letter-spacing: .12em; }
+
+/* 3列・余り中央揃えを保ち、スマホは幅288pxまでのコンパクトな1列。 */
+.classroom-grid { display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; gap: 36px 24px; padding: 0; list-style: none; }
+.classroom-card { --card-color: var(--room-pink); width: calc((100% - 48px) / 3); min-width: 0; }
+.classroom-card:nth-child(4n + 2) { --card-color: var(--room-orange); }
+.classroom-card:nth-child(4n + 3) { --card-color: var(--room-cyan); }
+.classroom-card:nth-child(4n + 4) { --card-color: var(--room-purple); }
+.classroom-card article { position: relative; border: 1px solid #bcc6bc; background: #fcfdf9; box-shadow: 5px 6px 0 #cdd4ca66; }
+.classroom-card__plate { display: flex; justify-content: space-between; align-items: center; gap: 10px; min-height: 38px; padding: 7px 14px; border-bottom: 1px solid #bdc7bd; background: #e7ebe4; }
+.classroom-card__plate span { font-size: 12px; letter-spacing: .08em; }
+.classroom-card__plate strong { font-size: 13px; font-weight: 600; }
+.classroom-frame { padding: 10px; background: #e1e6de; }
+.classroom-poster { position: relative; display: flex; justify-content: center; align-items: center; aspect-ratio: 4 / 5; padding: 18px 15px; border: 1px solid #b8c1b7; background: url("images/kyoshitsu/poster-surround.svg") center / 100% 100% no-repeat #f3f5ee; }
+.classroom-poster::before, .classroom-poster::after { content: ""; position: absolute; width: 23px; height: 23px; border-color: var(--card-color); border-style: solid; pointer-events: none; }
+.classroom-poster::before { top: 6px; left: 6px; border-width: 3px 0 0 3px; }
+.classroom-poster::after { bottom: 6px; right: 6px; border-width: 0 3px 3px 0; }
+.classroom-image { position: relative; width: auto; height: auto; max-width: 100%; max-height: 100%; min-width: 0; min-height: 0; object-fit: contain; border: 4px solid #fffffff0; box-shadow: 2px 5px 12px #38433e26; }
+.classroom-placeholder { display: grid; place-items: center; aspect-ratio: 4 / 5; border: 1px dashed #aab6a9; font-size: 13px; }
+.classroom-card__body { padding: 14px 16px 15px; border-top: 4px solid var(--card-color); background: linear-gradient(90deg, var(--card-color) -180%, #fcfdf9 100%); text-align: center; }
+.classroom-card__body h4 { font-size: 17px; font-weight: 600; line-height: 1.65; text-wrap: balance; }
+.classroom-title-line, .classroom-group__line { display: block; }
+.classroom-text-part { display: inline-block; max-width: 100%; vertical-align: top; }
+.classroom-card__group { margin-top: 7px; font-size: 12px; line-height: 1.8; color: #566158; }
+.classroom-card__catchcopy { margin-top: 11px; padding-top: 10px; border-top: 1px solid #b7c1b680; font-size: 12.5px; line-height: 1.85; text-wrap: pretty; }
+.classroom-card__details { padding: 13px 16px 16px; border-top: 1px solid var(--room-line); font-size: 12px; line-height: 1.85; text-align: center; }
+.classroom-card__details dl { display: grid; gap: 10px; }
+.classroom-card__details dl > div { display: grid; grid-template-columns: minmax(0, 1fr); gap: 2px; }
+.classroom-card__details dt { color: var(--room-muted); font-size: 11px; }
+.classroom-card__details dd { margin: 0; overflow-wrap: anywhere; text-wrap: pretty; }
+.classroom-place { display: inline-block; }
+.classroom-card__details time { white-space: nowrap; }
+.classroom-card__details ul { padding: 0; list-style: none; }
+.classroom-card__details li + li { margin-top: 6px; }
+.classroom-card__details .classroom-time-slots { display: grid; grid-template-columns: repeat(2, max-content); justify-content: center; gap: 3px 18px; }
+.classroom-card__details .classroom-time-slots li { margin: 0; white-space: nowrap; }
+.classroom-duration { margin-top: 6px; }
+.classroom-booking { padding: 2px 5px; background: #e8e3ef; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+.classroom-card__more { display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; margin-top: 15px; padding-top: 10px; border-top: 1px solid var(--room-line); text-decoration: underline !important; text-underline-offset: 4px; }
+
+@media (max-width: 1000px) {
+  .classroom-directory__inner { display: block; }
+  .classroom-floor-nav { margin-top: 14px; }
+  .classroom-hero::before { background-position: center, calc(100% + 170px) bottom; }
+}
+@media (max-width: 767px) {
+  .classroom-wrap { width: calc(100% - 64px); }
+  .classroom-hero { min-height: 240px; }
+  .classroom-hero::before { background: url("images/kyoshitsu/campus-lab.svg") center / auto 125% no-repeat; opacity: .22; }
+  .classroom-hero__inner { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 240px; padding-block: 36px; text-align: center; }
+  .classroom-hero h1 { margin-top: 0; font-size: clamp(28px, 7.5vw, 38px); letter-spacing: .08em; text-indent: .08em; }
+  .classroom-hero__entry { margin-top: 20px; padding: 10px 14px; gap: 34px; font-size: 13px; }
+  .classroom-directory { padding-block: 20px; }
+  .classroom-floor-nav { flex-wrap: wrap; gap: 8px; }
+  .classroom-floor-nav a { flex: 1 0 calc(25% - 8px); padding: 8px; gap: 3px; min-height: 56px; font-size: 9px; }
+  .classroom-floor-nav strong { font-size: 17px; }
+  .classroom-floor-nav a:last-child { flex: 1 0 100%; min-height: 49px; }
+  .classroom-floor-nav a:last-child strong { display: inline; margin-left: 12px; }
+  .classroom-lineup { padding-block: 28px 36px; }
+  .classroom-lineup::before, .classroom-page .footer::before { left: 8px; width: 6px; }
+  .classroom-lineup::after, .classroom-page .footer::after { right: 8px; width: 6px; background-position: right; }
+  .classroom-section-heading { display: block; margin-bottom: 24px; }
+  .classroom-section-heading h2 { font-size: 23px; }
+  .classroom-content-note { margin-top: 10px; font-size: 11px; }
+  .classroom-floor + .classroom-floor { margin-top: 38px; }
+  .classroom-floor__heading { gap: 10px; margin-bottom: 20px; }
+  .classroom-floor__number { width: 46px; height: 42px; font-size: 20px; }
+  .classroom-floor__heading h3 { font-size: 18px; }
+  .classroom-grid { gap: 24px; max-width: 288px; margin-inline: auto; }
+  .classroom-card { width: 100%; }
+  .classroom-card__body { padding: 12px 13px; text-align: center; }
+  .classroom-card__body h4 { font-size: 16px; text-wrap: balance; }
+  .classroom-card__group { text-wrap: balance; line-height: 1.8; }
+  .classroom-group__line { display: block; }
+  .classroom-card__catchcopy { text-wrap: pretty; }
+  .classroom-card__details { padding: 12px 13px 15px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .classroom-page *, .classroom-page *::before, .classroom-page *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}

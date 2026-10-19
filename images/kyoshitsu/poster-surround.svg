@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="400" viewBox="0 0 320 400" fill="none">
+  <defs>
+    <pattern id="grid" width="25" height="25" patternUnits="userSpaceOnUse"><path d="M25 0H0V25" stroke="#a5b5a3" stroke-opacity=".2"/></pattern>
+  </defs>
+  <path fill="#f3f5ee" d="M0 0H320V400H0z"/>
+  <path fill="url(#grid)" d="M0 0H320V400H0z"/>
+  <path fill="#a1cfca" fill-opacity=".3" d="M0 24H96V104H0z"/>
+  <path stroke="#8ab2ab" stroke-opacity=".6" d="M0 24H96V104H0M30 24V104M63 24V104M0 64H96"/>
+  <path fill="#dfbd99" fill-opacity=".32" d="M232 0H320V94H278V46H232z"/>
+  <path stroke="#be9b75" stroke-opacity=".6" d="M232 0V46H278V94H320M244 0V34H290V82H320"/>
+  <path fill="#deb6c4" fill-opacity=".28" d="M0 294H83V370H0z"/>
+  <path stroke="#c09ba8" stroke-opacity=".6" d="M0 294H83V370H0M0 306H71V358H0M0 318H59V346H0"/>
+  <path fill="#bfb1d7" fill-opacity=".3" d="M236 310H320V400H236z"/>
+  <path stroke="#a397b8" stroke-opacity=".65" d="M236 400V310H320M249 400V323H320M262 400V336H320M275 400V349H320"/>
+  <g stroke-width="2" opacity=".7">
+    <path d="M0 154H17V220H0M320 192H304V268H320" stroke="#deb6c4"/>
+    <path d="M0 160H11V226H0M320 198H310V274H320" stroke="#dfbd99"/>
+    <path d="M103 0V14H176V0M122 400V385H194V400" stroke="#a1cfca"/>
+    <path d="M109 0V8H182V0M128 400V391H200V400" stroke="#bfb1d7"/>
+  </g>
+  <g stroke="#9ba897" stroke-opacity=".55">
+    <path d="M108 45H124M116 37V53M200 360H216M208 352V368"/>
+    <circle cx="302" cy="18" r="3"/><circle cx="18" cy="382" r="3"/>
+  </g>
+</svg>
