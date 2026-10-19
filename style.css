@@ -2263,3 +2263,57 @@ main {
 
   overflow: visible;
 }
+
+/* トップページでも企画一覧と同じカードを使用する。 */
+.home-program-grid {
+  margin-top: 28px;
+  color: #522e1d;
+}
+
+.home-programs-button {
+  margin-top: 28px;
+}
+
+@media screen and (max-width: 599px) {
+  .home-program-grid {
+    gap: 14px;
+  }
+
+  .home-program-grid .event-banner {
+    flex-direction: row;
+  }
+
+  .home-program-grid .event-banner__visual {
+    flex: 0 0 38%;
+    aspect-ratio: auto;
+    border-bottom: 0;
+    border-right: 3px solid var(--banner-accent);
+  }
+
+  .home-program-grid .event-banner__body {
+    min-width: 0;
+    padding: 12px 14px;
+  }
+
+  .home-program-grid .event-banner__title {
+    font-size: 18px;
+  }
+
+  .home-program-grid .event-banner__subtitle {
+    margin-bottom: 8px;
+    font-size: 10px;
+  }
+
+  .home-program-grid .event-banner__arrow {
+    flex-basis: 26px;
+    width: 26px;
+    height: 26px;
+    font-size: 16px;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .home-program-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

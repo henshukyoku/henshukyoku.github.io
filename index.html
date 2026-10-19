@@ -29,6 +29,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Klee+One&display=swap" rel="stylesheet">
     
     <!-- メインのスタイルシート（すべてのCSSが統合されている） -->
+    <link rel="stylesheet" href="kikaku.css" />
     <link rel="stylesheet" href="style.css" />
     
     <!-- Scripts (deferred) -->
@@ -133,7 +134,7 @@
             
             <!-- メインコンテンツ -->
             <main>
-              <!-- 新着情報 -->
+              <!-- とこ祭の見どころ -->
               <section class="news-feature">
                 <div class="news-feature__inner appear up">
                   <div class="news-feature__vine-frame" aria-hidden="true">
@@ -232,7 +233,7 @@
                       </g>
                     </svg>
                   </div>
-                  <h2 class="news-feature__title main-title tween-animate-title item">新着情報</h2>
+                  <h2 class="news-feature__title main-title tween-animate-title item">とこ祭の見どころ</h2>
                   <div class="news-feature__image shine item">
                     <div class="news-feature__image-vines" aria-hidden="true">
                       <svg viewBox="0 0 700 980" preserveAspectRatio="none" focusable="false">
@@ -419,86 +420,51 @@
                 <div class="wind-wave orange"></div>
               </div> -->
               
-              <!-- 企画カテゴリ一覧（非表示）
-              <section class="programs">
-                セクションタイトル
-                <div>
-                  <h2 class="main-title tween-animate-title">
-                    企画一覧
-                  </h2>
-                  <p class="sub-title tween-animate-title">
-                    企画内容をご覧ください
-                  </p>
-                </div>
-                カテゴリカード一覧
-                <div class="programs__inner">
-                  カテゴリカード1
-                  <a class="programs__item" href="yoshikawa.html">
-                    <div class="cover-slide hover-darken">
-                      <div
-                        class="bg-img-zoom img-bg50 programs__celebrity-img"
-                        style="background-image: url(images/index/geinouzin_kikaku.png)"
-                      ></div>
-                    </div>
-                    <p class="programs__title">芸能人企画</p>
-                  </a>
-                  カテゴリカード2
-                  <div class="programs__item">
-                    <div class="cover-slide hover-darken">
-                      <div
-                        class="bg-img-zoom img-bg50"
-                        style="background-image: url(images/index/aka.png)"
-                      ></div>
-                    </div>
-                    <p class="programs__title">教室内企画</p>
-                  </div>
-                  カテゴリカード3
-                  <div class="programs__item">
-                    <div class="cover-slide hover-darken">
-                      <div
-                        class="bg-img-zoom img-bg50"
-                        style="background-image: url(images/index/mizuiro.png)"
-                      ></div>
-                    </div>
-                    <p class="programs__title">ステージ企画</p>
-                  </div>
-                  カテゴリカード4
-                  <div class="programs__item">
-                    <div class="cover-slide hover-darken">
-                      <div
-                        class="bg-img-zoom img-bg50"
-                        style="background-image: url(images/index/orange.png)"
-                      ></div>
-                    </div>
-                    <p class="programs__title">屋台</p>
-                  </div>
-                  カテゴリカード5
-                  <div class="programs__item">
-                    <div class="cover-slide hover-darken">
-                      <div
-                        class="bg-img-zoom img-bg50"
-                        style="background-image: url(images/index/kamen.webp)"
-                      ></div>
-                    </div>
-                    <p class="programs__title">Category 5</p>
-                  </div>
-                  カテゴリカード6
-                  <div class="programs__item">
-                    <div class="cover-slide hover-darken">
-                      <div
-                        class="bg-img-zoom img-bg50"
-                        style="background-image: url(images/index/kamen.webp)"
-                      ></div>
-                    </div>
-                    <p class="programs__title">Category 6</p>
-                  </div>
-                  もっと詳しくボタン（下からフェードイン）
-                  <div class="programs__btn appear up">
-                    <button class="btn slide-bg item">もっと詳しく</button>
-                  </div>
+              <!-- 企画カテゴリ一覧 -->
+              <section class="programs" aria-labelledby="home-programs-title">
+                <h2 id="home-programs-title" class="main-title">企画一覧</h2>
+                <ul class="program-grid home-program-grid">
+<li>
+                      <a class="event-banner event-banner--stage" href="stage.html">
+                        <div class="event-banner__visual event-banner__visual--illustration">
+                          <img src="images/kikaku/card-stage.svg" alt="4色の花火と照明、スピーカーが彩るステージのイラスト" width="640" height="480" loading="lazy" decoding="async" />
+                        </div>
+                        <div class="event-banner__body">
+                          <h3 class="event-banner__title">ステージ企画</h3>
+                          <p class="event-banner__subtitle">STAGE</p>
+                          <span class="event-banner__action">詳細を見る<span class="event-banner__arrow" aria-hidden="true">↗</span></span>
+                        </div>
+                      </a>
+                    </li>
+<li>
+                      <a class="event-banner event-banner--classroom" href="kyoshitsu.html">
+                        <div class="event-banner__visual event-banner__visual--illustration">
+                          <img src="images/kikaku/card-classroom.svg" alt="教室内企画ページの校舎と4色の案内ラインのイラスト" width="640" height="480" loading="lazy" decoding="async" />
+                        </div>
+                        <div class="event-banner__body">
+                          <h3 class="event-banner__title">教室内企画</h3>
+                          <p class="event-banner__subtitle">CLASSROOM</p>
+                          <span class="event-banner__action">詳細を見る<span class="event-banner__arrow" aria-hidden="true">↗</span></span>
+                        </div>
+                      </a>
+                    </li>
+<li>
+                      <a class="event-banner event-banner--food" href="yatai.html">
+                        <div class="event-banner__visual event-banner__visual--illustration">
+                          <img src="images/kikaku/card-food.svg" alt="4色の提灯と縞屋根の屋台が並ぶイラスト" width="640" height="480" loading="lazy" decoding="async" />
+                        </div>
+                        <div class="event-banner__body">
+                          <h3 class="event-banner__title">屋台企画</h3>
+                          <p class="event-banner__subtitle">FOOD</p>
+                          <span class="event-banner__action">詳細を見る<span class="event-banner__arrow" aria-hidden="true">↗</span></span>
+                        </div>
+                      </a>
+                    </li>
+                </ul>
+                <div class="programs__btn home-programs-button">
+                  <a class="btn filled" href="kikaku.html">企画一覧を見る</a>
                 </div>
               </section>
-              -->
             </main>
             
             <!-- 右サイドバー（コピーライト） -->

@@ -142,6 +142,11 @@
   object-fit: cover;
 }
 
+/* スマホの回転用コピーでもイラスト全体を枠内に収める。 */
+.event-banner__visual--illustration img {
+  object-fit: contain;
+}
+
 /* 吉川愛のバナーは下端を基準に拡大し、右下の権利表記を残す。
    visual側のクラスなので、スマホの回転用コピーにも同じ指定が適用される。 */
 .event-banner__visual--ai {
@@ -637,7 +642,7 @@
   pointer-events: none;
 }
 
-/* 受験生向け企画だけはチラシの縦横比を保ち、画像のみを表示する。 */
+/* 受験生向け企画はチラシの縦横比を保ち、下に詳細へのボタンを添える。 */
 .program-wheel:not(.is-windmill) .program-item--applicants {
   grid-column: 1 / -1;
   justify-self: center;
@@ -660,6 +665,27 @@
   object-fit: contain;
 }
 
+.event-banner__flyer-button {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  min-height: 44px;
+  margin: 12px;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.event-banner--applicants:hover .event-banner__flyer-button,
+.event-banner--applicants:focus-visible .event-banner__flyer-button {
+  background-color: #fff;
+  color: #522e1d;
+  box-shadow: none;
+}
+
 @media screen and (min-width: 1200px) and (hover: hover) and (pointer: fine) {
   .program-wheel:not(.is-windmill) .program-item--applicants {
     width: calc((100% - 48px) / 3);
@@ -667,7 +693,7 @@
 
   .is-windmill .program-grid > .program-item--applicants {
     width: calc(333px * 1241 / 1755);
-    height: 333px;
+    height: 403px;
   }
 }
 
