@@ -988,6 +988,7 @@
     flex:none;
     width:240px;
     max-width:100%;
+    padding:12px 40px;
   }
   .ap-cloud {
     font-size:clamp(30px, 9vw, 36px);
@@ -1001,9 +1002,25 @@
     margin-bottom:22px;
   }
   .ap-button {
+    position:relative;
+    justify-content:center;
+    text-align:center;
     font-size:12px;
-    padding:13px 21px;
+    padding:13px 40px;
     gap:25px;
+  }
+  .ap-button > span[aria-hidden="true"] {
+    position:absolute;
+    right:16px;
+    top:50%;
+    transform:translateY(-50%);
+  }
+  .ap-section-heading {
+    align-items:center;
+    text-align:center;
+  }
+  .ap-schedule-intro {
+    text-align:center;
   }
   .ap-world {
     position:absolute;
@@ -1283,6 +1300,11 @@
   .ap-booklet-tag {
     display:table;
     margin:20px auto 0;
+    position:relative;
+    /* 親の左余白42pxを補正し、カード全体の中央に配置。 */
+    left:-21px;
+    transform:none;
+    text-align:center;
   }
   .ap-support-times {
     max-width:310px;
