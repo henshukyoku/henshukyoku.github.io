@@ -160,6 +160,16 @@
   line-height:1;
 }
 
+.ap-button .ap-button-label {
+  font-size:inherit;
+  line-height:1.7;
+  text-align:center;
+}
+
+.ap-button-label small {
+  font-size:10px;
+}
+
 .ap-button:hover {
   background:#314568;
   transform:translateY(-3px);
