@@ -25,6 +25,7 @@
     <script src="scripts/libs/text-animation.js" defer></script>
     <script src="scripts/main.js" defer></script>
     <script src="scripts/access.js" defer></script>
+    <script src="scripts/access-map.js" defer></script>
     <script src="scripts/access-forest.js" defer></script>
   </head>
   <body>
@@ -186,10 +187,14 @@
                 </section>
                 <section class="access-block" id="campus" aria-labelledby="campus-heading">
                   <h2 class="access-heading" id="campus-heading">キャンパスマップ</h2>
-                  <div class="access-campus-grid">
-                    <div class="access-map-placeholder"><span class="access-status-label">準備中</span><h3>全体マップ</h3><p>キャンパス全体のマップを掲載予定です。</p></div>
-                    <div class="access-map-placeholder"><span class="access-status-label">準備中</span><h3>100号館・101号館</h3><p>建物内のマップを掲載予定です。</p></div>
-                  </div>
+                  <figure class="access-campus-map">
+                    <div class="access-campus-map-preview">
+                      <img src="images/access/P6_tokorozawa_campus_map_page-0001.jpg" alt="所沢キャンパス全体図。各号館、出入口、バス乗り場、バリアフリー設備の位置を掲載しています。" width="1241" height="1471" loading="lazy" decoding="async" />
+                    </div>
+                    <figcaption>
+                      <button class="btn filled" type="button" data-open-campus-map aria-haspopup="dialog" aria-controls="access-map-viewer">マップを拡大 <span aria-hidden="true">＋</span></button>
+                    </figcaption>
+                  </figure>
                 </section>
               </div>
             </main>
@@ -243,5 +248,20 @@
         </ul>
       </nav>
     </div>
+    <dialog class="access-map-viewer" id="access-map-viewer" aria-labelledby="access-map-viewer-title">
+      <div class="access-map-viewer__toolbar">
+        <h2 id="access-map-viewer-title">キャンパスマップ</h2>
+        <button class="access-dialog-close" type="button" data-map-close aria-label="閉じる" autofocus><span aria-hidden="true">×</span></button>
+        <div class="access-map-viewer__controls">
+          <button class="btn filled" type="button" data-map-zoom="out" aria-label="マップを縮小">−</button>
+          <output class="access-map-viewer__scale" aria-live="polite">100%</output>
+          <button class="btn filled" type="button" data-map-zoom="in" aria-label="マップを拡大">＋</button>
+          <button class="btn filled" type="button" data-map-zoom="reset">全体表示</button>
+        </div>
+      </div>
+      <div class="access-map-viewer__viewport" tabindex="0" aria-label="拡大したキャンパスマップ。スクロールで表示位置を移動できます。">
+        <img class="access-map-viewer__image" alt="所沢キャンパス全体図。各号館、出入口、バス乗り場、バリアフリー設備の位置。" />
+      </div>
+    </dialog>
   </body>
 </html>

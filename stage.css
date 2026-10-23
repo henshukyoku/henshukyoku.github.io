@@ -79,6 +79,7 @@
 .performer__body { position: relative; z-index: 3; margin-left: -24px; padding: 28px 24px 28px 40px; background: #090a0f; border-left: 2px solid var(--accent); }
 .performer__time { display: flex; align-items: center; gap: 10px; color: var(--accent); font-weight: 700; font-size: 21px; font-variant-numeric: tabular-nums; }.performer__time span:first-child { font-size: 9px; letter-spacing: .12em; margin-right: 4px; }
 .performer h3 { font-size: clamp(20px,2.2vw,29px); line-height: 1.65; margin: 18px 0 20px; font-weight: 800; overflow-wrap: anywhere; text-wrap: balance; }
+.performer__catchphrase { color: #d5d3de; font-size: clamp(13px, 1.2vw, 15px); line-height: 2; overflow-wrap: break-word; }
 
 
 .performer:nth-child(even) { grid-template-columns: 1fr 1.4fr; }.performer:nth-child(even) .performer__visual { grid-column: 2; grid-row: 1; }.performer:nth-child(even) .performer__body { grid-column: 1; grid-row: 1; margin-left: 0; margin-right: -24px; padding-left: 28px; padding-right: 40px; border-left: none; border-right: 2px solid var(--accent); }
@@ -103,3 +104,9 @@
 .performer-name-part { display: block; white-space: nowrap; }
 
 .stage-update-note { margin-top: 16px; color: #a0a0aa; font-size: 11px; line-height: 1.8; }
+
+.stage-rain-notice { margin-top: 24px; padding: clamp(18px, 3vw, 28px); background: #951d30; border: 1px solid #e6546b; border-left: 4px solid #ff7d8e; color: #fff; }
+.stage-rain-notice h3 { margin: 0 0 10px; font-size: clamp(15px, 2vw, 18px); line-height: 1.6; font-weight: 700; }
+.stage-rain-notice h3 span { margin-right: 6px; }
+.stage-rain-notice p { font-size: 14px; line-height: 1.9; }
+.stage-rain-notice strong { font-weight: 800; }

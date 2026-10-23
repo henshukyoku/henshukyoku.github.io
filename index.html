@@ -134,7 +134,15 @@
             
             <!-- メインコンテンツ -->
             <main>
-              <!-- 注目情報 -->
+
+
+              <section class="festival-visit" aria-labelledby="festival-visit-title">
+                <h2 id="festival-visit-title" class="main-title">開催日程</h2>
+                <p class="festival-visit__date"><span>10/25(日)</span> <span>9:30〜18:30</span></p>
+                <a class="btn filled" href="access.html">アクセスはこちら</a>
+              </section>
+
+              <!-- 吉川愛 注目情報 -->
               <section class="news-feature">
                 <div class="news-feature__inner appear up">
                   <div class="news-feature__vine-frame" aria-hidden="true">
@@ -242,9 +250,7 @@
                       </svg>
                     </div>
                     <div class="news-feature__poster">
-                      <picture>
-                        <img src="images/common/yoshikawa_new.png" alt="吉川愛さん トークショー 開催決定ポスター">
-                      </picture>
+                      <a href="yoshikawa.html" aria-label="吉川愛トークショーの詳細を見る"><img src="images/common/yoshikawa_new.png" alt="吉川愛さん トークショー 開催決定ポスター"></a>
                     </div>
                     <div class="news-feature__image-roses" aria-hidden="true">
                       <svg viewBox="0 0 700 980" preserveAspectRatio="none" focusable="false">
@@ -308,19 +314,6 @@
                     </div>
                   </div>
                   <h3 class="news-feature__text item">吉川愛さん トークショー 開催決定！</h3>
-                  <!-- <dl class="news-feature__info item">
-                    <div class="news-feature__info-row">
-                      <dt>開催日時</dt>
-                      <dd>
-                        10月25日（日）<br>
-                        開場 14:00　開演 14:45　終演 15:45
-                      </dd>
-                    </div>
-                    <div class="news-feature__info-row">
-                      <dt>開催場所</dt>
-                      <dd>早稲田大学所沢キャンパス100号館212教室</dd>
-                    </div>
-                  </dl> -->
                   <div class="news-feature__btns item">
                     <a class="btn filled" href="yoshikawa.html">詳細はこちら</a>
                     <a class="btn filled" href="https://livepocket.jp/e/yoshikawaai" target="_blank" rel="noopener">チケット購入</a>
@@ -387,33 +380,7 @@
                 <div class="wind-wave orange"></div>
               </div>
 
-              <!-- YouTube横動画セクション -->
-              <section class="pamphlet">
-                <div class="pamphlet__inner">
-                  <div class="pamphlet__img cover-slide">
-                    <div class="pamphlet__video">
-                      <iframe src="https://www.youtube.com/embed/kkdm_UuD_mQ" title="所沢キャンパス祭 公式動画" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-                    </div>
-                  </div>
-                  <div class="pamphlet__texts appear left">
-                    <div class="pamphlet__texts-inner">
-                      <div class="pamphlet__title main-title item">
-                        <span class="purple">公式</span>
-                        <span>動画</span>
-                      </div>
-                      <div class="pamphlet__sub sub-title item">PVをご覧ください</div>
-                      <div class="pamphlet__description item">
-                        <p>イベント紹介の横長動画です。</p>
-                      </div>
-                      <div class="pamphlet__btn item">
-                        <a class="btn filled" href="https://youtu.be/kkdm_UuD_mQ" target="_blank" rel="noopener">YouTubeで開く</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </section>
-
-              <!-- <div class="wind-decoration-area reverse-wind">
+<!-- <div class="wind-decoration-area reverse-wind">
                 <div class="wind-wave purple"></div>
                 <div class="wind-wave pink"></div>
                 <div class="wind-wave cyan"></div>
@@ -435,6 +402,7 @@
                           <span class="event-banner__action">詳細を見る<span class="event-banner__arrow" aria-hidden="true">↗</span></span>
                         </div>
                       </a>
+                      <p class="home-stage-venue"><span>100号館 メインステージ</span><br>雨天時は<strong>100号館の食堂に変更</strong></p>
                     </li>
 <li>
                       <a class="event-banner event-banner--classroom" href="kyoshitsu.html">
@@ -463,6 +431,23 @@
                 </ul>
                 <div class="programs__btn home-programs-button">
                   <a class="btn filled" href="kikaku.html">企画一覧を見る</a>
+                </div>
+              </section>
+              <!-- 公式パンフレット -->
+              <section class="news-feature brochure-feature">
+                <div class="news-feature__inner appear up">
+                  <h2 class="news-feature__title main-title tween-animate-title item">公式パンフレット</h2>
+                  <div class="news-feature__image item">
+                    <div class="news-feature__poster">
+                      <a class="brochure-feature__link" href="images/index/tokosai_brochure_2026_forWEB_v2.pdf" aria-label="所沢キャンパス祭2026のパンフレットをPDFで開く">
+                        <picture>
+                          <source media="(min-width: 600px)" srcset="images/index/ryomen.jpg">
+                          <img src="images/index/katamen.png" alt="所沢キャンパス祭2026 公式パンフレット" width="1128" height="1614">
+                        </picture>
+                      </a>
+                    </div>
+                  </div>
+                  <p class="item">画像をタップしてパンフレット（PDF）をご覧ください。</p>
                 </div>
               </section>
             </main>

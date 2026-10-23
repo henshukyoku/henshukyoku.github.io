@@ -34,6 +34,29 @@
   line-height: 1.4;
 }
 
+.corrections-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.corrections-heading__mascot {
+  position: relative;
+  flex: 0 0 64px;
+  height: 90px;
+  overflow: hidden;
+}
+
+.corrections-heading__mascot img {
+  position: absolute;
+  width: 184px;
+  max-width: none;
+  height: 184px;
+  left: -61px;
+  top: -51px;
+}
+
 .corrections-status {
   margin-top: 48px;
   padding-top: 26px;
@@ -43,6 +66,87 @@
 .corrections-status h2 {
   margin-bottom: 16px;
   font-size: 1.3rem;
+}
+
+.corrections-status h3 {
+  margin: 36px 0 16px;
+  font-size: 1.15rem;
+}
+
+.corrections-table-wrap {
+  overflow-x: auto;
+}
+
+.corrections-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  font-size: 0.95rem;
+}
+
+.corrections-table caption {
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.corrections-table th,
+.corrections-table td {
+  padding: 16px 12px;
+  border: 1px solid #c9d9d3;
+  text-align: left;
+  vertical-align: top;
+  overflow-wrap: anywhere;
+}
+
+.corrections-table thead th {
+  background: #e5f0eb;
+}
+
+.corrections-table tbody th {
+  background: #f5f8f5;
+}
+
+.corrections-table td a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.corrections-link-row {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.corrections-link-row .btn {
+  max-width: 100%;
+}
+
+.corrections-link-row .btn:focus-visible,
+.corrections-brochure__cover:focus-visible,
+.corrections-table td a:focus-visible {
+  outline: 3px solid #a65c25;
+  outline-offset: 4px;
+}
+
+.corrections-brochure {
+  text-align: center;
+}
+
+.corrections-brochure__cover {
+  display: block;
+  width: 100%;
+  margin: 24px auto 0;
+  box-shadow: 0 6px 20px rgba(82, 46, 29, 0.15);
+  transition: opacity 0.3s;
+}
+
+.corrections-brochure__cover:hover {
+  opacity: 0.8;
+}
+
+.corrections-brochure__cover img {
+  width: 100%;
+  height: auto;
 }
 
 @media (max-width: 600px) {
@@ -55,8 +159,34 @@
     font-size: 1.65rem;
   }
 
+  .corrections-heading {
+    gap: 8px;
+  }
+
+  .corrections-heading__mascot {
+    flex-basis: 48px;
+    height: 68px;
+  }
+
+  .corrections-heading__mascot img {
+    width: 138px;
+    height: 138px;
+    left: -46px;
+    top: -38px;
+  }
+
   .corrections-status {
     margin-top: 38px;
+  }
+
+  .corrections-brochure__cover {
+    max-width: 360px;
+  }
+
+  .corrections-table th,
+  .corrections-table td {
+    padding: 10px 7px;
+    font-size: 0.85rem;
   }
 }
 

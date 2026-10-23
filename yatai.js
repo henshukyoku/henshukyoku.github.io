@@ -56,7 +56,6 @@
       viewerImage.src = link.href;
       viewerImage.alt = link.querySelector("img").alt;
       viewer.querySelector("h2").textContent = link.closest("figure").querySelector("figcaption").textContent;
-      viewer.querySelector(".yatai-map-viewer__original").href = link.href;
       previousOverflow = document.body.style.overflow;
       document.body.style.overflow = "hidden";
       viewer.showModal();

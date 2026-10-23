@@ -2317,3 +2317,70 @@ main {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
+
+/* パンフレットはスマホで片面、タブレット・PCで見開きを表示。 */
+.brochure-feature__link { display: block; }
+.brochure-feature__link:focus-visible { outline: 3px solid #4d7c6b; outline-offset: -3px; }
+.brochure-feature .news-feature__poster::after { pointer-events: none; }
+@media screen and (min-width: 600px) {
+  .brochure-feature .news-feature__image { width: 100%; }
+}
+
+.home-program-grid > li {
+  display: flex;
+  flex-direction: column;
+}
+.home-program-grid .event-banner {
+  height: auto;
+  flex: 1;
+}
+.home-stage-venue {
+  margin-top: 10px;
+  padding: 10px 14px;
+  border-left: 3px solid #3d7e8e;
+  border-radius: 0 6px 6px 0;
+  background: #e3f0f3;
+  color: #522e1d;
+  font-size: 12px;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+.home-stage-venue strong { display: inline-block; }
+@media screen and (max-width: 599px) {
+  .home-program-grid .event-banner { flex: none; }
+}
+
+/* パンフレットと注目情報の間に開催日時・アクセスを案内。 */
+.festival-visit {
+  box-sizing: border-box;
+  width: 90%;
+  max-width: 960px;
+  margin: 0 auto 80px;
+  padding: 44px 24px;
+  border: 1px solid rgba(77, 124, 107, 0.18);
+  border-radius: 8px;
+  background: linear-gradient(145deg, #f8fbf7, #e3eee6);
+  box-shadow: 0 14px 32px rgba(82, 46, 29, 0.10);
+  text-align: center;
+  color: #522e1d;
+}
+.festival-visit .main-title {
+  margin-bottom: 24px;
+}
+@media screen and (min-width: 960px) {
+  .festival-visit {
+    padding: 52px 40px;
+    margin-bottom: 96px;
+  }
+}
+.festival-visit__date {
+  margin-bottom: 24px;
+  font-size: clamp(26px, 4vw, 38px);
+  font-weight: 600;
+  line-height: 1.6;
+}
+.festival-visit__date span { display: inline-block; }
+.festival-visit .btn { margin-bottom: 0; }
+@media screen and (max-width: 599px) {
+  .festival-visit__date span { display: block; }
+}

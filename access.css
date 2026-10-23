@@ -60,7 +60,7 @@
 }
 
 .access-block p {
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
 }
 
 .access-heading {
@@ -157,30 +157,30 @@
 }
 
 /* モバイルを基準にしたアクセス案内 */
-.new-page-main { padding: 120px 0 64px; font-size: 16px; line-height: 1.85; }
-.content-inner { width: calc(100% - 40px); max-width: 960px; }
-.access-intro { margin-bottom: 28px; }
+.new-page-main { padding: 116px 0 44px; font-size: 15px; line-height: 1.8; }
+.content-inner { width: calc(100% - 48px); max-width: 800px; }
+.access-intro { margin-bottom: 20px; }
 .access-eyebrow { font-size: 12px; font-weight: 700; letter-spacing: .18em; color: #47695d; }
-.access-page-title { font-family: "Klee One", cursive; font-size: clamp(26px, 5vw, 42px); line-height: 1.5; text-align: left; margin: 12px 0 16px; }
+.access-page-title { font-family: "Klee One", cursive; font-size: clamp(24px, 4.5vw, 34px); line-height: 1.5; text-align: left; margin: 12px 0 16px; }
 .access-intro > p:last-child { color: #6b5a4f; }
-.access-shortcuts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; margin-bottom: 48px; }
-.access-shortcuts .btn { display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; margin: 0; padding: 12px 4px; font-size: 12px; text-align: center; }
+.access-shortcuts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; margin-bottom: 32px; }
+.access-shortcuts .btn { display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; margin: 0; padding: 8px 4px; min-height: 44px; font-size: 12px; text-align: center; }
 .access-shortcuts span { color: inherit; }
-.access-block { margin-bottom: 52px; scroll-margin-top: 110px; }
-.access-heading { display: flex; align-items: baseline; gap: 12px; font-size: clamp(19px, 3vw, 25px); line-height: 1.6; padding-top: 18px; border-top: 1px solid #b9b5aa; margin-bottom: 22px; }
+.access-block { margin-bottom: 36px; scroll-margin-top: 110px; }
+.access-heading { display: flex; align-items: baseline; gap: 12px; font-size: clamp(18px, 2.8vw, 22px); line-height: 1.6; padding-top: 18px; border-top: 1px solid #b9b5aa; margin-bottom: 16px; }
 .access-venue { font-weight: 600; }
-.access-map-embed { padding-top: 0; height: 270px; border-radius: 6px; box-shadow: none; border: 1px solid #d3d4cb; }
+.access-map-embed { padding-top: 0; height: 220px; border-radius: 6px; box-shadow: none; border: 1px solid #d3d4cb; }
 .access-address { font-size: 13px; font-weight: 400; line-height: 1.7; }
-.access-map-link-row .btn { max-width: 100%; padding: 12px 24px; font-size: 15px; }
+.access-map-link-row .btn { max-width: 100%; padding: 8px 22px; min-height: 44px; font-size: 14px; }
 .access-timetable-card { background: #fff; border: 1px solid #d9dece; border-radius: 8px; overflow: hidden; }
 .access-bus-direction { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; font-size: 14px; padding: 18px 12px; border-bottom: 1px solid #e1e6df; }
 .access-bus-direction span { color: #47695d; }
-.access-next-bus { padding: 24px 20px; background: #edf3ef; }
+.access-next-bus { padding: 16px; background: #edf3ef; }
 .access-status-label { display: block; color: #47695d; font-size: 12px; font-weight: 600; letter-spacing: .08em; }
 .access-next-bus p { margin-bottom: 0; }
 .access-next-time { margin: 8px 0 12px; font-size: 21px; font-weight: 600; font-variant-numeric: tabular-nums; }
 .access-fine-print { font-size: 12px; color: #58665d; line-height: 1.8; }
-.access-timetable-body { padding: 24px 20px; }
+.access-timetable-body { padding: 18px 16px; }
 .access-timetable-body h4 { font-size: 16px; margin-bottom: 16px; }
 .access-pending { font-size: 14px; color: #6b5a4f; }
 .access-timetable { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
@@ -193,26 +193,30 @@
 .access-map-placeholder { padding: 28px 20px; background: #ffffffb3; border: 1px solid #d9dece; border-radius: 6px; }
 .access-map-placeholder h3 { margin: 8px 0; font-size: 18px; }
 .access-map-placeholder p { margin: 0; font-size: 14px; color: #6b5a4f; }
-.access-campus-grid { display: grid; gap: 16px; }
+.access-campus-map { width: 100%; max-width: 280px; margin: 0 auto; }
+.access-campus-map-preview { display: block; overflow: hidden; border: 1px solid #d9dece; border-radius: 6px; background: #fff; box-shadow: 0 8px 24px rgba(64, 41, 29, .05); }
+.access-campus-map-preview img { display: block; width: 100%; height: auto; }
+.access-campus-map figcaption { margin-top: 12px; color: #522e1d; font-size: 14px; text-align: center; }
 .new-page-main a:focus-visible { outline: 3px solid #47695d; outline-offset: 4px; }
 @media (min-width: 700px) {
-  .new-page-main { padding-top: 150px; }
-  .access-intro { margin-bottom: 36px; }
+  .new-page-main { padding-top: 132px; }
+  .access-intro { margin-bottom: 24px; }
   .access-title-break { display: none; }
-  .access-shortcuts { max-width: 600px; gap: 12px; margin: 0 auto 64px; }
+  .access-shortcuts { max-width: 520px; gap: 10px; margin: 0 auto 44px; }
   .access-shortcuts .btn { flex-direction: row; gap: 20px; font-size: 14px; }
-  .access-block { margin-bottom: 72px; }
-  .access-map-embed { height: 430px; }
-  .access-campus-grid { grid-template-columns: 1fr 1fr; }
-  .access-next-bus, .access-timetable-body { padding: 28px 32px; }
+  .access-block { margin-bottom: 48px; }
+  .access-map-embed { height: 330px; }
+  .access-next-bus, .access-timetable-body { padding: 18px 24px; }
+  .access-campus-map { max-width: 600px; }
 }
 
 #bus { scroll-margin-top: 110px; }
 .access-transport-note { font-size: inherit; color: inherit; }
 
-.access-timetable-card + .access-timetable-card { margin-top: 28px; }
+.access-timetable-card + .access-timetable-card { margin-top: 20px; }
 
-.access-timetable-actions { padding: 16px 20px; text-align: center; }
+.access-timetable-actions { padding: 10px 16px; text-align: center; }
+.access-timetable-actions .btn, .access-campus-map .btn { min-height: 44px; padding: 8px 24px; font-size: 14px; }
 .access-timetable-dialog { width: min(640px, calc(100% - 24px)); max-height: 85dvh; margin: auto; padding: 0; border: 1px solid #d9dece; border-radius: 8px; background: #fff; color: #522e1d; font-family: inherit; overscroll-behavior: contain; }
 .access-timetable-dialog::backdrop { background: rgba(30, 25, 20, .6); }
 .access-dialog-header { position: sticky; top: 0; z-index: 1; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 16px; background: #476b57; color: #fff; border-bottom: 1px solid #3b5b49; }
@@ -227,19 +231,19 @@ body:has(.access-timetable-dialog[open]) { overflow: hidden; }
 }
 
 /* 元の書体・配色を活かし、余白と陰影で奥行きを付ける。 */
-.access-intro { padding: 20px 0 32px; text-align: center; }
+.access-intro { padding: 12px 0 20px; text-align: center; }
 .access-page-title { text-align: center; }
 .access-intro > p:last-child { color: #522e1d; }
-.access-heading { position: relative; display: block; padding-top: 24px; border-top-color: rgba(82, 46, 29, .25); }
+.access-heading { position: relative; display: block; padding-top: 18px; border-top-color: rgba(82, 46, 29, .25); }
 .access-map-embed { border-radius: 4px; box-shadow: 0 12px 28px rgba(64, 41, 29, .1); }
 .access-timetable-card { border-radius: 4px; box-shadow: 0 12px 30px rgba(64, 41, 29, .08); }
-.access-bus-direction { background: #522e1d; color: #fff; padding: 20px 12px; border-bottom: 0; }
+.access-bus-direction { background: #522e1d; color: #fff; padding: 14px 12px; border-bottom: 0; }
 .access-next-bus { background: linear-gradient(120deg, #f6faf7, #e5efea); }
-.access-next-time { font-size: clamp(26px, 5vw, 36px); line-height: 1.6; overflow-wrap: anywhere; }
+.access-next-time { font-size: clamp(22px, 4.5vw, 28px); line-height: 1.6; overflow-wrap: anywhere; }
 .access-map-placeholder { padding: 32px 24px; background: #ffffffc9; box-shadow: 0 8px 24px rgba(64, 41, 29, .05); }
 .access-timetable-dialog { box-shadow: 0 24px 80px #20150c66; }
 @media (min-width: 700px) {
-  .access-intro { padding: 32px 24px 40px; }
+  .access-intro { padding: 20px 20px 28px; }
 }
 
 /* 吉川愛ページの植物装飾に合わせた、本文の背後に伸びる枝。 */
@@ -265,7 +269,7 @@ body:has(.access-timetable-dialog[open]) { overflow: hidden; }
 }
 
 /* 画像ではなくSVGで描く、画面幅に合わせた路線案内。 */
-.access-rail-map { margin: 0; padding: 24px 8px 8px; background: #fffdf9f2; border: 1px solid #d9dece; border-radius: 6px; box-shadow: 0 8px 24px rgba(64, 41, 29, .05); }
+.access-rail-map { max-width: 300px; margin: 0 auto; padding: 18px 8px 8px; background: #fffdf9f2; border: 1px solid #d9dece; border-radius: 6px; box-shadow: 0 8px 24px rgba(64, 41, 29, .05); }
 .access-rail-map figcaption { padding: 0 12px 12px; font-size: 14px; text-align: center; }
 .rail-diagram { display: block; width: 100%; height: auto; overflow: visible; font-family: inherit; }
 .rail-diagram--desktop { display: none; }
@@ -281,8 +285,32 @@ body:has(.access-timetable-dialog[open]) { overflow: hidden; }
 .rail-station--campus rect { fill: #e6eee6; stroke: #9db39f; }
 .rail-exit-label { fill: #476b57; font-size: 14px; paint-order: stroke; stroke: #fffdf9; stroke-width: 6px; }
 @media (min-width: 700px) {
-  .access-rail-map { padding: 28px 16px 12px; }
+  .access-rail-map { max-width: none; padding: 20px 12px 8px; }
   .access-rail-map figcaption { font-size: 16px; }
   .rail-diagram--mobile { display: none; }
   .rail-diagram--desktop { display: block; }
+}
+
+/* 屋台マップと同じ倍率・スクロール操作の画像ビューアー。 */
+.access-map-viewer { position: fixed; inset: 0; width: min(1200px, calc(100vw - 40px)); height: min(900px, calc(100dvh - 40px)); max-width: none; max-height: none; margin: auto; padding: 0; border: 1px solid #d9dece; color: #522e1d; background: #fff; font-family: "Klee One", cursive; overflow: hidden; }
+.access-map-viewer[open] { display: flex; flex-direction: column; }
+.access-map-viewer::backdrop { background: #241b15cc; }
+.access-map-viewer__toolbar { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 12px 20px; padding: 16px 20px; background: #476b57; color: #fff; }
+.access-map-viewer h2 { font-size: 18px; font-weight: 600; }
+.access-map-viewer__controls { grid-column: 1 / -1; display: flex; align-items: center; gap: 10px; }
+.access-map-viewer__controls .btn { min-width: 44px; min-height: 44px; padding: 6px 12px; margin: 0; }
+.access-map-viewer button:disabled { opacity: .4; cursor: default; }
+.access-map-viewer__scale { min-width: 54px; text-align: center; font-variant-numeric: tabular-nums; font-size: 14px; }
+.access-map-viewer__viewport { flex: 1; min-height: 0; overflow: auto; overscroll-behavior: contain; padding: 16px; background: #e9e9e6; }
+.access-map-viewer__viewport:focus-visible { outline: 3px solid #476b57; outline-offset: -3px; }
+.access-map-viewer__toolbar :focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+.access-map-viewer__image { display: block; max-width: none; height: auto; margin-inline: auto; background: #fff; }
+body:has(.access-map-viewer[open]) { overflow: hidden; }
+@media (max-width: 699px) {
+  .access-map-viewer { width: calc(100vw - 16px); height: calc(100dvh - 16px); }
+  .access-map-viewer__toolbar { padding: 12px; gap: 12px 8px; }
+  .access-map-viewer h2 { font-size: 16px; }
+  .access-map-viewer__controls { gap: 6px; }
+  .access-map-viewer__controls .btn { padding-inline: 8px; font-size: 13px; }
+  .access-map-viewer__scale { min-width: 44px; font-size: 12px; }
 }
