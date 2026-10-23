@@ -293,6 +293,13 @@
     text-align: center;
   }
 
+  .about-section--tokomidori .about-section__image {
+    width: 84%;
+    margin-right: auto;
+    margin-left: auto;
+    box-shadow: none;
+  }
+
   .about-section--tokomidori .about-section__body {
     left: auto;
     width: 100%;
