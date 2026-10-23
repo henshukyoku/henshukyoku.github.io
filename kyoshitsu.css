@@ -79,7 +79,7 @@
 .classroom-floor__heading h3 { font-size: 20px; font-weight: 600; letter-spacing: .08em; }
 .classroom-floor__heading small { display: block; margin-top: 2px; color: var(--room-muted); font: 10px "Helvetica Neue", Arial, sans-serif; letter-spacing: .12em; }
 
-/* 3列・余り中央揃えを保ち、スマホは幅288pxまでのコンパクトな1列。 */
+/* 3列・余り中央揃えを保ち、スマホは幅320pxまでの1列。 */
 .classroom-grid { display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; gap: 36px 24px; padding: 0; list-style: none; }
 .classroom-card { --card-color: var(--room-pink); width: calc((100% - 48px) / 3); min-width: 0; }
 .classroom-card:nth-child(4n + 2) { --card-color: var(--room-orange); }
@@ -123,7 +123,7 @@
   .classroom-hero::before { background-position: center, calc(100% + 170px) bottom; }
 }
 @media (max-width: 767px) {
-  .classroom-wrap { width: calc(100% - 64px); }
+  .classroom-wrap { width: calc(100% - 48px); }
   .classroom-hero { min-height: 240px; }
   .classroom-hero::before { background: url("images/kyoshitsu/campus-lab.svg") center / auto 125% no-repeat; opacity: .22; }
   .classroom-hero__inner { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 240px; padding-block: 36px; text-align: center; }
@@ -146,7 +146,7 @@
   .classroom-floor__number { width: 46px; height: 42px; font-size: 20px; }
   .classroom-floor__number--area { font-size: 14px; }
   .classroom-floor__heading h3 { font-size: 18px; }
-  .classroom-grid { gap: 24px; max-width: 288px; margin-inline: auto; }
+  .classroom-grid { gap: 24px; max-width: 320px; margin-inline: auto; }
   .classroom-card { width: 100%; }
   .classroom-card__body { padding: 12px 13px; text-align: center; }
   .classroom-card__body h4 { font-size: 16px; text-wrap: balance; }
