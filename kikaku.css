@@ -477,7 +477,10 @@
 
   .program-grid {
     grid-template-columns: minmax(0, 1fr);
-    gap: 24px;
+    gap: 20px;
+    width: 86%;
+    max-width: 300px;
+    margin-inline: auto;
   }
 
   .event-banner {
@@ -485,15 +488,15 @@
   }
 
   .event-banner__body {
-    padding: 18px 20px;
+    padding: 14px 16px;
   }
 
   .event-banner__title {
-    font-size: 22px;
+    font-size: 18px;
   }
 
   .event-banner__subtitle {
-    margin-bottom: 12px;
+    margin-bottom: 10px;
     letter-spacing: 0;
   }
 
@@ -712,4 +715,57 @@
     aspect-ratio: 1241 / 1755;
     border: 0;
   }
+}
+
+/* 表示モードに合わせてJSで移動する、単一の全体タイムテーブル。 */
+.program-timetable { margin-bottom: 40px; }
+.program-timetable h2 { margin-bottom: 20px; text-align: center; font-size: clamp(23px, 3vw, 30px); font-weight: 600; letter-spacing: .08em; }
+.program-timetable figure { padding: 16px; border: 1px solid #d9cbb9; border-radius: 12px; background: #fffdfa; }
+.program-timetable__link { display: block; color: #522e1d; text-decoration: none; cursor: zoom-in; }
+.program-timetable__link img { width: 100%; height: auto; }
+.program-timetable__link > span { display: block; width: fit-content; margin: 16px auto 0; font-size: 14px; text-decoration: underline; text-underline-offset: 4px; }
+.program-timetable__link:focus-visible { outline: 3px solid #4d7c6b; outline-offset: 5px; }
+.has-windmill .program-timetable { margin: 40px 0 0; }
+
+/* 屋台マップと共通の操作・サイズで表示する拡大ダイアログ。 */
+.program-image-viewer {
+  position: fixed;
+  inset: 0;
+  width: min(1440px, calc(100vw - 40px));
+  height: min(1000px, calc(100dvh - 40px));
+  max-width: none;
+  max-height: none;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #d9cbb9;
+  color: #522e1d;
+  background: #fff;
+  overflow: hidden;
+}
+.program-image-viewer[open] { display: flex; flex-direction: column; }
+.program-image-viewer::backdrop { background: #241b15cc; }
+.program-image-viewer__toolbar { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 12px 20px; padding: 16px 20px; border-bottom: 1px solid #d9cbb9; }
+.program-image-viewer h2 { font-size: 20px; font-weight: 600; }
+.program-image-viewer__controls { grid-column: 1 / -1; display: flex; align-items: center; gap: 10px; }
+.program-image-viewer button { min-width: 44px; min-height: 44px; padding: 6px 12px; color: inherit; background: #fff; border: 1px solid #d9cbb9; cursor: pointer; }
+.program-image-viewer button:hover:not(:disabled) { background: #edf3ed; }
+.program-image-viewer button:disabled { opacity: .4; cursor: default; }
+.program-image-viewer__close { background: #a1cfca !important; }
+.program-image-viewer__scale { min-width: 54px; text-align: center; font-variant-numeric: tabular-nums; font-size: 14px; }
+.program-image-viewer__viewport { flex: 1; min-height: 0; overflow: auto; overscroll-behavior: contain; padding: 16px; background: #e9e9e6; }
+.program-image-viewer__viewport:focus-visible { outline: 3px solid #765e91; outline-offset: -3px; }
+.program-image-viewer__image { display: block; max-width: none; height: auto; margin-inline: auto; background: #fff; }
+
+@media (max-width: 767px) {
+  .program-image-viewer { width: calc(100vw - 16px); height: calc(100dvh - 16px); }
+  .program-image-viewer__toolbar { padding: 12px; gap: 12px 8px; }
+  .program-image-viewer h2 { font-size: 16px; }
+  .program-image-viewer__controls { gap: 6px; }
+  .program-image-viewer__controls button { padding-inline: 8px; font-size: 13px; }
+  .program-image-viewer__scale { min-width: 44px; font-size: 12px; }
+}
+@media (max-width: 599px) {
+  .program-timetable { margin: 40px 0 0; }
+  .program-timetable figure { padding: 10px; }
+  .program-timetable__link > span { font-size: 13px; }
 }
