@@ -314,3 +314,9 @@ body:has(.access-map-viewer[open]) { overflow: hidden; }
   .access-map-viewer__controls .btn { padding-inline: 8px; font-size: 13px; }
   .access-map-viewer__scale { min-width: 44px; font-size: 12px; }
 }
+
+/* 出発時刻と残り時間を分け、毎秒更新しても読みやすくする。 */
+.access-bus-countdown { color: #365943; margin: 0 0 10px; line-height: 1.7; }
+.access-countdown-label { display: inline-block; font-size: 12px; margin-right: 10px; }
+.access-countdown-value { display: inline-block; font-size: 17px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.access-next-bus .access-bus-countdown { margin-bottom: 10px; }
