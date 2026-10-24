@@ -36,6 +36,10 @@
 .contact-mail-link { display: block; width: fit-content; max-width: 100%; margin: 24px auto; text-align: center; padding-inline: 20px; font-size: clamp(14px, 2.5vw, 22px); overflow-wrap: anywhere; }
 .contact-accessibility { padding-top: 24px; border-top: 1px solid #e1d9cd; }
 .contact-accessibility h3 { font-size: 17px; }
+/* トップページと同じアンケート画像を中央に配置。 */
+.contact-survey { width: 100%; max-width: 520px; margin: 0 auto 48px; text-align: center; }
+.contact-survey .btn { max-width: 100%; margin: 20px auto 0; }
+.contact-survey img { display: block; width: 100%; height: auto; }
 .contact-sns { text-align: center; }
 .contact-sns-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; }
 .contact-sns-links a { min-width: 140px; margin: 10px 0; text-align: center; }

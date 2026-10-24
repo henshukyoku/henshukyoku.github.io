@@ -2401,3 +2401,77 @@ main {
 @media screen and (max-width: 599px) {
   .festival-visit__date span { display: block; }
 }
+
+/* 来場者アンケート */
+.visitor-survey {
+  width: 90%;
+  max-width: 520px;
+  margin: 0 auto 80px;
+}
+.visitor-survey { text-align: center; }
+.visitor-survey .btn { display: inline-block; margin: 24px 0 0; }
+.visitor-survey img { width: 100%; height: auto; }
+.visitor-survey a:focus-visible {
+  outline: 3px solid #4d7c6b;
+  outline-offset: 6px;
+}
+
+@media screen and (max-width: 599px) {
+  #home-programs-title {
+    text-align: center;
+  }
+}
+
+/* スマホの企画一覧は左右の余白を抑えて広く表示。 */
+@media screen and (max-width: 599px) {
+  .programs[aria-labelledby="home-programs-title"] {
+    width: 96%;
+  }
+  .home-program-grid .event-banner__body {
+    padding: 15px 16px;
+  }
+  .home-program-grid .event-banner__title {
+    font-size: 20px;
+  }
+}
+
+/* カード上でもページの縦スクロールを妨げず、吸着を行わない。 */
+@media screen and (max-width: 599px) {
+  .highlight__container {
+    scroll-snap-type: none;
+    overflow-y: hidden;
+    touch-action: auto;
+    overscroll-behavior: auto;
+  }
+  .highlight__item {
+    scroll-snap-align: none;
+  }
+}
+
+/* 注目企画の見出しとカードの間隔。 */
+.highlight__inner {
+  margin-top: 24px;
+}
+
+/* PCでは案内ブロックを少しコンパクトにまとめる。 */
+@media screen and (min-width: 960px) {
+  .festival-visit,
+  .home-rain-notice,
+  .news-feature {
+    max-width: 840px;
+  }
+  .festival-visit {
+    padding: 36px 32px;
+    margin-bottom: 72px;
+  }
+  .festival-visit .main-title { margin-bottom: 16px; }
+  .festival-visit__date { font-size: 34px; margin-bottom: 18px; }
+  .home-rain-notice { padding: 22px; margin-bottom: 64px; }
+  .news-feature { margin-bottom: 72px !important; }
+  .news-feature__inner { padding: 30px 64px 34px; }
+  .news-feature__title { font-size: 29px; }
+  .news-feature__image { width: min(100%, 370px); }
+  .news-feature__text { font-size: 19px; margin-top: 38px; }
+  .brochure-feature .news-feature__image { width: min(100%, 640px); }
+  .visitor-survey { max-width: 450px; margin-bottom: 64px; }
+}
