@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>早稲田大学 所沢キャンパス祭</title>
+    <title>お問い合わせ・ご来場の皆さまへ | 所沢キャンパス祭2026</title>
 
     <link rel="icon" type="image/png" href="images/common/tomei.png" />
     <link rel="apple-touch-icon" href="images/common/tomei.png" />
@@ -27,7 +27,7 @@
     <script src="scripts/main.js" defer></script>
   </head>
 
-  <body>
+  <body class="contact-page">
     <div id="global-container">
       <div id="container">
         <div class="mobile-menu__cover"></div>
@@ -49,37 +49,83 @@
           <div id="main-content">
             <main class="new-page-main">
               <div class="content-inner">
-                <h1 class="contact-page-title main-title tween-animate-title">お問い合わせ</h1>
-                <section class="contact-block">
-                  <p>
-                    早稲田大学所沢キャンパス祭実行委員や所沢キャンパス祭に関してご質問がございましたら、<br />
-                    以下のメールアドレスまでお問い合わせください。
-                  </p>
-                  <p>
-                    また、文字通訳、手話通訳、場内誘導、座席の確保、お子様連れでの参加等について配慮をご希望の方は、<br />
-                    下記のメールアドレスにご希望の内容をお知らせください。
-                  </p>
-                  <p class="contact-mail">
-                    <a class="contact-mail-link" href="mailto:tokosai.waseda@gmail.com">tokosai.waseda@gmail.com</a>
-                  </p>
-                </section>
-              </div>
+                <div class="contact-page-heading">
+                  <h1 class="contact-page-title">お問い合わせ</h1>
+                </div>
 
-              <div class="wind-decoration-area reverse-wind">
-                <div class="wind-wave purple"></div>
-                <div class="wind-wave pink"></div>
-                <div class="wind-wave cyan"></div>
-                <div class="wind-wave orange"></div>
-              </div>
 
-              <div class="content-inner">
-                <section class="contact-block contact-sns">
-                  <h2 class="contact-heading">SNS</h2>
-                  <div class="contact-sns-item">
-                    <a class="contact-sns-link icon twitter" href="https://x.com/tokosai_waseda" target="_blank" rel="noopener noreferrer">X</a>
+                <section class="contact-section contact-email" id="email-contact" aria-labelledby="email-heading">
+                  <h2 class="contact-heading" id="email-heading">メールでのお問い合わせ</h2>
+                  <p>早稲田大学所沢キャンパス祭実行委員会や所沢キャンパス祭に関してご質問がございましたら、以下のメールアドレスまでお問い合わせください。</p>
+                  <a class="btn filled contact-mail-link" href="mailto:tokosai.waseda@gmail.com">tokosai.waseda@gmail.com <span aria-hidden="true">↗</span></a>
+                  <div class="contact-accessibility">
+                    <h3>参加にあたって配慮をご希望の方へ</h3>
+                    <p>文字通訳、手話通訳、場内誘導、座席の確保、お子様連れでの参加等について配慮をご希望の方は、上記のメールアドレスにご希望の内容をお知らせください。</p>
                   </div>
-                  <div class="contact-sns-item">
-                    <a class="contact-sns-link icon fb" href="https://www.instagram.com/waseda.tokosai/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                </section>
+
+                <section class="contact-section" id="support" aria-labelledby="support-heading">
+                  <h2 class="contact-heading" id="support-heading">当日のお困りごと</h2>
+                  <p class="contact-section-lead">お困りの際は、お近くのスタッフまでお気軽にお声がけください。</p>
+                  <div class="contact-card-grid">
+                    <article class="contact-card">
+                      <p class="contact-label">各種ご案内</p>
+                      <h3>インフォメーション（本部）</h3>
+                      <p class="contact-location">100号館前のテント</p>
+                      <p>各種案内を行っています。お困りごとやお気づきの点がありましたら、気軽にお立ち寄りください。</p>
+                    </article>
+                    <article class="contact-card">
+                      <p class="contact-label">救護のご案内</p>
+                      <h3>体調不良・怪我など</h3>
+                      <p>気分が優れないときや怪我をされたときは、お近くのスタッフまでお声がけください。保健センターにご案内します。</p>
+                    </article>
+                    <article class="contact-card">
+                      <p class="contact-label">お探しもの・お子様の迷子</p>
+                      <h3>落とし物・迷子など</h3>
+                      <p>インフォメーション（本部）にお越しいただくか、お近くのスタッフにお声がけください。スタッフは常時キャンパス内を巡回しています。</p>
+                    </article>
+                    <article class="contact-card contact-card--emergency">
+                      <p class="contact-label">緊急時のご案内</p>
+                      <h3>災害発生時</h3>
+                      <p>身の安全を図り、大学職員および緑または黒の法被を着たスタッフの指示に従って、落ち着いて行動してください。屋内にいる場合は、原則として屋外へ出ることを優先してください。</p>
+                      <dl class="contact-emergency-details">
+                        <div><dt>避難場所</dt><dd>陸上競技場</dd></div>
+                        <div><dt>緊急連絡先</dt><dd>守衛室 <a href="tel:0429497519">04-2949-7519</a></dd></div>
+                      </dl>
+                    </article>
+                  </div>
+                  <a class="btn filled contact-map-link" href="access.html#campus">キャンパスマップを確認する <span aria-hidden="true">→</span></a>
+                </section>
+
+                <section class="contact-section" id="visitor-rules" aria-labelledby="rules-heading">
+                  <h2 class="contact-heading" id="rules-heading">ご来場時のお願い</h2>
+                  <div class="contact-card-grid">
+                    <article class="contact-card">
+                      <h3>分煙へのご協力</h3>
+                      <p>喫煙所以外の場所での喫煙・歩きタバコ等はご遠慮ください。</p>
+                    </article>
+                    <article class="contact-card">
+                      <h3>構内での飲酒・持ち込み禁止</h3>
+                      <p>大学構内でのアルコールの飲酒および持ち込みはお断りしております。</p>
+                    </article>
+                    <article class="contact-card contact-card--wide">
+                      <h3>ごみ分別の取り組みとご協力のお願い</h3>
+                      <p>今年度は、早稲田大学公認 環境ボランティアサークル「<a href="https://www.envrodorigues.com/" target="_blank" rel="noopener noreferrer">環境ロドリゲス</a>」と連携し、ごみの分別に取り組んでいます。</p>
+                      <p>マップ内のごみステーションにいるスタッフの指示に従って、ごみの分別にご協力ください。</p>
+                    </article>
+                  </div>
+                  <div class="contact-notes">
+                    <p>その他のご来場者様の迷惑になる行為はお控えください。</p>
+                    <p>※会場内でスタッフが写真や動画を撮影することがあります。お客様が映り込む可能性がございますので、あらかじめご了承ください。</p>
+                  </div>
+                </section>
+
+
+                <section class="contact-sns" aria-labelledby="sns-heading">
+                  <h2 class="contact-heading" id="sns-heading">公式SNS</h2>
+                  <div class="contact-sns-links">
+                    <a class="btn filled" href="https://x.com/tokosai_waseda" target="_blank" rel="noopener noreferrer">X <span aria-hidden="true">↗</span></a>
+                    <a class="btn filled" href="https://www.instagram.com/waseda.tokosai/" target="_blank" rel="noopener noreferrer">Instagram <span aria-hidden="true">↗</span></a>
                   </div>
                 </section>
               </div>
