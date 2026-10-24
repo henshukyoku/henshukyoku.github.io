@@ -2381,6 +2381,23 @@ main {
 }
 .festival-visit__date span { display: inline-block; }
 .festival-visit .btn { margin-bottom: 0; }
+.home-rain-notice {
+  box-sizing: border-box;
+  width: 90%;
+  max-width: 960px;
+  margin: -48px auto 80px;
+  padding: clamp(18px, 3vw, 28px);
+  background: #951d30;
+  border: 1px solid #e6546b;
+  border-left: 4px solid #ff7d8e;
+  color: #fff;
+}
+.home-rain-notice h2 { margin: 0 0 10px; font-size: clamp(15px, 2vw, 18px); line-height: 1.6; font-weight: 700; }
+.home-rain-notice h2 span { margin-right: 6px; }
+.home-rain-notice p,
+.home-rain-notice li { font-size: 14px; line-height: 1.9; }
+.home-rain-notice ul { margin: 10px 0 0; padding-left: 1.5em; list-style: disc; }
+.home-rain-notice strong { font-weight: 800; }
 @media screen and (max-width: 599px) {
   .festival-visit__date span { display: block; }
 }

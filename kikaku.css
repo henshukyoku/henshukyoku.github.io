@@ -719,6 +719,7 @@
 
 /* 表示モードに合わせてJSで移動する、単一の全体タイムテーブル。 */
 .program-timetable { margin-bottom: 40px; }
+.program-timetable__rain-note { margin-top: 16px; line-height: 1.8; }
 .program-timetable h2 { margin-bottom: 20px; text-align: center; font-size: clamp(23px, 3vw, 30px); font-weight: 600; letter-spacing: .08em; }
 .program-timetable figure { padding: 16px; border: 1px solid #d9cbb9; border-radius: 12px; background: #fffdfa; }
 .program-timetable__link { display: block; color: #522e1d; text-decoration: none; cursor: zoom-in; }
