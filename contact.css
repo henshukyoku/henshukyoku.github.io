@@ -45,6 +45,9 @@
   .contact-card-grid { grid-template-columns: minmax(0, 1fr); gap: 16px; }
   .contact-card, .contact-email { padding: 22px 18px; }
   .contact-section { margin-bottom: 36px; }
+  #support > .contact-heading,
+  #support > .contact-section-lead,
+  #visitor-rules > .contact-heading { text-align: center; }
 }
 
 /* 各ブロックの中で、見出し・本文・ボタンを中央に揃える。 */
