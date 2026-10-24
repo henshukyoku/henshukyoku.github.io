@@ -1880,7 +1880,7 @@ main {
     flex-direction: row;
     flex-wrap: nowrap;
     overflow-x: auto;
-    scroll-snap-type: x mandatory;
+    scroll-snap-type: x proximity;
     -webkit-overflow-scrolling: touch;
     gap: 16px;
     padding: 0 8px 10px;

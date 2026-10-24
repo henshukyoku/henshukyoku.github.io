@@ -27,7 +27,7 @@
   function fitMap() {
     if (!viewer.open || !image.naturalWidth) return;
     fitWidth = Math.max(1, Math.min(
-      image.naturalWidth,
+      /\.svg(?:[?#]|$)/i.test(imageSource) ? Infinity : image.naturalWidth,
       viewport.clientWidth - 32,
       (viewport.clientHeight - 32) * image.naturalWidth / image.naturalHeight,
     ));
