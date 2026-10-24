@@ -117,6 +117,11 @@
 .classroom-booking { padding: 2px 5px; background: #e8e3ef; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
 .classroom-card__more { display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; margin-top: 15px; padding-top: 10px; border-top: 1px solid var(--room-line); text-decoration: underline !important; text-underline-offset: 4px; }
 
+@media (min-width: 1024px) {
+  .classroom-lineup > .classroom-wrap { width: min(1120px, calc(100% - 80px)); }
+  .classroom-poster, .classroom-placeholder { aspect-ratio: 9 / 10; }
+}
+
 @media (max-width: 1000px) {
   .classroom-directory__inner { display: block; }
   .classroom-floor-nav { margin-top: 14px; }
