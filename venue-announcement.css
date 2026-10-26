@@ -4,16 +4,15 @@
   max-width: 960px;
   margin: 24px auto 32px;
   padding: 20px 24px;
-  border: 2px solid #ffb4bf;
-  background: #951d30;
-  color: #fff;
+  border: 1px solid #b5cdbf;
+  background: #edf4ef;
+  color: #355f50;
   text-align: center;
   overflow-wrap: anywhere;
 }
 .venue-announcement h2 { margin: 0 0 10px; font-size: 20px; line-height: 1.6; }
 .venue-announcement p { margin: 0; font-size: 17px; line-height: 1.8; }
 .venue-announcement strong { font-weight: 800; }
-.venue-announcement + .home-rain-notice { margin-top: 0; }
 @media (max-width: 599px) {
   .venue-announcement { padding: 16px; }
   .venue-announcement h2 { font-size: 18px; }
